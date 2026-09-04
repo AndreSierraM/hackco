@@ -98,12 +98,20 @@ El recorrido del usuario responde a una secuencia psicológica diseñada para ge
 
 ---
 
-## 6. Copywriting & Voz de Marca
+## 6. Copywriting & Voz de Marca: El Cliente es el Héroe
 
+> **Regla de Oro**: Hablamos del problema y los objetivos del cliente, no de lo grandiosos que somos nosotros. El usuario corporativo debe entrar y decir inmediatamente: *"Ellos conocen exactamente el dolor que vivo a diario y me ayudan a solucionarlo"*.
+
+- **Enfoque en 'Tú' y 'Te Ayudamos'**: Reemplazar expresiones autorreferenciales (*"Somos el operador líder...", "Diseñamos y operamos..."*) por empatía y solución directa (*"Tu equipo interno no da abasto...", "Te ayudamos a convertir tus cuellos de botella en software funcionando..."*).
+- **Agitación del Dolor Real**: Reconocer los 3 cuellos de botella reales de la empresa:
+  1. *Backlog de TI saturado a 6-9 meses*.
+  2. *Consultorías tradicionales que cobran fortunas por documentos teóricos en PowerPoint que nadie programa*.
+  3. *Iniciativas o hackathons aislados que solo dejan pizzas y fotos, sin continuidad técnica*.
 - **Tono**: Sobrio, pragmático, respetuoso del tiempo del tomador de decisiones, riguroso con el talento técnico.
-- **Voz**: Activa, directa y honesta.
+- **Voz**: Activa, directa y orientada a resultados de negocio.
 - **Frases de Marca**:
   - *"Menos PowerPoints. Más productos funcionando."*
+  - *"Tienes el problema de negocio claro. Te ayudamos a tener el software funcionando."*
   - *"Un hackathon debería terminar con algo más que fotos."*
   - *"Deja de buscar ideas. Haz que las construyan."*
-  - *"La innovación no es un evento de fin de semana; es un proceso estructurado hacia un piloto."*
+  - *"El verdadero retorno de inversión es el piloto en tus servidores."*

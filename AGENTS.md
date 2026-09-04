@@ -26,6 +26,7 @@ Kamino es la plataforma y operador B2B de innovación abierta que ayuda a corpor
    - **PROHIBIDO** inventar métricas ficticias o presentar empresas ficticias como si fueran casos de éxito o clientes reales.
    - Cualquier pantalla de muestra o mockup debe etiquetarse explícitamente como `VISTA DEMOSTRATIVA` o `Entorno Demostrativo en Vivo`.
 5. **Vender Resultados, No Features**: La narrativa debe enfocar el resultado comercial (*"Menos PowerPoints. Más productos funcionando"*, *"El Demo Day no es la meta: el objetivo es el piloto"*).
+6. **El Cliente es el Héroe (Hablar del Cliente, No de Nosotros)**: Hablar siempre en términos del dolor de la empresa y cómo le ayudamos a solucionarlo (*"Tu equipo interno no da abasto...", "Te ayudamos a convertir tus cuellos de botella en software funcionando..."*). El usuario corporativo debe entrar y decir de inmediato: *"Ellos conocen mi problema exacto y me ayudan a solucionarlo"*.
 
 ---
 

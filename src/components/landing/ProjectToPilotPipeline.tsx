@@ -68,10 +68,10 @@ export function ProjectToPilotPipeline() {
             El Mayor Diferenciador
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#141517] tracking-tight">
-            El Demo Day no es la meta. Es el punto de partida.
+            El verdadero retorno de inversión es el piloto en tus servidores.
           </h3>
           <p className="text-xs sm:text-sm text-[#52535A] mt-2 leading-relaxed">
-            Deja de buscar ideas. Haz que las construyan. La mayoría de iniciativas mueren después de entregar el premio; en Kamino acompañamos a los mejores equipos para convertir prototipos en pilotos reales dentro de tu organización.
+            De nada sirve un evento emocionante si el lunes nadie continúa el código. Te ayudamos a dar el paso que los hackathons tradicionales olvidan: acompañar la transferencia técnica y legal del prototipo para que tu empresa comience a probarlo en producción de inmediato.
           </p>
         </div>
         <div className="shrink-0 text-right">

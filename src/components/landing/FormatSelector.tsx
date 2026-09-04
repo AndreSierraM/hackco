@@ -20,40 +20,40 @@ export function FormatSelector() {
   const goals = [
     {
       id: "business_problem",
-      label: "Resolver un problema de negocio",
+      label: "Resolver un dolor operativo o de negocio",
       icon: Building2,
       recommendation: {
-        title: "Corporate Challenge",
-        tag: "Innovación Abierta",
-        description: "Transformamos un dolor operativo o de clientes en un desafío estructurado con datasets y criterios de aceptación claros.",
+        title: "Corporate Innovation Challenge",
+        tag: "Solución de Cuello de Botella",
+        description: "Te ayudamos a transformar un proceso lento, costoso o manual en un desafío técnico con especificaciones claras, entregándote prototipos de software probados.",
         duration: "4 semanas",
         participants: "50 - 150 builders seleccionados",
         format: "Híbrido (Remoto con Demo Day presencial)",
-        outcome: "3 a 8 prototipos funcionales evaluados contra criterios definidos con tu organización.",
+        outcome: "De 5 a 10 prototipos funcionales evaluados con tus criterios y listos para pasar a piloto.",
       },
     },
     {
       id: "adopt_ai",
-      label: "Adoptar inteligencia artificial",
+      label: "Explorar IA aplicada a tus procesos sin riesgo",
       icon: Cpu,
       recommendation: {
         title: "AI Innovation Sprint",
-        tag: "IA Aplicada",
-        description: "Sprint intensivo con ingenieros de IA para explorar modelos multimodales, agentes autónomos y análisis documental en tu stack.",
+        tag: "IA Aplicada a tu Empresa",
+        description: "Sprint intensivo con ingenieros de IA para validar automatizaciones, agentes autónomos y análisis documental sobre tus propios flujos de trabajo sin comprometer la seguridad.",
         duration: "3 semanas",
         participants: "40 - 100 especialistas en IA y datos",
         format: "Remoto con acompañamiento técnico continuo",
-        outcome: "Modelos y pipelines agénticos probados con métricas de latencia, precisión y costo.",
+        outcome: "Modelos y pipelines agénticos probados con métricas de latencia, precisión y costo para tu empresa.",
       },
     },
     {
       id: "tech_talent",
-      label: "Encontrar talento técnico",
+      label: "Contratar talento técnico viéndolos programar",
       icon: UserCheck,
       recommendation: {
         title: "Talent Hiring Hackathon",
         tag: "Reclutamiento Práctico",
-        description: "Observa cómo programan, resuelven problemas bajo presión y colaboran en equipo en lugar de filtrar únicamente por un currículum.",
+        description: "Te ahorramos meses de entrevistas tradicionales: observa cómo programan bajo presión real, resuelven problemas de arquitectura y colaboran en equipo en lugar de filtrar por un CV.",
         duration: "48 horas intensivas",
         participants: "80 - 150 desarrolladores pre-evaluados",
         format: "Presencial o Remoto",
@@ -62,12 +62,12 @@ export function FormatSelector() {
     },
     {
       id: "internal_employees",
-      label: "Activar e integrar empleados",
+      label: "Activar la innovación de tus propios colaboradores",
       icon: Flame,
       recommendation: {
         title: "Internal Challenge (Silos Cero)",
-        tag: "Cultura de Innovación",
-        description: "Rompe los silos entre tecnología, operaciones, producto y legal, creando soluciones desde adentro con quienes mejor conocen la empresa.",
+        tag: "Cultura & Eficiencia Interna",
+        description: "Te ayudamos a romper los silos entre tecnología, operaciones, producto y legal, creando soluciones desde adentro con quienes mejor conocen tu negocio.",
         duration: "3 días inmersivos",
         participants: "40 - 200 colaboradores internos",
         format: "Presencial en oficinas corporativas",
@@ -76,12 +76,12 @@ export function FormatSelector() {
     },
     {
       id: "launch_tech",
-      label: "Lanzar una API, SDK o producto",
+      label: "Acelerar la adopción de tu API, SDK o producto",
       icon: Code2,
       recommendation: {
         title: "Developer Relations (DevRel) Hackathon",
         tag: "Adopción de Infraestructura",
-        description: "Impulsa la adopción de tu tecnología invitando a cientos de desarrolladores a crear integraciones, librerías y aplicaciones sobre tu plataforma.",
+        description: "Ponemos a cientos de desarrolladores a crear integraciones, librerías y aplicaciones sobre tu plataforma, validando tu documentación en el mundo real.",
         duration: "3 semanas abiertas",
         participants: "200 - 800 desarrolladores",
         format: "Online regional / global",
@@ -90,12 +90,12 @@ export function FormatSelector() {
     },
     {
       id: "connect_startups",
-      label: "Conectar startups con tu empresa",
+      label: "Conectar con startups tecnológicas maduras",
       icon: Rocket,
       recommendation: {
         title: "Open Innovation Bounty Program",
         tag: "Scouting & Alianzas",
-        description: "Conecta con startups tecnológicas maduras que ya cuentan con soluciones listas para integrarse como proveedores o aliados estratégicos.",
+        description: "Filtramos y convocamos a startups tecnológicas con soluciones listas para integrarse como proveedores o aliados de tu empresa mediante pruebas de concepto rápidas.",
         duration: "6 semanas estructuradas",
         participants: "20 - 40 startups validadas",
         format: "Remoto con sesiones de pitch ejecutivo",
@@ -111,13 +111,13 @@ export function FormatSelector() {
       <div className="max-w-2xl">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1E2026] text-[#93C5FD] text-[11px] font-mono font-semibold uppercase tracking-wider mb-2 border border-[#2B2D36]">
           <Target className="w-3.5 h-3.5" />
-          Selector Metodológico
+          Soluciones a tu Medida
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-          ¿Qué objetivo busca tu organización?
+          ¿Qué cuello de botella necesitas destrabar en tu empresa hoy?
         </h3>
         <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
-          Selecciona tu meta principal y te mostraremos el formato recomendado, la duración estimada, la escala de talento y el entregable concreto.
+          Selecciona el reto que enfrenta tu organización. Te mostramos exactamente cómo te ayudamos a estructurarlo y qué resultado de software te entregamos en 4 semanas:
         </p>
       </div>
 

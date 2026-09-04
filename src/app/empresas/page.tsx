@@ -81,28 +81,28 @@ export default function EmpresasPage() {
         {/* HERO SECTION B2B */}
         <section className="pt-16 sm:pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6">
           <Badge variant="primary" size="md">
-            Soluciones Corporativas & Open Innovation
+            Soluciones Corporativas & Desafíos Técnicos
           </Badge>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.1]">
-            Tu próximo gran producto puede empezar como un reto.
+            Tienes el problema de negocio claro. Te ayudamos a tener el software funcionando.
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Diseñamos y operamos hackathons y programas de innovación competitiva para corporaciones, bancos, tecnológicas y sector público en Colombia y LATAM.
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Tu equipo interno no da abasto y las consultorías tradicionales cobran fortunas por diagnósticos teóricos. Te ayudamos a transformar tus cuellos de botella en retos técnicos y recibir entre 5 y 10 prototipos de software probados, listos para tu próximo piloto en 4 semanas.
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/start">
               <Button size="lg" className="w-full sm:w-auto bg-slate-950 hover:bg-blue-600 text-white font-semibold">
-                Diseñar un challenge
+                Diseñar un reto para mi empresa
               </Button>
             </Link>
             <Link href="/demo">
               <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold">
-                Ver Demo Comercial
+                Ver Demo de la Plataforma
               </Button>
             </Link>
           </div>
           <p className="text-xs text-slate-400">
-            Infraestructura tecnológica y metodológica para la nueva generación de hackathons en Colombia y América Latina.
+            Menos PowerPoints. Más productos funcionando. Cero desgaste operativo para tu equipo interno.
           </p>
         </section>
 

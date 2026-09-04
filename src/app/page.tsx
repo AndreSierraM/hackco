@@ -34,39 +34,39 @@ export default function HomePage() {
   const steps = [
     {
       num: "01",
-      title: "Diseñamos el reto",
-      subtitle: "De dolor difuso a reto técnico",
-      desc: "Nos reunimos con tus líderes de negocio y convertimos una necesidad operativa en un challenge claro, con datos de prueba, reglas y criterios de aceptación.",
+      title: "Estructuramos tu problema de negocio",
+      subtitle: "Traducimos tu necesidad a código",
+      desc: "Nos reunimos con tus líderes y convertimos ese cuello de botella en un reto técnico con reglas claras, datasets seguros y criterios de éxito medibles para tu empresa.",
       tag: "Estrategia",
       image: "/images/hackathon-whiteboard.jpg",
-      highlight: "Brief técnico y dataset listo",
+      highlight: "Especificación técnica y métricas de éxito",
     },
     {
       num: "02",
-      title: "Convocamos el talento",
-      subtitle: "Filtro riguroso de perfiles",
-      desc: "Lanzamos la convocatoria en comunidades técnicas, universidades y redes de builders. Evaluamos experiencia práctica en código, IA y producto.",
+      title: "Te conseguimos el talento técnico ideal",
+      subtitle: "Especialistas filtrados para tu caso",
+      desc: "Atraemos y seleccionamos a los mejores programadores, ingenieros de IA y diseñadores de la región para que compitan por construir la solución que necesitas.",
       tag: "Convocatoria",
       image: "/images/hackathon-builders.jpg",
-      highlight: "Equipos equilibrados sin vacíos",
+      highlight: "Equipos multidisciplinarios listos",
     },
     {
       num: "03",
-      title: "Construimos",
-      subtitle: "Operación de alta intensidad",
-      desc: "Coordinamos los sprints de trabajo, las sesiones de mentoría técnica 1:1, las revisiones intermedias y toda la logística presencial o remota.",
+      title: "Supervisamos toda la construcción",
+      subtitle: "Sprints enfocados en tu arquitectura",
+      desc: "Nos encargamos de toda la operación, el cronograma y las mentorías técnicas para asegurar que el código cumpla con tus restricciones de seguridad y negocio.",
       tag: "Operación",
       image: "/images/hackathon-mentoring.jpg",
-      highlight: "Entregas con código ejecutable",
+      highlight: "Código ejecutable verificado en GitHub",
     },
     {
       num: "04",
-      title: "Convertimos resultados en acción",
-      subtitle: "Evaluación objetiva y camino a piloto",
-      desc: "Calificamos con Jury OS sin sesgos y ayudamos a estructurar pruebas de concepto (POC) para que los prototipos no queden guardados en un cajón.",
+      title: "Te entregamos soluciones listas para piloto",
+      subtitle: "Evaluación objetiva y traspaso",
+      desc: "Tus jurados califican prototipos en vivo con nuestra plataforma y te acompañamos en el traspaso legal y técnico para iniciar el piloto en tu empresa.",
       tag: "Resultados",
       image: "/images/hackathon-pitch.jpg",
-      highlight: "Prototipos validados para piloto",
+      highlight: "Prototipos listos para producción",
     },
   ];
 
@@ -90,19 +90,19 @@ export default function HomePage() {
               </span>
             </h1>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-xl text-[#52535A] max-w-2xl mx-auto leading-relaxed font-normal">
-              Diseñamos y operamos hackathons de principio a fin: reto, convocatoria, talento, plataforma, jurados y acompañamiento hasta convertir las mejores ideas en pilotos reales.
+            {/* Supporting Copy: 100% Client Centric */}
+            <p className="text-base sm:text-xl text-[#52535A] max-w-3xl mx-auto leading-relaxed font-normal">
+              Tu equipo interno no da abasto y las consultoras tradicionales cobran fortunas por diagnósticos teóricos. Te ayudamos a estructurar tu reto, convocar al mejor talento técnico de la región y entregarte entre 5 y 10 prototipos de software funcionando, listos para tu próximo piloto en 4 semanas.
             </p>
 
-            {/* Action CTAs: Primary B2B + Secondary "Cómo funciona" */}
+            {/* Action CTAs: Primary B2B + Secondary "Cómo te ayudamos" */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
               <Link href="/start" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="w-full sm:w-auto bg-[#141517] hover:bg-[#252830] text-white shadow-editorial font-semibold px-7 text-sm sm:text-base py-3.5"
                 >
-                  Diseñar un reto
+                  Diseñar un reto para mi empresa
                 </Button>
               </Link>
               <a href="#como-funciona" className="w-full sm:w-auto">
@@ -111,7 +111,7 @@ export default function HomePage() {
                   variant="outline"
                   className="w-full sm:w-auto border-[#DCDCD5] text-[#141517] hover:bg-[#F4F4EE] font-medium px-6 text-sm sm:text-base py-3.5"
                 >
-                  Ver cómo funciona
+                  Ver cómo te ayudamos
                 </Button>
               </a>
             </div>
@@ -209,20 +209,19 @@ export default function HomePage() {
 
         {/* =========================================================
             SECCIÓN 02 — EL PROBLEMA (Caos vs. Solución Kamino)
-            "Organizar un hackathon no debería significar coordinar 12 herramientas"
             Visual: CAOS TRADICIONAL -> KAMINO UNIFICADO -> RESULTADOS
             ========================================================= */}
         <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="max-w-2xl text-left mb-12">
+            <div className="max-w-3xl text-left mb-12">
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
-                La Realidad de la Innovación
+                ¿Te suena familiar?
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
-                Organizar un hackathon no debería significar coordinar 12 herramientas dispersas.
+                La innovación en tu empresa no se frena por falta de ideas, sino por falta de manos que las construyan.
               </h2>
               <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
-                Un hackathon debería terminar con algo más que fotos. Sin una operación profesional, los programas corporativos se convierten en un dolor de cabeza de formularios perdidos, jurados descalibrados y proyectos que jamás se ejecutan.
+                Tu equipo de tecnología está 100% ocupado manteniendo la operación. Las consultorías tradicionales te cobran fortunas por diagnósticos de 80 páginas que nadie programa. Y los eventos internos solo dejan pizzas y fotos. Te ayudamos a romper ese cuello de botella y recibir entre 5 y 10 prototipos de software probados sin distraer a tu equipo interno.
               </p>
             </div>
 
@@ -232,18 +231,18 @@ export default function HomePage() {
 
         {/* =========================================================
             SECCIÓN 03 — CÓMO FUNCIONA (4 Grandes Momentos)
-            No 8 cards iguales: 4 fases operacionales con visuales reales.
+            4 fases operacionales con visuales reales.
             ========================================================= */}
         <section id="como-funciona" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-3xl mb-14">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
-              Metodología de Extremo a Extremo
+              Cómo te ayudamos
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
-              Cuatro momentos para pasar de una necesidad difusa a un piloto en producción.
+              Cuatro pasos para pasar de un problema que te quita el sueño a software listo para piloto.
             </h2>
             <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
-              Kamino asume la carga operativa completa para que tu equipo se concentre únicamente en evaluar soluciones y adoptar las mejores.
+              Nosotros absorbemos toda la carga metodológica, técnica y operativa. Tu organización solo participa en definir los criterios de éxito, revisar avances y elegir las soluciones ganadoras.
             </p>
           </div>
 
@@ -274,7 +273,7 @@ export default function HomePage() {
 
                   <div className="absolute bottom-3 left-4 right-4 text-white">
                     <span className="text-[11px] font-mono text-[#D1D5DB] block">
-                      Entregable de la fase:
+                      Entregable para tu empresa:
                     </span>
                     <p className="text-xs font-semibold text-[#A7F3D0]">
                       ✓ {step.highlight}
@@ -298,19 +297,19 @@ export default function HomePage() {
 
         {/* =========================================================
             SECCIÓN 04 — MOSTRAR LA EXPERIENCIA (Producto en contexto)
-            "Todo el programa. Un solo lugar."
+            "Así supervisas las soluciones que se construyen para ti."
             Estudio interactivo de capacidades Kamino.
             ========================================================= */}
         <section id="experiencia" className="py-24 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-6xl mx-auto space-y-6">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
-              La Plataforma en Acción
+              Control Total para tu Empresa
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#141517] max-w-3xl mx-auto">
-              Todo el programa. Un solo lugar.
+              Así supervisas las soluciones que se construyen para ti.
             </h2>
             <p className="text-sm sm:text-base text-[#52535A] max-w-2xl mx-auto leading-relaxed">
-              Del registro de participantes a la deliberación de los jurados y el traspaso de código: Kamino centraliza participantes, equipos, mentores, rúbricas y proyectos entregados.
+              Sin hojas de cálculo dispersas ni chats caóticos: monitorea en tiempo real los equipos postulados, el avance de código en GitHub, las sesiones con mentores y la calificación matemática de tus jurados.
             </p>
 
             {/* Showcase Studio Component with Integrated 4 Capabilities */}
@@ -345,17 +344,17 @@ export default function HomePage() {
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              “Las buenas ideas aparecen cuando juntas a las personas correctas alrededor de un problema que importa.”
+              “Tu empresa no necesita más comités para debatir ideas. Necesita ver software funcionando en manos de sus usuarios.”
             </h2>
 
             <p className="text-sm sm:text-base text-[#9CA3AF] max-w-xl mx-auto leading-relaxed">
-              Menos PowerPoints. Más productos funcionando. La verdadera innovación ocurre cuando creas el entorno para que ingenieros, diseñadores y expertos de negocio construyan bajo presión real.
+              Menos PowerPoints. Más productos funcionando. Te ayudamos a acortar la distancia entre un cuello de botella operativo y una solución que tu equipo pueda desplegar en producción.
             </p>
 
             <div className="pt-4">
               <Link href="/start">
                 <Button size="lg" className="bg-white hover:bg-[#F4F4EE] text-[#141517] font-semibold px-6 shadow-sm">
-                  Lanzar un reto con nosotros
+                  Cuéntanos qué problema quieres resolver
                 </Button>
               </Link>
             </div>
@@ -372,23 +371,23 @@ export default function HomePage() {
 
         {/* =========================================================
             SECCIÓN 07 — SOCIAL PROOF & CREDIBILIDAD HONESTA
-            Cero métricas ficticias. Posicionamiento transparente y sólido.
+            Garantías concretas para el cliente corporativo.
             ========================================================= */}
         <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-5 space-y-4">
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
-                  Propósito & Ecosistema
+                  Garantías para tu Empresa
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                  Estamos construyendo la infraestructura para una nueva generación de hackathons en América Latina.
+                  Eliminamos los riesgos que habitualmente frenan la innovación corporativa.
                 </h2>
                 <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
-                  Creemos que el mejor talento técnico no siempre está dentro de una sola corporación ni se descubre a través de un CV. Conectamos empresas con universidades, comunidades tech y desarrolladores para resolver problemas reales con rigor metodológico.
+                  Sabemos que abrir un reto genera dudas sobre confidencialidad, calidad de código y desgaste de tu equipo interno. Diseñamos cada proceso para darte certeza total y control desde el primer día:
                 </p>
                 <div className="pt-2 text-xs font-mono text-[#71717A]">
-                  <span>Sede en Bogotá, Colombia · Operación híbrida en toda la región</span>
+                  <span>Sede en Bogotá, Colombia · Operación híbrida en toda América Latina</span>
                 </div>
               </div>
 
@@ -397,19 +396,9 @@ export default function HomePage() {
                   <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
                     <Workflow className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Metodología Probada</h4>
+                  <h4 className="text-sm font-bold text-[#141517]">Cero Desgaste Operativo</h4>
                   <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Formulación precisa de retos técnicos, rúbricas cuantitativas y criterios de éxito acordados previamente con el sponsor.
-                  </p>
-                </div>
-
-                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
-                    <Users className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Operación de Terreno</h4>
-                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Nos encargamos de las admisiones, la logística, los mentores, los jurados y la facilitación del Demo Day presencial o remoto.
+                    Nosotros absorbemos toda la logística, admisiones y soporte a builders. Tu equipo solo invierte 2 horas semanales en revisar avances y dar feedback.
                   </p>
                 </div>
 
@@ -417,9 +406,9 @@ export default function HomePage() {
                   <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
                     <Layers className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Plataforma Propietaria</h4>
+                  <h4 className="text-sm font-bold text-[#141517]">Código Real, No Maquetas</h4>
                   <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Centralización de participantes, equipos, repositorios, votaciones sin sesgos y trazabilidad de entregables.
+                    Exigimos repositorios de GitHub verificados, APIs integradas y demos en vivo para que no pagues por conceptos abstractos en diapositivas.
                   </p>
                 </div>
 
@@ -427,9 +416,19 @@ export default function HomePage() {
                   <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Gobernanza & IP</h4>
+                  <h4 className="text-sm font-bold text-[#141517]">Blindaje Legal & Propiedad (IP)</h4>
                   <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Términos legales claros de propiedad intelectual, acuerdos de confidencialidad y vías directas a acuerdos de piloto.
+                    Términos claros desde la postulación: acuerdos de confidencialidad (NDA), cesión de derechos sobre prototipos y datasets protegidos para tu empresa.
+                  </p>
+                </div>
+
+                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
+                    <Users className="w-4 h-4" />
+                  </div>
+                  <h4 className="text-sm font-bold text-[#141517]">Evaluación Objetiva con tus Criterios</h4>
+                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
+                    Tus líderes técnicos califican con rúbricas cuantitativas calibradas al 100%; nada se decide por simpatía, sino por viabilidad técnica y valor comercial.
                   </p>
                 </div>
               </div>
@@ -457,13 +456,13 @@ export default function HomePage() {
               <div className="p-8 sm:p-10 rounded-2xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial flex flex-col justify-between relative overflow-hidden">
                 <div className="space-y-4">
                   <span className="px-2.5 py-1 rounded-full bg-white/10 text-white font-mono text-[11px] font-semibold uppercase tracking-wider border border-white/20 inline-block">
-                    Para Organizaciones & Empresas
+                    Para tu Organización o Empresa
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                    ¿Tienes un reto que vale la pena resolver?
+                    ¿Tienes un problema de negocio que necesitas resolver rápido?
                   </h3>
                   <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                    Cuéntanos el problema que enfrenta tu negocio. Nosotros diseñamos el challenge, convocamos al talento técnico y operamos todo el programa.
+                    Cuéntanos tu cuello de botella. En 48 horas estructuramos las bases del reto y ponemos a decenas de desarrolladores senior a construir soluciones para ti.
                   </p>
                   <ul className="space-y-2 pt-2 text-xs text-[#D1D5DB]">
                     <li className="flex items-center gap-2">
@@ -472,18 +471,18 @@ export default function HomePage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                      <span>Operación logística y académica sin desgaste para tu equipo</span>
+                      <span>Operación completa sin desgaste para tu equipo interno</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                      <span>Acompañamiento a pilotos con los proyectos ganadores</span>
+                      <span>Acompañamiento hasta el piloto con los proyectos ganadores</span>
                     </li>
                   </ul>
                 </div>
                 <div className="pt-8">
                   <Link href="/start">
                     <Button className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                      Diseñar un reto
+                      Diseñar un reto para mi empresa
                     </Button>
                   </Link>
                 </div>
@@ -496,15 +495,15 @@ export default function HomePage() {
                     Para Builders & Desarrolladores
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                    ¿Quieres construir algo que realmente importe?
+                    ¿Quieres construir soluciones para problemas reales?
                   </h3>
                   <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
-                    Encuentra hackathons con desafíos reales, forma equipo con talento multidisciplinario, recibe mentoría de alto nivel y demuestra de qué eres capaz.
+                    Encuentra retos técnicos patrocinados por empresas líderes, compite por bolsas de premios, recibe mentoría de alto nivel y construye prototipos que sí se usan.
                   </p>
                   <ul className="space-y-2 pt-2 text-xs text-[#52535A]">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
-                      <span>Retos reales con premios en efectivo y oportunidades de contratación</span>
+                      <span>Retos reales con premios y oportunidades de contratación</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
@@ -519,7 +518,7 @@ export default function HomePage() {
                 <div className="pt-8">
                   <Link href="/hackathons">
                     <Button variant="outline" className="w-full sm:w-auto font-medium" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                      Explorar hackathons
+                      Explorar hackathons abiertos
                     </Button>
                   </Link>
                 </div>
@@ -530,16 +529,15 @@ export default function HomePage() {
 
         {/* =========================================================
             SECCIÓN 10 — CTA FINAL EMOCIONAL
-            "¿Qué problema resolverías si tuvieras 100 personas brillantes trabajando en él?"
             Cierre memorable y directo.
             ========================================================= */}
         <section className="py-24 sm:py-32 bg-[#141517] text-white px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-6 relative z-10">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              ¿Qué problema resolverías si tuvieras 100 personas brillantes trabajando en él?
+              ¿Qué problema de tu empresa resolverías si tuvieras a 100 expertos programando en él este mes?
             </h2>
-            <p className="text-sm sm:text-base text-[#9CA3AF] max-w-xl mx-auto leading-relaxed">
-              Cuéntanos el reto de tu empresa. En menos de 48 horas te proponemos la estructura y el cronograma para convertirlo en un hackathon con resultados medibles.
+            <p className="text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+              Agenda una llamada técnica de 30 minutos. Analizamos tu cuello de botella sin costo y te mostramos cómo te ayudamos a tener prototipos de software funcionando antes de que termine el mes.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/start" className="w-full sm:w-auto">
@@ -549,7 +547,7 @@ export default function HomePage() {
               </Link>
               <Link href="/empresas" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#2B2D36] text-white hover:bg-[#22242C] font-medium px-6 py-3.5">
-                  Conocer formatos y servicios
+                  Ver cómo ayudamos a tu empresa
                 </Button>
               </Link>
             </div>
