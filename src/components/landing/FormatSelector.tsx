@@ -99,16 +99,16 @@ export function FormatSelector() {
   const current = goals.find((g) => g.id === selectedGoal) || goals[0];
 
   return (
-    <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 md:p-12 border border-slate-800 text-left">
+    <div className="bg-[#141517] text-white rounded-2xl p-6 sm:p-10 md:p-12 border border-[#2B2D33] shadow-editorial-elevated text-left">
       <div className="max-w-2xl">
-        <span className="text-xs font-bold uppercase tracking-wider text-blue-400">
-          Herramienta de Recomendación
+        <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#93C5FD]">
+          Selector Metodológico Interactivo
         </span>
-        <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">
+        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mt-1 text-white">
           ¿Qué objetivo busca tu organización?
         </h3>
-        <p className="text-sm text-slate-400 mt-2">
-          Selecciona tu meta principal y el sistema definirá el formato, duración y metodología adecuada.
+        <p className="text-sm text-[#9CA3AF] mt-2">
+          Selecciona tu meta principal y el sistema definirá el formato, duración, perfiles y entregable adecuado.
         </p>
       </div>
 
@@ -123,17 +123,17 @@ export function FormatSelector() {
                 key={goal.id}
                 onClick={() => setSelectedGoal(goal.id)}
                 className={clsx(
-                  "w-full flex items-center justify-between p-3.5 rounded-2xl text-left transition-all border",
+                  "w-full flex items-center justify-between p-3.5 rounded-xl text-left transition-all border cursor-pointer",
                   isSelected
-                    ? "bg-blue-600 border-blue-500 text-white shadow-lg"
-                    : "bg-slate-800/60 border-slate-800 text-slate-300 hover:bg-slate-800 hover:border-slate-700"
+                    ? "bg-[#1E2026] border-[#3B82F6] text-white shadow-xs"
+                    : "bg-[#1C1E24]/60 border-[#2B2D36] text-[#9CA3AF] hover:bg-[#22242C] hover:text-white"
                 )}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={clsx(
-                      "p-2 rounded-xl",
-                      isSelected ? "bg-white/20 text-white" : "bg-slate-900 text-slate-400"
+                      "p-2 rounded-lg",
+                      isSelected ? "bg-[#3B82F6]/20 text-[#60A5FA]" : "bg-[#141517] text-[#71717A]"
                     )}
                   >
                     <Icon className="w-4 h-4" />
@@ -147,41 +147,41 @@ export function FormatSelector() {
         </div>
 
         {/* Dynamic Recommendation Box */}
-        <div className="lg:col-span-7 bg-slate-800/80 rounded-2xl border border-slate-700 p-6 sm:p-8 flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-[#1C1E24] rounded-xl border border-[#2B2D36] p-6 sm:p-8 flex flex-col justify-between">
           <div className="space-y-4">
             <div>
-              <span className="text-[11px] font-bold text-blue-400 uppercase tracking-wider">
-                Te recomendamos:
+              <span className="text-[11px] font-mono font-semibold text-[#60A5FA] uppercase tracking-wider">
+                Recomendación Metodológica
               </span>
-              <h4 className="text-xl font-bold text-white mt-1">
+              <h4 className="text-xl font-bold text-white mt-1 tracking-tight">
                 {current.recommendation.title}
               </h4>
-              <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
                 {current.recommendation.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-700/80 text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#2B2D36] text-xs">
               <div>
-                <span className="text-[11px] text-slate-400">Duración sugerida</span>
+                <span className="text-[11px] font-mono text-[#71717A] block">Duración</span>
                 <p className="font-semibold text-white mt-0.5">{current.recommendation.duration}</p>
               </div>
               <div>
-                <span className="text-[11px] text-slate-400">Escala participantes</span>
+                <span className="text-[11px] font-mono text-[#71717A] block">Escala de Talento</span>
                 <p className="font-semibold text-white mt-0.5">{current.recommendation.participants}</p>
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <span className="text-[11px] text-slate-400">Modalidad</span>
+                <span className="text-[11px] font-mono text-[#71717A] block">Modalidad</span>
                 <p className="font-semibold text-white mt-0.5">{current.recommendation.format}</p>
               </div>
             </div>
 
-            <div className="space-y-2 pt-3 border-t border-slate-700/80">
-              <span className="text-xs font-bold text-slate-300">Fases operativas estándar:</span>
-              <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
+            <div className="space-y-2 pt-4 border-t border-[#2B2D36]">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9CA3AF]">Fases operativas:</span>
+              <div className="grid grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
                 {current.recommendation.phases.map((phase, idx) => (
-                  <div key={phase} className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 rounded-full bg-slate-700 text-blue-400 flex items-center justify-center font-mono text-[10px] font-bold">
+                  <div key={phase} className="flex items-center gap-2">
+                    <span className="w-4 h-4 rounded-md bg-[#252830] text-[#93C5FD] flex items-center justify-center font-mono text-[10px] font-bold border border-[#2B2D36]">
                       {idx + 1}
                     </span>
                     <span>{phase}</span>
@@ -190,18 +190,18 @@ export function FormatSelector() {
               </div>
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-700 text-xs">
-              <span className="text-slate-400 font-medium">Entregable final esperado:</span>
-              <p className="font-semibold text-emerald-400 mt-0.5">{current.recommendation.outcome}</p>
+            <div className="p-3.5 rounded-lg bg-[#141517] border border-[#2B2D36] text-xs">
+              <span className="text-[#71717A] font-mono text-[11px] block">Entregable tangible:</span>
+              <p className="font-medium text-[#6EE7B7] mt-0.5 font-sans">{current.recommendation.outcome}</p>
             </div>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-xs text-slate-400">
+          <div className="pt-6 mt-6 border-t border-[#2B2D36] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span className="text-xs text-[#71717A]">
               Personalizable para tu presupuesto y calendario.
             </span>
             <Link href="/start" className="w-full sm:w-auto">
-              <Button size="sm" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold">
+              <Button size="sm" className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold">
                 Cotizar este programa
               </Button>
             </Link>

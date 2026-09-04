@@ -74,12 +74,12 @@ export function RoleSwitcher() {
   return (
     <div className="fixed bottom-5 right-5 z-50 select-none">
       {isExpanded && (
-        <div className="mb-3 w-80 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-200/90 p-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
-          <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 px-1">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              Demo Switcher · Cambiar Rol
+        <div className="mb-3 w-80 bg-white/95 backdrop-blur-md rounded-2xl shadow-editorial-elevated border border-[#DCDCD5] p-3 animate-in fade-in slide-in-from-bottom-2 duration-150">
+          <div className="flex items-center justify-between pb-2.5 mb-2 border-b border-[#E8E8E4] px-1">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#71717A]">
+              Demo Persona Switcher
             </span>
-            <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-semibold border border-amber-200">
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#F4F4F1] text-[#141517] font-mono font-semibold border border-[#E0E0D8]">
               MODO DEMO
             </span>
           </div>
@@ -92,29 +92,29 @@ export function RoleSwitcher() {
                   key={cfg.role}
                   onClick={() => handleSelect(cfg)}
                   className={clsx(
-                    "w-full flex items-start gap-2.5 p-2.5 rounded-xl text-left transition-all",
+                    "w-full flex items-start gap-2.5 p-2 rounded-xl text-left transition-all cursor-pointer",
                     isCurrent
-                      ? "bg-slate-900 text-white shadow-xs"
-                      : "hover:bg-slate-100 text-slate-800"
+                      ? "bg-[#141517] text-white shadow-xs"
+                      : "hover:bg-[#F4F4EE] text-[#141517]"
                   )}
                 >
                   <div
                     className={clsx(
                       "p-1.5 rounded-lg shrink-0 mt-0.5",
-                      isCurrent ? "bg-slate-800 text-white" : "bg-slate-100 text-slate-700"
+                      isCurrent ? "bg-[#252830] text-white" : "bg-[#F4F4F1] text-[#52535A]"
                     )}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <p className="text-xs font-semibold truncate">{cfg.label}</p>
-                      {isCurrent && <Check className="w-3.5 h-3.5 text-blue-400 shrink-0 ml-1" />}
+                      {isCurrent && <Check className="w-3.5 h-3.5 text-[#60A5FA] shrink-0 ml-1" />}
                     </div>
                     <p
                       className={clsx(
-                        "text-[11px] truncate mt-0.5",
-                        isCurrent ? "text-slate-300" : "text-slate-500"
+                        "text-[10px] truncate mt-0.5",
+                        isCurrent ? "text-[#9CA3AF]" : "text-[#71717A]"
                       )}
                     >
                       {cfg.description}
@@ -130,16 +130,16 @@ export function RoleSwitcher() {
       {/* Floating Pill Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-950 text-white text-xs font-semibold shadow-xl hover:bg-slate-900 border border-slate-700 transition-transform active:scale-95 group"
-        title="Cambiar rol para demo rápida"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#141517] text-white text-xs font-medium shadow-editorial-elevated hover:bg-[#222429] border border-[#2B2D33] transition-transform active:scale-95 group cursor-pointer"
+        title="Cambiar perspectiva de usuario"
       >
-        <Sparkles className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform" />
-        <span className="text-slate-300">Rol:</span>
-        <span className="text-white font-bold">{currentCfg.label.split("/")[0].trim()}</span>
+        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+        <span className="text-[#9CA3AF] font-mono text-[11px]">Rol:</span>
+        <span className="text-white font-semibold">{currentCfg.label.split("/")[0].trim()}</span>
         {isExpanded ? (
-          <ChevronDown className="w-3.5 h-3.5 text-slate-400 ml-0.5" />
+          <ChevronDown className="w-3.5 h-3.5 text-[#9CA3AF] ml-0.5" />
         ) : (
-          <ChevronUp className="w-3.5 h-3.5 text-slate-400 ml-0.5" />
+          <ChevronUp className="w-3.5 h-3.5 text-[#9CA3AF] ml-0.5" />
         )}
       </button>
     </div>

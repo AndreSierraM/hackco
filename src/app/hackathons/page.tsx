@@ -205,19 +205,19 @@ export default function HackathonsDiscoveryPage() {
               return (
                 <div
                   key={program.id}
-                  className="bg-white rounded-3xl border border-slate-200/90 shadow-xs overflow-hidden flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all text-left group"
+                  className="bg-white rounded-2xl border border-[#E8E8E4] shadow-editorial overflow-hidden flex flex-col justify-between hover:border-[#141517] hover:shadow-editorial-hover transition-all text-left group"
                 >
                   <div>
                     {/* Cover Image & Category */}
-                    <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                    <div className="relative h-44 w-full overflow-hidden bg-[#141517]">
                       <img
                         src={program.coverImage}
                         alt={program.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/20" />
                       <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                        <span className="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white font-bold text-[11px] tracking-wide">
+                        <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white font-mono font-medium text-[10px] tracking-wider uppercase border border-white/10">
                           {program.category}
                         </span>
                       </div>
@@ -230,7 +230,7 @@ export default function HackathonsDiscoveryPage() {
                         <img
                           src={program.logo}
                           alt={program.organizationName}
-                          className="w-6 h-6 rounded-lg object-cover border border-white/40"
+                          className="w-6 h-6 rounded-md object-cover border border-white/20"
                         />
                         <span className="text-white text-xs font-semibold drop-shadow-xs">
                           {program.organizationName}

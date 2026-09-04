@@ -11,7 +11,7 @@ export function Card({
     <div
       className={twMerge(
         clsx(
-          "bg-white rounded-2xl border border-slate-200/90 shadow-xs transition-all duration-200",
+          "bg-white rounded-2xl border border-[#E8E8E4] shadow-editorial transition-all duration-200",
           className
         )
       )}

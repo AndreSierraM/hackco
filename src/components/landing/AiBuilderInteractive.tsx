@@ -29,32 +29,32 @@ export function AiBuilderInteractive() {
   ];
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden text-left">
+    <div className="bg-white rounded-2xl border border-[#DCDCD5] shadow-editorial-elevated overflow-hidden text-left">
       {/* Top Banner */}
-      <div className="p-6 md:p-8 bg-slate-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-6 md:p-8 bg-[#141517] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-[#252830]">
         <div>
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span>AI Challenge Builder · Simulación en Vivo</span>
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-[#252830] text-[#93C5FD] text-xs font-mono mb-2">
+            <Sparkles className="w-3 h-3 text-[#60A5FA]" />
+            <span>AI CHALLENGE ARCHITECT · SIMULADOR</span>
           </div>
           <h3 className="text-xl md:text-2xl font-bold tracking-tight">
             De un dolor operativo a una arquitectura de reto en segundos
           </h3>
-          <p className="text-xs md:text-sm text-slate-400 mt-1">
-            Escribe el problema de tu organización y nuestra metodología estructura tracks, perfiles y rúbrica.
+          <p className="text-xs md:text-sm text-[#9CA3AF] mt-1 font-normal">
+            Escribe el problema de tu organización y nuestra metodología estructura tracks, perfiles y rúbrica ponderada.
           </p>
         </div>
         <Link href="/org/northstar/programs/new">
-          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white shrink-0">
+          <Button size="sm" className="bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold shrink-0 shadow-xs">
             Abrir Builder Completo
           </Button>
         </Link>
       </div>
 
-      <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Input */}
         <div className="lg:col-span-5 space-y-4">
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+          <label className="block text-[11px] font-mono font-semibold text-[#71717A] uppercase tracking-wider">
             ¿Qué problema u objetivo quieres resolver?
           </label>
           <div className="relative">
@@ -63,19 +63,19 @@ export function AiBuilderInteractive() {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="Describe el reto de tu organización..."
-              className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all resize-none shadow-xs"
+              className="w-full rounded-xl border border-[#DCDCD5] bg-[#F9F9F8] p-4 text-xs sm:text-sm text-[#141517] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#141517] focus:bg-white transition-all resize-none shadow-xs font-sans"
             />
           </div>
 
           <div className="space-y-1.5">
-            <span className="text-[11px] font-semibold text-slate-400">Ejemplos rápidos:</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717A]">Ejemplos reales:</span>
             <div className="flex flex-wrap gap-1.5">
               {samplePrompts.map((sample) => (
                 <button
                   key={sample}
                   type="button"
                   onClick={() => handleSimulate(sample)}
-                  className="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors text-left"
+                  className="text-[11px] px-2.5 py-1 rounded-md bg-[#F4F4F1] text-[#52535A] hover:bg-[#E8E8E4] hover:text-[#141517] transition-colors text-left border border-[#E8E8E4] cursor-pointer"
                 >
                   {sample}
                 </button>
@@ -86,7 +86,7 @@ export function AiBuilderInteractive() {
           <Button
             onClick={() => handleSimulate(prompt)}
             isLoading={isGenerating}
-            className="w-full bg-slate-950 text-white font-semibold"
+            className="w-full bg-[#141517] text-white hover:bg-[#252830] font-semibold shadow-editorial"
             rightIcon={<ArrowRight className="w-4 h-4" />}
           >
             Re-estructurar programa con IA
@@ -94,29 +94,29 @@ export function AiBuilderInteractive() {
         </div>
 
         {/* Right Generated Preview */}
-        <div className="lg:col-span-7 bg-slate-50 rounded-2xl border border-slate-200/90 p-5 md:p-6 space-y-5">
+        <div className="lg:col-span-7 bg-[#F9F9F8] rounded-xl border border-[#E8E8E4] p-5 md:p-6 space-y-5">
           {isGenerating ? (
-            <div className="h-64 flex flex-col items-center justify-center space-y-3 text-slate-500">
-              <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
-              <p className="text-xs font-semibold">Analizando restricciones operativas y estructurando tracks...</p>
+            <div className="h-64 flex flex-col items-center justify-center space-y-3 text-[#71717A]">
+              <Loader2 className="w-7 h-7 animate-spin text-[#1846A3]" />
+              <p className="text-xs font-mono">Analizando restricciones y calculando rúbrica ponderada...</p>
             </div>
           ) : hasGenerated ? (
             <>
-              <div className="flex items-start justify-between gap-3 pb-4 border-b border-slate-200">
+              <div className="flex items-start justify-between gap-3 pb-4 border-b border-[#E8E8E4]">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">
-                      Programa Recomendado
+                    <span className="text-[11px] font-mono font-semibold text-[#1846A3] uppercase tracking-wider">
+                      Arquitectura Sugerida
                     </span>
-                    <Badge variant="primary" size="sm">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#ECFDF5] text-[#065F46] font-mono font-medium border border-[#A7F3D0]">
                       Formato Híbrido
-                    </Badge>
+                    </span>
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 mt-1">
+                  <h4 className="text-base font-bold text-[#141517] mt-1 tracking-tight">
                     AI Operations & Automation Challenge
                   </h4>
-                  <p className="text-xs text-slate-500 mt-0.5">
-                    Diseñado para 4 semanas con validación de prototipo y paso a piloto.
+                  <p className="text-xs text-[#71717A] mt-0.5">
+                    Diseñado para 4 semanas con validación técnica y pase a piloto corporativo.
                   </p>
                 </div>
               </div>

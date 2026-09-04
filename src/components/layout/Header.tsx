@@ -36,31 +36,31 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "sticky top-0 z-40 w-full transition-all duration-200",
+        "sticky top-0 z-40 w-full transition-all duration-200 border-b",
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs py-3"
-          : "bg-[#FBFBFA]/80 backdrop-blur-xs border-b border-slate-200/40 py-4"
+          ? "bg-[#FBFBFA]/90 backdrop-blur-md border-[#E8E8E4] shadow-xs py-3"
+          : "bg-[#FBFBFA]/75 backdrop-blur-xs border-[#ECECE6] py-3.5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-xl bg-slate-950 flex items-center justify-center text-white font-bold text-base shadow-sm group-hover:bg-blue-600 transition-colors">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-8 h-8 rounded-xl bg-[#141517] text-white flex items-center justify-center font-bold text-sm tracking-tighter border border-[#2B2D33] shadow-xs group-hover:bg-[#1846A3] transition-colors">
               <span className="font-mono">{BRAND.name.charAt(0)}</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-extrabold tracking-tight text-slate-900 leading-none">
+              <span className="text-[15px] font-bold tracking-tight text-[#141517] leading-none">
                 {BRAND.name}
               </span>
-              <span className="text-[10px] text-slate-400 font-medium tracking-wide">
-                Innovation Platform
+              <span className="text-[10px] text-[#71717A] font-mono tracking-wider uppercase mt-0.5">
+                Open Innovation OS
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -70,8 +70,8 @@ export function Header() {
                   className={clsx(
                     "px-3 py-1.5 rounded-lg text-xs font-medium transition-colors",
                     isActive
-                      ? "text-slate-900 bg-slate-100 font-semibold"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                      ? "text-[#141517] bg-[#EFEFEA] font-semibold"
+                      : "text-[#52535A] hover:text-[#141517] hover:bg-[#F4F4EE]"
                   )}
                 >
                   {link.label}
@@ -86,12 +86,12 @@ export function Header() {
           {/* Quick Search Button (⌘K) */}
           <button
             onClick={() => setIsCommandPaletteOpen(true)}
-            className="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-xl border border-slate-200/90 bg-white text-slate-500 hover:text-slate-800 hover:border-slate-300 transition-all text-xs shadow-xs"
+            className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[#DCDCD5] bg-white text-[#52535A] hover:text-[#141517] hover:border-[#141517] transition-all text-xs shadow-xs"
             title="Buscar (⌘K)"
           >
-            <Search className="w-3.5 h-3.5" />
-            <span className="text-slate-400">Buscar...</span>
-            <kbd className="px-1.5 py-0.5 rounded bg-slate-100 text-[10px] font-mono text-slate-500 border border-slate-200">
+            <Search className="w-3.5 h-3.5 text-[#71717A]" />
+            <span className="text-[#71717A]">Buscar...</span>
+            <kbd className="px-1.5 py-0.5 rounded bg-[#F4F4F1] text-[10px] font-mono text-[#52535A] border border-[#E0E0D8]">
               ⌘K
             </kbd>
           </button>
@@ -99,28 +99,20 @@ export function Header() {
           {/* Notifications */}
           <button
             onClick={() => setIsNotificationDrawerOpen(true)}
-            className="relative p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-            aria-label="Ver notificaciones"
+            className="relative p-2 rounded-xl border border-[#DCDCD5] bg-white text-[#52535A] hover:text-[#141517] hover:border-[#141517] transition-all shadow-xs"
+            title="Notificaciones"
           >
-            <Bell className="w-4 h-4" />
+            <Bell className="w-3.5 h-3.5" />
             {unreadCount > 0 && (
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white" />
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#1846A3] ring-2 ring-white" />
             )}
           </button>
 
-          {/* Role Portal Shortcut */}
-          <Link
-            href={role === "ORG_ADMIN" ? "/org/northstar" : "/app"}
-            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-          >
-            <LayoutDashboard className="w-3.5 h-3.5 text-slate-500" />
-            <span>Mi Espacio</span>
-          </Link>
 
-          {/* Login link */}
+          {/* Action CTAs */}
           <Link
             href="/login"
-            className="hidden sm:inline-block text-xs font-medium text-slate-600 hover:text-slate-900 px-2 py-1.5"
+            className="hidden sm:inline-block text-xs font-medium text-[#52535A] hover:text-[#141517] px-2 py-1.5 transition-colors"
           >
             Ingresar
           </Link>
@@ -129,8 +121,8 @@ export function Header() {
           <Link href="/start">
             <Button
               size="sm"
-              className="font-semibold bg-slate-950 hover:bg-blue-600 text-white transition-all shadow-xs"
-              rightIcon={<ArrowUpRight className="w-3.5 h-3.5" />}
+              className="bg-[#141517] hover:bg-[#252830] text-white transition-all shadow-editorial"
+              rightIcon={<ArrowUpRight className="w-3.5 h-3.5 text-[#9CA3AF]" />}
             >
               Lanzar un reto
             </Button>

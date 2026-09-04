@@ -108,63 +108,72 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-1">
-        {/* HERO SECTION */}
-        <section className="relative pt-12 sm:pt-18 pb-16 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
-          <div className="max-w-4xl mx-auto space-y-5">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200/80 text-xs font-semibold text-slate-700">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-              <span>{BRAND.tagline}</span>
-              <span className="text-slate-300">·</span>
-              <span className="text-slate-500 font-normal">{BRAND.origin}</span>
+        {/* HERO SECTION WITH EDITORIAL DISTINCTION */}
+        <section className="relative pt-16 sm:pt-22 pb-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden editorial-glow bg-dot-grid">
+          <div className="max-w-4xl mx-auto space-y-6 relative z-10">
+            {/* Eyebrow / Origin indicator */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 border border-[#E8E8E4] shadow-xs text-xs font-medium text-[#141517]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1846A3]" />
+              <span className="font-mono text-[11px] uppercase tracking-wider text-[#71717A]">Metodología & Operación</span>
+              <span className="text-[#D0D0C8]">/</span>
+              <span className="text-[#141517] font-semibold">{BRAND.origin}</span>
             </div>
 
-            {/* H1 Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 leading-[1.08]">
-              {BRAND.claim}
+            {/* H1 Headline with Editorial Distinction */}
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-extrabold tracking-[-0.035em] text-[#141517] leading-[1.05]">
+              Convierte retos en soluciones que{" "}
+              <span className="font-serif-italic font-normal text-[#1846A3] tracking-tight">
+                sí se construyen.
+              </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              {BRAND.description}
+            {/* Subtitle with High Substance */}
+            <p className="text-base sm:text-lg text-[#52535A] max-w-2xl mx-auto leading-relaxed font-normal">
+              Tú traes el problema de negocio. Nosotros nos encargamos de la estrategia, el talento técnico, la plataforma y el acompañamiento hasta el piloto en producción.
             </p>
 
-            {/* CTAs */}
-            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+            {/* CTAs with Distinctive Visual Hierarchy */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/start">
-                <Button size="lg" className="w-full sm:w-auto bg-slate-950 hover:bg-blue-600 text-white font-semibold">
-                  Quiero lanzar un reto
+                <Button size="lg" className="w-full sm:w-auto bg-[#141517] hover:bg-[#252830] text-white shadow-editorial font-semibold px-6">
+                  Lanzar un reto en tu empresa
                 </Button>
               </Link>
               <Link href="/hackathons">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold">
-                  Explorar hackathons
+                <Button size="lg" variant="outline" className="w-full sm:w-auto font-medium px-6 text-[#141517]">
+                  Explorar convocatorias
                 </Button>
               </Link>
             </div>
 
-            {/* Microcopy */}
-            <p className="text-xs text-slate-500 font-medium tracking-wide">
-              Presencial · Híbrido · Remoto · Gobernanza de IP garantizada
-            </p>
+            {/* Microcopy / Operational Guarantee */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-[#71717A] pt-1 font-mono">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1 h-1 rounded-full bg-[#10B981]" /> Presencial · Híbrido · Remoto
+              </span>
+              <span>·</span>
+              <span>Gobernanza de IP para sponsors</span>
+              <span>·</span>
+              <span>Sin hojas de cálculo caóticas</span>
+            </div>
           </div>
 
-          {/* Product Storytelling Window */}
+          {/* Product Window Component */}
           <HeroProductWindow />
         </section>
 
-        {/* SECTION: DEL RETO AL RESULTADO */}
-        <section id="metodologia" className="py-20 bg-white border-y border-slate-200/80 px-4 sm:px-6 lg:px-8">
+        {/* SECTION: DEL RETO AL RESULTADO (EDITORIAL TIMELINE) */}
+        <section id="metodologia" className="py-24 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl text-left mb-12">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                Metodología End-to-End
+            <div className="max-w-2xl text-left mb-14">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+                Ciclo de Vida del Reto
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-1">
-                Del reto al resultado: Un solo sistema integrado
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+                Un solo sistema desde el dolor de negocio hasta la solución en producción.
               </h2>
-              <p className="text-sm text-slate-600 mt-2">
-                Un solo sistema desde el problema inicial hasta la solución implementable.
+              <p className="text-sm text-[#52535A] mt-2 leading-relaxed">
+                Sin saltos en el vacío ni eventos que quedan en el olvido. Cada etapa tiene entregables técnicos y criterios de aceptación verificados.
               </p>
             </div>
 
@@ -173,52 +182,52 @@ export default function HomePage() {
               {timelineSteps.map((step) => (
                 <div
                   key={step.num}
-                  className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-slate-300 transition-all text-left group"
+                  className="p-5 rounded-xl bg-[#FBFBFA] border border-[#E8E8E4] hover:border-[#141517] transition-all text-left group shadow-editorial"
                 >
-                  <span className="text-xl font-mono font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
-                    {step.num}
+                  <span className="text-xs font-mono font-bold text-[#71717A] group-hover:text-[#1846A3] transition-colors">
+                    Fase {step.num}
                   </span>
-                  <h3 className="text-sm font-bold text-slate-900 mt-2">{step.title}</h3>
-                  <p className="text-xs text-slate-500 mt-1 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-sm font-bold text-[#141517] mt-2">{step.title}</h3>
+                  <p className="text-xs text-[#52535A] mt-1 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SECTION: DOS AUDIENCIAS (SPLIT) */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        {/* SECTION: DOS AUDIENCIAS (SPLIT EDITORIAL) */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Organizations Card */}
-            <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between text-left relative overflow-hidden border border-slate-800">
+            <div className="bg-[#141517] text-white rounded-2xl p-8 sm:p-10 flex flex-col justify-between text-left relative overflow-hidden border border-[#2B2D33] shadow-editorial-elevated">
               <div className="space-y-4">
                 <Badge variant="primary" size="sm">
-                  Para Organizaciones
+                  Para Organizaciones & Corporaciones
                 </Badge>
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                  Encuentra soluciones reales, no diapositivas.
+                  Encuentra soluciones reales, no diapositivas vacías.
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                   Lanza retos abiertos o internos, convoca al mejor talento especializado de LATAM y acelera la adopción de tecnologías como inteligencia artificial en tus procesos clave.
                 </p>
-                <ul className="space-y-2 pt-2 text-xs text-slate-300">
+                <ul className="space-y-2.5 pt-2 text-xs text-[#D1D5DB]">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Metodología probada para formular retos de alto valor</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
+                    <span>Metodología probada para formular retos de alto valor técnico</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
                     <span>Command Center unificado para toda la operación</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Acompañamiento directo a pilotos e incubación</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
+                    <span>Acompañamiento directo a pilotos e incubación post-evento</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-8">
                 <Link href="/empresas">
-                  <Button className="w-full sm:w-auto bg-white text-slate-950 hover:bg-slate-100 font-semibold" rightIcon={<ArrowRight className="w-4 h-4" />}>
+                  <Button className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold" rightIcon={<ArrowRight className="w-4 h-4" />}>
                     Organizar un challenge
                   </Button>
                 </Link>
@@ -226,36 +235,36 @@ export default function HomePage() {
             </div>
 
             {/* Builders Card */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between text-left border border-slate-200/90 shadow-xs">
+            <div className="bg-white rounded-2xl p-8 sm:p-10 flex flex-col justify-between text-left border border-[#E8E8E4] shadow-editorial">
               <div className="space-y-4">
                 <Badge variant="purple" size="sm">
-                  Para Builders & Developers
+                  Para Builders, Developers & Diseñadores
                 </Badge>
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950">
-                  Construye algo que realmente importe.
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#141517]">
+                  Construye proyectos que realmente importen.
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
                   Compite en hackathons de primer nivel, forma equipos multidisciplinarios con matchmaking inteligente, recibe mentoría de líderes de industria y gana premios sin ceder tu IP.
                 </p>
-                <ul className="space-y-2 pt-2 text-xs text-slate-700">
+                <ul className="space-y-2.5 pt-2 text-xs text-[#52535A]">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
                     <span>Retos con datasets y problemáticas reales de empresas</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
                     <span>Herramientas de equipo para encontrar frontend, IA o diseño</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Portafolio verificado que respalda tu carrera</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
+                    <span>Portafolio verificado que respalda tu carrera profesional</span>
                   </li>
                 </ul>
               </div>
               <div className="pt-8">
                 <Link href="/hackathons">
-                  <Button variant="outline" className="w-full sm:w-auto font-semibold" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                    Ver oportunidades abiertas
+                  <Button variant="outline" className="w-full sm:w-auto font-medium" rightIcon={<ArrowRight className="w-4 h-4" />}>
+                    Ver convocatorias abiertas
                   </Button>
                 </Link>
               </div>
@@ -283,69 +292,73 @@ export default function HomePage() {
               <AiBuilderInteractive />
             </div>
 
-            {/* Stories Grid (Stories 2, 3, 4, 5) */}
+            {/* Stories Grid (Modules 2, 3, 4, 5) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              {/* Story 2 */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+              {/* Module 2 */}
+              <div className="p-6 rounded-xl bg-white border border-[#E8E8E4] shadow-editorial hover:border-[#141517] transition-all flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center mb-4">
-                    <Workflow className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#F4F4F1] text-[#141517] border border-[#E8E8E4] flex items-center justify-center mb-4">
+                    <Workflow className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900">Story 2: Command Center</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                    Toda la operación en un solo lugar: métricas de salud del evento, postulaciones, participantes, jurados y canales de comunicación sin cambiar de pestaña.
+                  <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Módulo 02</span>
+                  <h4 className="text-sm font-bold text-[#141517] mt-0.5">Command Center Unificado</h4>
+                  <p className="text-xs text-[#52535A] mt-2 leading-relaxed">
+                    Métricas de salud del evento, admisiones, equipos activos y comunicaciones en un solo tablero en tiempo real.
                   </p>
                 </div>
-                <Link href="/org/northstar" className="mt-4 text-xs font-bold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">
-                  Ver Command Center <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/org/northstar" className="mt-5 text-xs font-semibold text-[#1846A3] hover:text-[#141517] inline-flex items-center gap-1 font-mono">
+                  Abrir Command Center <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
-              {/* Story 3 */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+              {/* Module 3 */}
+              <div className="p-6 rounded-xl bg-white border border-[#E8E8E4] shadow-editorial hover:border-[#141517] transition-all flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center mb-4">
-                    <Users className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#F4F4F1] text-[#141517] border border-[#E8E8E4] flex items-center justify-center mb-4">
+                    <Users className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900">Story 3: Matchmaking</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                    Detecta automáticamente vacíos de habilidades en los equipos (ej. falta backend o diseño) y recomienda perfiles complementarios para asegurar entregas completas.
+                  <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Módulo 03</span>
+                  <h4 className="text-sm font-bold text-[#141517] mt-0.5">Radar de Matchmaking</h4>
+                  <p className="text-xs text-[#52535A] mt-2 leading-relaxed">
+                    Detecta vacíos de habilidades en los equipos (ej. falta UX o backend) y recomienda perfiles para asegurar entregas completas.
                   </p>
                 </div>
-                <Link href="/app/hackathons/bogota-ai-operations/people" className="mt-4 text-xs font-bold text-purple-600 hover:text-purple-800 inline-flex items-center gap-1">
+                <Link href="/app/hackathons/bogota-ai-operations/people" className="mt-5 text-xs font-semibold text-[#1846A3] hover:text-[#141517] inline-flex items-center gap-1 font-mono">
                   Ver Matchmaking <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
-              {/* Story 4 */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+              {/* Module 4 */}
+              <div className="p-6 rounded-xl bg-white border border-[#E8E8E4] shadow-editorial hover:border-[#141517] transition-all flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4">
-                    <Scale className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#F4F4F1] text-[#141517] border border-[#E8E8E4] flex items-center justify-center mb-4">
+                    <Scale className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900">Story 4: Jury OS</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                    Evalúa sin hojas de cálculo caóticas. Rúbricas ponderadas al 100%, vista dividida para jurados, detección de conflictos de interés y cálculo de varianza en tiempo real.
+                  <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Módulo 04</span>
+                  <h4 className="text-sm font-bold text-[#141517] mt-0.5">Jury OS & Calibración</h4>
+                  <p className="text-xs text-[#52535A] mt-2 leading-relaxed">
+                    Rúbricas ponderadas al 100%, vista dividida para jurados, detección de conflictos de interés y cálculo de varianza sin hojas de cálculo.
                   </p>
                 </div>
-                <Link href="/judge" className="mt-4 text-xs font-bold text-emerald-600 hover:text-emerald-800 inline-flex items-center gap-1">
-                  Abrir Portal Jurado <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/judge" className="mt-5 text-xs font-semibold text-[#1846A3] hover:text-[#141517] inline-flex items-center gap-1 font-mono">
+                  Abrir Jury OS <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
-              {/* Story 5 */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+              {/* Module 5 */}
+              <div className="p-6 rounded-xl bg-white border border-[#E8E8E4] shadow-editorial hover:border-[#141517] transition-all flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-4">
-                    <FolderGit2 className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#F4F4F1] text-[#141517] border border-[#E8E8E4] flex items-center justify-center mb-4">
+                    <FolderGit2 className="w-4 h-4" />
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900">Story 5: Project Pipeline</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                    El proyecto no termina cuando entregas el premio. Tablero Kanban para dar seguimiento post-evento: desde la validación técnica hasta pilotos remunerados e incubación.
+                  <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Módulo 05</span>
+                  <h4 className="text-sm font-bold text-[#141517] mt-0.5">Project Pipeline</h4>
+                  <p className="text-xs text-[#52535A] mt-2 leading-relaxed">
+                    Seguimiento post-hackathon: tablero Kanban para gestionar validaciones técnicas, pilotos remunerados e integración empresarial.
                   </p>
                 </div>
-                <Link href="/org/northstar/projects" className="mt-4 text-xs font-bold text-amber-600 hover:text-amber-800 inline-flex items-center gap-1">
-                  Ver Pipeline Post-Hackathon <ArrowRight className="w-3.5 h-3.5" />
+                <Link href="/org/northstar/projects" className="mt-5 text-xs font-semibold text-[#1846A3] hover:text-[#141517] inline-flex items-center gap-1 font-mono">
+                  Ver Pipeline <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
@@ -407,26 +420,26 @@ export default function HomePage() {
         </section>
 
         {/* SECTION: NOS ENCARGAMOS DE TODO */}
-        <section className="py-20 bg-slate-50 border-y border-slate-200/80 px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-24 bg-[#F4F4F1] border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-              Operación Integral de Principio a Fin
+            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
+              Operación Integral End-to-End
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950">
-              La plataforma es solo una parte. También podemos operar todo el programa.
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+              La plataforma es solo una parte. Operamos el programa completo.
             </h2>
-            <p className="text-sm text-slate-600 max-w-2xl mx-auto">
-              Si tu equipo no cuenta con el tiempo o la experiencia para estructurar bases, convocar cientos de builders, coordinar jurados o moderar un evento de alta tensión, nuestro equipo se encarga de la ejecución completa.
+            <p className="text-sm text-[#52535A] max-w-2xl mx-auto leading-relaxed">
+              Si tu equipo no cuenta con el ancho de banda para formular bases técnicas, convocar a cientos de ingenieros, coordinar jurados o moderar un demo day de alta tensión, nos encargamos de la misión de principio a fin.
             </p>
 
             {/* Service Map Badges */}
             <div className="pt-4 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-              {serviceMap.map((service, index) => (
+              {serviceMap.map((service) => (
                 <div
                   key={service}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-xs"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E8E8E4] text-xs font-medium text-[#141517] shadow-xs"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1846A3]" />
                   <span>{service}</span>
                 </div>
               ))}
@@ -434,7 +447,7 @@ export default function HomePage() {
 
             <div className="pt-6">
               <Link href="/start">
-                <Button size="lg" className="bg-slate-950 hover:bg-blue-600 text-white font-semibold">
+                <Button size="lg" className="bg-[#141517] hover:bg-[#252830] text-white font-semibold shadow-editorial">
                   Hablar con nuestro equipo de operaciones
                 </Button>
               </Link>
@@ -443,18 +456,18 @@ export default function HomePage() {
         </section>
 
         {/* SECTION: CASE STUDY (EXAMPLE PROGRAM) */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-12 text-left shadow-xs">
-            <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-200 gap-4">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="bg-white rounded-2xl border border-[#E8E8E4] p-8 sm:p-12 text-left shadow-editorial">
+            <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#E8E8E4] gap-4">
               <div>
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                  Ejemplo de Programa Ejecutado en {BRAND.name}
+                <span className="text-[11px] font-mono font-semibold text-[#71717A] uppercase tracking-wider block">
+                  Caso Real de Referencia · {BRAND.name} OS
                 </span>
-                <h3 className="text-2xl font-bold text-slate-900 mt-1">
-                  Caso Demo: Bogotá AI Operations Challenge
+                <h3 className="text-2xl font-bold text-[#141517] mt-1 tracking-tight">
+                  Bogotá AI Operations Challenge
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Organizado por Northstar Labs · Formato Híbrido · Retos de Automatización y Auditoría
+                <p className="text-xs text-[#71717A] mt-0.5">
+                  Northstar Labs · Formato Híbrido · Retos de Auditoría Documental y Agentes Multimodales
                 </p>
               </div>
               <Link href="/hackathons/bogota-ai-operations">
@@ -464,36 +477,36 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-b border-slate-100 text-xs">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-b border-[#E8E8E4] text-xs">
               <div>
-                <span className="text-slate-400">Participantes Convocados</span>
-                <p className="text-lg font-bold text-slate-900 mt-0.5">428 builders</p>
+                <span className="text-[#71717A] font-mono text-[11px] block">Convocatoria</span>
+                <p className="text-lg font-bold text-[#141517] font-mono mt-0.5">428 postulantes</p>
               </div>
               <div>
-                <span className="text-slate-400">Equipos & Proyectos</span>
-                <p className="text-lg font-bold text-slate-900 mt-0.5">34 equipos · 26 MVPs</p>
+                <span className="text-[#71717A] font-mono text-[11px] block">Equipos & MVPs</span>
+                <p className="text-lg font-bold text-[#141517] font-mono mt-0.5">34 equipos · 26 entregas</p>
               </div>
               <div>
-                <span className="text-slate-400">Proyecto Ganador</span>
-                <p className="text-lg font-bold text-slate-900 mt-0.5">DocuFlow AI</p>
+                <span className="text-[#71717A] font-mono text-[11px] block">Ganador 1er Puesto</span>
+                <p className="text-lg font-bold text-[#141517] mt-0.5">DocuFlow AI</p>
               </div>
               <div>
-                <span className="text-slate-400">Estado Post-Evento</span>
-                <p className="text-lg font-bold text-emerald-600 mt-0.5">Piloto en Ejecución</p>
+                <span className="text-[#71717A] font-mono text-[11px] block">Resultado Post-Hackathon</span>
+                <p className="text-lg font-bold text-[#059669] mt-0.5">Piloto Corporativo</p>
               </div>
             </div>
 
-            <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-600">
+            <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-[#52535A]">
               <div>
-                <h4 className="font-bold text-slate-900 mb-1">El Desafío Inicial:</h4>
+                <h4 className="font-bold text-[#141517] mb-1.5 font-mono text-[11px] uppercase tracking-wider">El Dolor Inicial:</h4>
                 <p className="leading-relaxed">
-                  Northstar Labs requería reducir más de 18 horas semanales de verificación manual de contratos mercantiles sin comprometer la precisión legal.
+                  Northstar Labs perdía más de 18 horas semanales en la verificación manual de contratos mercantiles y pólizas con salvaguardas legales complejas.
                 </p>
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 mb-1">El Resultado Operativo:</h4>
+                <h4 className="font-bold text-[#141517] mb-1.5 font-mono text-[11px] uppercase tracking-wider">El Resultado Tangible:</h4>
                 <p className="leading-relaxed">
-                  El equipo ganador desarrolló un pipeline agéntico con OCR e indexación vectorial que redujo el tiempo de auditoría a 18 segundos, pasando de la hackathon a un piloto formal con presupuesto asignado.
+                  El equipo ganador construyó un pipeline multimodal con OCR e indexación vectorial que redujo el tiempo de auditoría a 18 segundos. Hoy se encuentra en fase de integración formal con presupuesto asignado.
                 </p>
               </div>
             </div>
@@ -501,23 +514,23 @@ export default function HomePage() {
         </section>
 
         {/* SECTION: FINAL CTA */}
-        <section className="py-20 bg-slate-950 text-white px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+        <section className="py-24 bg-[#141517] text-white px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden border-t border-[#252830]">
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-[-0.03em]">
               ¿Tienes un problema que podría convertirse en un reto?
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-xl mx-auto">
-              Cuéntanos tu objetivo y te mostraremos cómo nuestra metodología y plataforma lo transforman en soluciones funcionales.
+            <p className="text-sm sm:text-base text-[#9CA3AF] max-w-xl mx-auto leading-relaxed">
+              Cuéntanos tu objetivo y te mostraremos cómo nuestra metodología y plataforma lo transforman en prototipos funcionales y talento contratado.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/start">
-                <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold px-6 shadow-xs">
                   Diseñar mi challenge
                 </Button>
               </Link>
               <Link href="/empresas">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto border-slate-700 text-white hover:bg-slate-900 font-semibold">
-                  Agendar una conversación
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#2B2D36] text-white hover:bg-[#22242C] font-medium px-6">
+                  Hablar con un consultor
                 </Button>
               </Link>
             </div>

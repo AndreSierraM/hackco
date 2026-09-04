@@ -17,28 +17,28 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const variantStyles = {
-    neutral: "bg-slate-100 text-slate-700 border-slate-200",
-    primary: "bg-blue-50 text-blue-700 border-blue-200",
-    success: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    warning: "bg-amber-50 text-amber-700 border-amber-200",
-    danger: "bg-rose-50 text-rose-700 border-rose-200",
-    purple: "bg-purple-50 text-purple-700 border-purple-200",
-    outline: "bg-transparent text-slate-700 border-slate-300",
+    neutral: "bg-[#F4F4F1] text-[#4A4B4F] border-[#E8E8E4]",
+    primary: "bg-[#EEF4FF] text-[#1846A3] border-[#D3E2FE]",
+    success: "bg-[#ECFDF5] text-[#065F46] border-[#A7F3D0]",
+    warning: "bg-[#FFFBEB] text-[#92400E] border-[#FDE68A]",
+    danger: "bg-[#FEF2F2] text-[#991B1B] border-[#FECACA]",
+    purple: "bg-[#FAF5FF] text-[#6B21A8] border-[#E9D5FF]",
+    outline: "bg-transparent text-[#3A3B40] border-[#D0D0C8]",
   };
 
   const dotColors = {
-    neutral: "bg-slate-400",
-    primary: "bg-blue-600",
-    success: "bg-emerald-600",
-    warning: "bg-amber-600",
-    danger: "bg-rose-600",
-    purple: "bg-purple-600",
-    outline: "bg-slate-400",
+    neutral: "bg-[#71717A]",
+    primary: "bg-[#2563EB]",
+    success: "bg-[#10B981]",
+    warning: "bg-[#F59E0B]",
+    danger: "bg-[#EF4444]",
+    purple: "bg-[#8B5CF6]",
+    outline: "bg-[#71717A]",
   };
 
   const sizeStyles = {
-    sm: "text-[11px] px-2 py-0.5 rounded-md font-medium tracking-tight",
-    md: "text-xs px-2.5 py-1 rounded-lg font-medium",
+    sm: "text-[11px] px-2.5 py-0.5 rounded-full font-medium tracking-tight",
+    md: "text-xs px-3 py-1 rounded-full font-medium",
   };
 
   return (

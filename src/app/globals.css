@@ -1,39 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #FBFBFA;
-  --foreground: #0F172A;
-  --surface: #FFFFFF;
-  --card-border: #E2E8F0;
-  --accent-primary: #0F172A;
-  --accent-blue: #2563EB;
+@layer base {
+  :root {
+    --background: #FBFBFA;
+    --foreground: #141517;
+    --surface: #FFFFFF;
+    --surface-muted: #F4F4F1;
+    --card-border: #E8E8E4;
+    --card-border-hover: #D0D0C8;
+    --accent-primary: #121316;
+    --accent-blue: #1846A3;
+    --accent-electric: #2563EB;
+  }
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+}
+
+.font-serif-title {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Subtle architectural dot grid */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(20, 21, 23, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-dot-grid-dense {
+  background-image: radial-gradient(rgba(20, 21, 23, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-grid-lines {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(20, 21, 23, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 21, 23, 0.03) 1px, transparent 1px);
+}
+
+/* Atmospheric glow without childish neon */
+.editorial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, rgba(251, 251, 250, 0) 70%);
+}
+
+/* Premium Card Shadows */
+.shadow-editorial {
+  box-shadow: 0 1px 2px rgba(20, 21, 23, 0.04), 0 4px 12px rgba(20, 21, 23, 0.02);
+}
+
+.shadow-editorial-hover {
+  box-shadow: 0 4px 6px -1px rgba(20, 21, 23, 0.05), 0 12px 28px -4px rgba(20, 21, 23, 0.08);
+}
+
+.shadow-editorial-elevated {
+  box-shadow: 0 20px 40px -15px rgba(20, 21, 23, 0.12), 0 0 0 1px rgba(20, 21, 23, 0.04);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: #DBEAFE;
-  color: #1E3A8A;
+  background-color: #E2ECFE;
+  color: #0E357E;
 }
 
-/* Custom minimal scrollbar */
+/* Custom refined scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #D4D4CE;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #A8A8A0;
 }

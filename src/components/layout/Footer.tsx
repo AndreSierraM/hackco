@@ -5,30 +5,30 @@ import { Globe, Heart, Shield, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300 border-t border-slate-800 text-xs">
+    <footer className="bg-[#141517] text-[#9CA3AF] border-t border-[#252830] text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12 text-left">
           {/* Brand Col */}
           <div className="col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-xl bg-white text-slate-950 flex items-center justify-center font-bold text-sm font-mono">
+              <div className="w-7 h-7 rounded-lg bg-white text-[#141517] flex items-center justify-center font-bold text-sm font-mono">
                 {BRAND.name.charAt(0)}
               </div>
               <span className="text-base font-bold text-white tracking-tight">{BRAND.name}</span>
             </div>
-            <p className="text-slate-400 text-xs max-w-sm leading-relaxed">
+            <p className="text-[#9CA3AF] text-xs max-w-sm leading-relaxed">
               {BRAND.claim} Operación de retos, hackathons e innovación abierta de principio a fin.
             </p>
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] text-slate-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>{BRAND.origin}</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1C1E24] border border-[#2B2D36] text-[11px] text-[#9CA3AF]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+              <span className="font-mono">{BRAND.origin}</span>
             </div>
           </div>
 
           {/* Platform */}
           <div className="space-y-3">
-            <p className="text-white font-semibold text-xs tracking-wider uppercase">Plataforma</p>
-            <ul className="space-y-2 text-slate-400">
+            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Plataforma</p>
+            <ul className="space-y-2 text-[#9CA3AF]">
               <li>
                 <Link href="/hackathons" className="hover:text-white transition-colors">
                   Explorar retos
@@ -46,7 +46,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/demo" className="hover:text-white transition-colors flex items-center gap-1">
-                  Sales Demo Interactiva <ArrowUpRight className="w-3 h-3 text-blue-400" />
+                  Sales Demo Interactiva <ArrowUpRight className="w-3 h-3 text-[#60A5FA]" />
                 </Link>
               </li>
             </ul>
