@@ -102,7 +102,7 @@ export default function EmpresasPage() {
             </Link>
           </div>
           <p className="text-xs text-slate-400">
-            Northstar Labs, laboratorios de innovación y entidades líderes confían en nuestra infraestructura.
+            Infraestructura tecnológica y metodológica para la nueva generación de hackathons en Colombia y América Latina.
           </p>
         </section>
 

@@ -2,96 +2,108 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Lightbulb, Wrench, ShieldAlert, Rocket, UserCheck, Flame, Globe2, ArrowRight, Check } from "lucide-react";
+import { 
+  Building2, 
+  Cpu, 
+  UserCheck, 
+  Flame, 
+  Code2, 
+  Rocket, 
+  ArrowRight, 
+  CheckCircle2, 
+  Calendar, 
+  Users, 
+  Target 
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { clsx } from "clsx";
 
 export function FormatSelector() {
-  const [selectedGoal, setSelectedGoal] = useState<string>("prototypes");
+  const [selectedGoal, setSelectedGoal] = useState<string>("business_problem");
 
   const goals = [
     {
-      id: "prototypes",
-      label: "Construir prototipos funcionales",
-      icon: Wrench,
+      id: "business_problem",
+      label: "Resolver un problema de negocio",
+      icon: Building2,
       recommendation: {
-        title: "Signature Tech Hackathon",
-        description: "Enfoque intensivo para pasar de especificación técnica a código ejecutable y demo en vivo.",
-        duration: "3 a 5 días o 2 semanas híbridas",
-        participants: "80 - 250 builders seleccionados",
-        format: "Híbrido o Presencial",
-        phases: ["Convocatoria técnica", "Briefing de arquitectura", "Construcción guiada", "Pitch y evaluación"],
-        outcome: "15 a 30 repositorios funcionando con frontend y APIs",
+        title: "Corporate Challenge",
+        tag: "Innovación Abierta",
+        description: "Transformamos un dolor operativo o de clientes en un desafío estructurado con datasets y criterios de aceptación claros.",
+        duration: "4 semanas",
+        participants: "50 - 150 builders seleccionados",
+        format: "Híbrido (Remoto con Demo Day presencial)",
+        outcome: "3 a 8 prototipos funcionales evaluados contra criterios definidos con tu organización.",
       },
     },
     {
-      id: "problem",
-      label: "Resolver un reto operativo específico",
-      icon: ShieldAlert,
+      id: "adopt_ai",
+      label: "Adoptar inteligencia artificial",
+      icon: Cpu,
       recommendation: {
-        title: "Corporate Innovation Challenge",
-        description: "Desafío estructurado con datos reales y validación directa por líderes de área.",
-        duration: "4 a 6 semanas",
-        participants: "30 - 60 equipos calificados",
-        format: "Remoto con final presencial",
-        phases: ["Inmersión en el dolor", "Mentorías técnicas", "Validación con usuarios", "Comité de piloto"],
-        outcome: "3 a 5 soluciones listas para integración en piloto corporativo",
+        title: "AI Innovation Sprint",
+        tag: "IA Aplicada",
+        description: "Sprint intensivo con ingenieros de IA para explorar modelos multimodales, agentes autónomos y análisis documental en tu stack.",
+        duration: "3 semanas",
+        participants: "40 - 100 especialistas en IA y datos",
+        format: "Remoto con acompañamiento técnico continuo",
+        outcome: "Modelos y pipelines agénticos probados con métricas de latencia, precisión y costo.",
       },
     },
     {
-      id: "talent",
-      label: "Contratar talento validado en acción",
+      id: "tech_talent",
+      label: "Encontrar talento técnico",
       icon: UserCheck,
       recommendation: {
         title: "Talent Hiring Hackathon",
-        description: "Evalúa cómo resuelven problemas reales bajo presión en lugar de basarte en un CV estático.",
+        tag: "Reclutamiento Práctico",
+        description: "Observa cómo programan, resuelven problemas bajo presión y colaboran en equipo en lugar de filtrar únicamente por un currículum.",
         duration: "48 horas intensivas",
-        participants: "100 - 180 candidatos pre-filtrados",
+        participants: "80 - 150 desarrolladores pre-evaluados",
         format: "Presencial o Remoto",
-        phases: ["Prueba de código", "Reto en equipo", "Revisión de pull requests", "Ofertas directas"],
-        outcome: "Pipeline de contratación verificado con métricas de colaboración",
+        outcome: "Pipeline de contratación verificado con código visible en repositorios y referencias técnicas reales.",
       },
     },
     {
-      id: "startups",
-      label: "Scouting de startups y alianzas",
+      id: "internal_employees",
+      label: "Activar e integrar empleados",
+      icon: Flame,
+      recommendation: {
+        title: "Internal Challenge (Silos Cero)",
+        tag: "Cultura de Innovación",
+        description: "Rompe los silos entre tecnología, operaciones, producto y legal, creando soluciones desde adentro con quienes mejor conocen la empresa.",
+        duration: "3 días inmersivos",
+        participants: "40 - 200 colaboradores internos",
+        format: "Presencial en oficinas corporativas",
+        outcome: "Soluciones de eficiencia y proyectos internos con alta viabilidad de adopción inmediata.",
+      },
+    },
+    {
+      id: "launch_tech",
+      label: "Lanzar una API, SDK o producto",
+      icon: Code2,
+      recommendation: {
+        title: "Developer Relations (DevRel) Hackathon",
+        tag: "Adopción de Infraestructura",
+        description: "Impulsa la adopción de tu tecnología invitando a cientos de desarrolladores a crear integraciones, librerías y aplicaciones sobre tu plataforma.",
+        duration: "3 semanas abiertas",
+        participants: "200 - 800 desarrolladores",
+        format: "Online regional / global",
+        outcome: "Decenas de integraciones públicas, feedback técnico sobre documentación y posicionamiento de marca.",
+      },
+    },
+    {
+      id: "connect_startups",
+      label: "Conectar startups con tu empresa",
       icon: Rocket,
       recommendation: {
         title: "Open Innovation Bounty Program",
-        description: "Conecta con startups maduras capaces de integrar soluciones con APIs empresariales.",
-        duration: "6 a 8 semanas",
-        participants: "25 - 50 startups validadas",
-        format: "Remoto con demo day",
-        phases: ["Scouting y filtrado", "Integración técnica", "Prueba de concepto", "Acuerdo comercial"],
-        outcome: "Contratos de POC (Proof of Concept) o inversión semilla",
-      },
-    },
-    {
-      id: "internal",
-      label: "Activar e integrar colaboradores internos",
-      icon: Flame,
-      recommendation: {
-        title: "Internal Corporate Hackathon",
-        description: "Rompe silos internos uniendo equipos de tecnología, operaciones y negocio en un solo sprint.",
-        duration: "3 días inmersivos",
-        participants: "50 - 300 colaboradores",
-        format: "Presencial corporativo",
-        phases: ["Identificación de dolores internos", "Formación cross-funcional", "Construcción", "Votación ejecutiva"],
-        outcome: "Soluciones de eficiencia creadas por quienes conocen el negocio por dentro",
-      },
-    },
-    {
-      id: "community",
-      label: "Crear comunidad y posicionar marca técnica",
-      icon: Globe2,
-      recommendation: {
-        title: "Developer Relations (DevRel) Challenge",
-        description: "Genera adopción de tu API, SDK o modelo fundacional en la comunidad técnica más activa.",
-        duration: "3 semanas abiertas",
-        participants: "300 - 1,000 developers",
-        format: "Online global / regional",
-        phases: ["Lanzamiento de documentación", "Workshops de producto", "Construcción abierta", "Showcase público"],
-        outcome: "Cientos de aplicaciones construidas sobre tu infraestructura técnica",
+        tag: "Scouting & Alianzas",
+        description: "Conecta con startups tecnológicas maduras que ya cuentan con soluciones listas para integrarse como proveedores o aliados estratégicos.",
+        duration: "6 semanas estructuradas",
+        participants: "20 - 40 startups validadas",
+        format: "Remoto con sesiones de pitch ejecutivo",
+        outcome: "Acuerdos de prueba de concepto (POC) comerciales y acuerdos de integración tecnológica.",
       },
     },
   ];
@@ -99,22 +111,23 @@ export function FormatSelector() {
   const current = goals.find((g) => g.id === selectedGoal) || goals[0];
 
   return (
-    <div className="bg-[#141517] text-white rounded-2xl p-6 sm:p-10 md:p-12 border border-[#2B2D33] shadow-editorial-elevated text-left">
+    <div className="w-full bg-[#141517] text-white rounded-2xl p-6 sm:p-10 md:p-12 border border-[#2B2D33] shadow-editorial-elevated text-left">
       <div className="max-w-2xl">
-        <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#93C5FD]">
-          Selector Metodológico Interactivo
-        </span>
-        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mt-1 text-white">
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1E2026] text-[#93C5FD] text-[11px] font-mono font-semibold uppercase tracking-wider mb-2 border border-[#2B2D36]">
+          <Target className="w-3.5 h-3.5" />
+          Selector Metodológico
+        </div>
+        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
           ¿Qué objetivo busca tu organización?
         </h3>
-        <p className="text-sm text-[#9CA3AF] mt-2">
-          Selecciona tu meta principal y el sistema definirá el formato, duración, perfiles y entregable adecuado.
+        <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
+          Selecciona tu meta principal y te mostraremos el formato recomendado, la duración estimada, la escala de talento y el entregable concreto.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
-        {/* Goals Selector */}
-        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mt-8 items-stretch">
+        {/* Buttons List */}
+        <div className="lg:col-span-5 flex flex-col gap-2">
           {goals.map((goal) => {
             const Icon = goal.icon;
             const isSelected = goal.id === selectedGoal;
@@ -132,7 +145,7 @@ export function FormatSelector() {
                 <div className="flex items-center gap-3">
                   <div
                     className={clsx(
-                      "p-2 rounded-lg",
+                      "p-2 rounded-lg shrink-0",
                       isSelected ? "bg-[#3B82F6]/20 text-[#60A5FA]" : "bg-[#141517] text-[#71717A]"
                     )}
                   >
@@ -140,20 +153,26 @@ export function FormatSelector() {
                   </div>
                   <span className="text-xs font-semibold">{goal.label}</span>
                 </div>
-                {isSelected && <Check className="w-4 h-4 text-white shrink-0 ml-2" />}
+                {isSelected && (
+                  <span className="w-2 h-2 rounded-full bg-[#3B82F6] shrink-0 ml-2" />
+                )}
               </button>
             );
           })}
         </div>
 
-        {/* Dynamic Recommendation Box */}
+        {/* Dynamic Card */}
         <div className="lg:col-span-7 bg-[#1C1E24] rounded-xl border border-[#2B2D36] p-6 sm:p-8 flex flex-col justify-between">
           <div className="space-y-4">
-            <div>
-              <span className="text-[11px] font-mono font-semibold text-[#60A5FA] uppercase tracking-wider">
-                Recomendación Metodológica
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#252830] text-[#93C5FD] border border-[#2B2D36]">
+                {current.recommendation.tag}
               </span>
-              <h4 className="text-xl font-bold text-white mt-1 tracking-tight">
+              <span className="text-xs text-[#71717A] font-mono">Diseño a medida</span>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold text-white tracking-tight">
                 {current.recommendation.title}
               </h4>
               <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
@@ -162,47 +181,37 @@ export function FormatSelector() {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-[#2B2D36] text-xs">
-              <div>
-                <span className="text-[11px] font-mono text-[#71717A] block">Duración</span>
-                <p className="font-semibold text-white mt-0.5">{current.recommendation.duration}</p>
+              <div className="p-3 rounded-lg bg-[#141517] border border-[#252830]">
+                <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Duración</span>
+                <p className="font-semibold text-white mt-1">{current.recommendation.duration}</p>
               </div>
-              <div>
-                <span className="text-[11px] font-mono text-[#71717A] block">Escala de Talento</span>
-                <p className="font-semibold text-white mt-0.5">{current.recommendation.participants}</p>
+              <div className="p-3 rounded-lg bg-[#141517] border border-[#252830]">
+                <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Participantes</span>
+                <p className="font-semibold text-white mt-1">{current.recommendation.participants}</p>
               </div>
-              <div className="col-span-2 sm:col-span-1">
-                <span className="text-[11px] font-mono text-[#71717A] block">Modalidad</span>
-                <p className="font-semibold text-white mt-0.5">{current.recommendation.format}</p>
-              </div>
-            </div>
-
-            <div className="space-y-2 pt-4 border-t border-[#2B2D36]">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9CA3AF]">Fases operativas:</span>
-              <div className="grid grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
-                {current.recommendation.phases.map((phase, idx) => (
-                  <div key={phase} className="flex items-center gap-2">
-                    <span className="w-4 h-4 rounded-md bg-[#252830] text-[#93C5FD] flex items-center justify-center font-mono text-[10px] font-bold border border-[#2B2D36]">
-                      {idx + 1}
-                    </span>
-                    <span>{phase}</span>
-                  </div>
-                ))}
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-lg bg-[#141517] border border-[#252830]">
+                <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">Modalidad</span>
+                <p className="font-semibold text-white mt-1">{current.recommendation.format}</p>
               </div>
             </div>
 
-            <div className="p-3.5 rounded-lg bg-[#141517] border border-[#2B2D36] text-xs">
-              <span className="text-[#71717A] font-mono text-[11px] block">Entregable tangible:</span>
-              <p className="font-medium text-[#6EE7B7] mt-0.5 font-sans">{current.recommendation.outcome}</p>
+            <div className="p-4 rounded-xl bg-[#141517] border border-[#252830] text-xs">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717A] block">
+                Resultado Concreto Esperado:
+              </span>
+              <p className="font-medium text-[#34D399] mt-1 text-xs sm:text-sm leading-relaxed">
+                {current.recommendation.outcome}
+              </p>
             </div>
           </div>
 
           <div className="pt-6 mt-6 border-t border-[#2B2D36] flex flex-col sm:flex-row items-center justify-between gap-4">
             <span className="text-xs text-[#71717A]">
-              Personalizable para tu presupuesto y calendario.
+              Estructuramos las bases, el filtro y la operación para tu calendario.
             </span>
             <Link href="/start" className="w-full sm:w-auto">
               <Button size="sm" className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold">
-                Cotizar este programa
+                Diseñar este programa →
               </Button>
             </Link>
           </div>

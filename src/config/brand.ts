@@ -7,11 +7,11 @@ export const BRAND = {
   name: "Kamino",
   shortName: "Kamino",
   legalName: "Kamino Innovation Labs S.A.S.",
-  tagline: "Innovation, built.",
-  claim: "Convierte retos en soluciones que sí se construyen.",
+  tagline: "Tú tienes un reto. Nosotros hacemos que cientos de personas quieran resolverlo.",
+  claim: "Convierte los problemas de tu empresa en soluciones que sí se construyen.",
   description:
-    "Diseñamos y operamos hackathons y programas de innovación de principio a fin: estrategia, convocatoria, plataforma, talento, evaluación y seguimiento.",
-  origin: "Nacida en Colombia · Diseñada para LATAM",
+    "Diseñamos y operamos hackathons de principio a fin: reto, convocatoria, talento, plataforma, jurados y acompañamiento hasta convertir las mejores ideas en pilotos reales.",
+  origin: "Hecho en Colombia · Para América Latina",
   contactEmail: "hola@kamino.co",
   salesEmail: "empresas@kamino.co",
   socials: {
@@ -20,9 +20,9 @@ export const BRAND = {
     github: "https://github.com/kamino-latam",
   },
   demoOrg: {
-    name: "Northstar Labs",
-    slug: "northstar",
-    tagline: "Inteligencia artificial aplicada a operaciones de alta escala",
+    name: "Demo Corporativo",
+    slug: "demo",
+    tagline: "Entorno interactivo para visualización de programas de innovación",
     location: "Bogotá, Colombia",
   },
 } as const;
