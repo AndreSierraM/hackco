@@ -32,7 +32,7 @@ export default function SalesDemoPage() {
       tag: "El Dolor Inicial",
       title: "1. La organización llega con una necesidad real",
       description:
-        "Una empresa líder como Northstar Labs enfrenta un problema operativo: 'Gastamos 18 horas por semana cotejando contratos mercantiles manualmente y queremos resolverlo usando IA'.",
+        "Un caso de uso representativo: una entidad financiera enfrenta un problema operativo: 'Gastamos 18 horas por semana cotejando contratos mercantiles manualmente y queremos resolverlo usando IA'.",
       actionLabel: "Ver cómo estructuramos el reto",
       preview: {
         title: "Problema no estructurado",

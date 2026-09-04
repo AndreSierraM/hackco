@@ -6,16 +6,11 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DEMO_BUILDERS, DEMO_PROJECTS } from "@/lib/demo-data";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import {
   MapPin,
-  Globe,
   Trophy,
-  CheckCircle2,
-  FolderGit2,
   ArrowRight,
-  ShieldCheck,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 

@@ -8,16 +8,13 @@ import {
   LayoutDashboard,
   FolderGit2,
   Users,
-  Building2,
   Workflow,
   Radio,
   FileSpreadsheet,
-  Settings,
   Scale,
   Sparkles,
   ArrowLeft,
   ChevronRight,
-  TrendingUp,
   FileCheck2,
 } from "lucide-react";
 import { clsx } from "clsx";

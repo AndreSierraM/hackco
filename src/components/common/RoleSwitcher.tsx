@@ -3,21 +3,20 @@
 import React, { useState } from "react";
 import { usePlatform } from "@/context/PlatformContext";
 import { UserRole } from "@/types";
-import { useRouter, usePathname } from "next/navigation";
-import { Sparkles, Users, Building2, Scale, Compass, Shield, ChevronUp, ChevronDown, Check } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Users, Building2, Scale, Compass, Shield, ChevronUp, ChevronDown, Check } from "lucide-react";
 import { clsx } from "clsx";
 
 export function RoleSwitcher() {
   const { role, setRole } = usePlatform();
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
 
   const roleConfigs: Array<{
     role: UserRole;
     label: string;
     description: string;
-    icon: any;
+    icon: React.ComponentType<{ className?: string }>;
     targetRoute: string;
     badgeColor: string;
   }> = [

@@ -5,24 +5,12 @@ import Link from "next/link";
 import {
   Users,
   FolderGit2,
-  Trophy,
   CheckCircle2,
-  TrendingUp,
   ArrowRight,
-  ShieldCheck,
-  Star,
   Scale,
   Workflow,
-  Calendar,
   Clock,
-  Code2,
-  ExternalLink,
-  Layers,
-  Sparkles,
-  Check,
-  Radio,
-  FileCode,
-  Video
+  FileCode
 } from "lucide-react";
 import { clsx } from "clsx";
 

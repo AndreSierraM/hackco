@@ -145,7 +145,7 @@ export default function HackathonDetailPage() {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as "overview" | "challenges" | "schedule" | "prizes" | "mentors" | "faq")}
                 className={clsx(
                   "py-3.5 px-4 text-xs font-semibold whitespace-nowrap border-b-2 transition-all select-none",
                   activeTab === tab.id

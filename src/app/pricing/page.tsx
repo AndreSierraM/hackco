@@ -2,10 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { BRAND } from "@/config/brand";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Building2, Rocket, Users } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function PricingPage() {
   const tiers = [

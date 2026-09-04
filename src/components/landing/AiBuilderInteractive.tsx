@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Sparkles, ArrowRight, CheckCircle2, Clock, Users, FileText, Layers, Loader2 } from "lucide-react";
+import { Sparkles, ArrowRight, CheckCircle2, Clock, Users, Layers, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 
 export function AiBuilderInteractive() {
   const [prompt, setPrompt] = useState(

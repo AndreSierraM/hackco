@@ -7,19 +7,11 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { usePlatform } from "@/context/PlatformContext";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import {
-  FolderGit2,
   ExternalLink,
   Trophy,
-  ShieldCheck,
-  CheckCircle2,
-  Cpu,
   Layers,
-  Users,
-  Calendar,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 import { GithubIcon } from "@/components/common/Icons";
 

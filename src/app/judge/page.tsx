@@ -43,7 +43,7 @@ export default function JudgePortalPage() {
     "Excepcional planteamiento de arquitectura. La validación con documentos reales es muy convincente y el pipeline multimodal demuestra alta solidez."
   );
   const [privateNotes, setPrivateNotes] = useState(
-    "Fuerte candidato a 1er puesto. Verificar compatibilidad de licencias con el equipo legal de Northstar Labs."
+    "Fuerte candidato a 1er puesto. Verificar compatibilidad de licencias con el equipo legal del sponsor."
   );
   const [hasConflict, setHasConflict] = useState(false);
   const [submittedFeedback, setSubmittedFeedback] = useState(false);

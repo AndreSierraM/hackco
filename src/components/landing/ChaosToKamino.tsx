@@ -9,9 +9,7 @@ import {
   HelpCircle, 
   FileText, 
   CheckCircle2, 
-  ArrowRight,
-  Layers,
-  Sparkles
+  ArrowRight
 } from "lucide-react";
 
 export function ChaosToKamino() {

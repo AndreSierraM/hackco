@@ -9,10 +9,6 @@ import {
   Flame, 
   Code2, 
   Rocket, 
-  ArrowRight, 
-  CheckCircle2, 
-  Calendar, 
-  Users, 
   Target 
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";

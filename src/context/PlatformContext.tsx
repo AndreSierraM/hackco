@@ -5,6 +5,7 @@ import {
   UserRole,
   Program,
   Team,
+  TeamMember,
   ProjectSubmission,
   JudgeEvaluation,
   NotificationItem,
@@ -27,7 +28,7 @@ interface PlatformContextType {
   addProgram: (program: Program) => void;
   teams: Team[];
   addTeam: (team: Team) => void;
-  joinTeam: (teamId: string, member: any) => void;
+  joinTeam: (teamId: string, member: TeamMember) => void;
   applications: DemoApplication[];
   updateApplicationStatus: (id: string, status: ApplicationStatus) => void;
   submissions: ProjectSubmission[];
@@ -96,7 +97,7 @@ export function PlatformProvider({ children }: { children: React.ReactNode }) {
     setTeams((prev) => [team, ...prev]);
   };
 
-  const joinTeam = (teamId: string, member: any) => {
+  const joinTeam = (teamId: string, member: TeamMember) => {
     setTeams((prev) =>
       prev.map((t) => (t.id === teamId ? { ...t, members: [...t.members, member] } : t))
     );

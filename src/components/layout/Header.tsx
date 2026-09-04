@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 import { BRAND } from "@/config/brand";
 import { usePlatform } from "@/context/PlatformContext";
 import { Button } from "@/components/ui/Button";
-import { Search, Bell, Menu, X, ArrowUpRight } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import { clsx } from "clsx";
 
 export function Header() {
   const pathname = usePathname();
-  const { notifications, setIsCommandPaletteOpen, setIsNotificationDrawerOpen } = usePlatform();
+  const { setIsCommandPaletteOpen } = usePlatform();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,8 +22,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const unreadCount = notifications.filter((n) => !n.read).length;
 
   const navLinks = [
     { label: "Hackathons", href: "/hackathons" },

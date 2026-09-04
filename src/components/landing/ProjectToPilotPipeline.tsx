@@ -7,10 +7,7 @@ import {
   Trophy, 
   Rocket, 
   CheckCircle2, 
-  ArrowRight, 
-  ShieldCheck, 
-  Cpu, 
-  Building2 
+  ShieldCheck 
 } from "lucide-react";
 import { clsx } from "clsx";
 

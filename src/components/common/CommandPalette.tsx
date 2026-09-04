@@ -1,22 +1,25 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { usePlatform } from "@/context/PlatformContext";
 import { useRouter } from "next/navigation";
-import { Search, Compass, FolderGit2, Building2, User, ArrowRight, Sparkles, X } from "lucide-react";
+import { Search, Compass, FolderGit2, ArrowRight, Sparkles, X } from "lucide-react";
 import { DEMO_BUILDERS } from "@/lib/demo-data";
-import { clsx } from "clsx";
 
 export function CommandPalette() {
   const { isCommandPaletteOpen, setIsCommandPaletteOpen, programs, submissions } = usePlatform();
   const [query, setQuery] = useState("");
   const router = useRouter();
 
-  useEffect(() => {
-    if (isCommandPaletteOpen) {
-      setQuery("");
-    }
-  }, [isCommandPaletteOpen]);
+  const handleClose = () => {
+    setQuery("");
+    setIsCommandPaletteOpen(false);
+  };
+
+  const handleNavigate = (url: string) => {
+    handleClose();
+    router.push(url);
+  };
 
   const filteredPrograms = useMemo(() => {
     if (!query) return programs.slice(0, 3);
@@ -57,17 +60,12 @@ export function CommandPalette() {
 
   if (!isCommandPaletteOpen) return null;
 
-  const handleNavigate = (url: string) => {
-    setIsCommandPaletteOpen(false);
-    router.push(url);
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-slate-950/40 backdrop-blur-xs transition-opacity animate-in fade-in duration-150"
-        onClick={() => setIsCommandPaletteOpen(false)}
+        onClick={handleClose}
       />
 
       {/* Palette container */}
@@ -83,7 +81,7 @@ export function CommandPalette() {
             className="w-full py-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none bg-transparent"
           />
           <button
-            onClick={() => setIsCommandPaletteOpen(false)}
+            onClick={handleClose}
             className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           >
             <X className="w-4 h-4" />

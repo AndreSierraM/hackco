@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { OrganizerSidebar } from "@/components/organizer/OrganizerSidebar";
 import { usePlatform } from "@/context/PlatformContext";
+import { ProgramFormat } from "@/types";
 import { BRAND } from "@/config/brand";
 import { Button } from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
@@ -62,8 +63,8 @@ export default function NewProgramWizardPage() {
   const [formData, setFormData] = useState({
     title: "AI Operations & Automation Challenge",
     oneLiner: "Construye pipelines agénticos para transformar la auditoría de contratos y procesos operativos.",
-    format: "HIBRIDO" as const,
-    category: "AI" as const,
+    format: "HIBRIDO" as ProgramFormat,
+    category: "AI",
     city: "Bogotá",
     durationWeeks: "4 semanas",
     teamSize: "3 a 5 builders",
@@ -335,7 +336,7 @@ export default function NewProgramWizardPage() {
                       <button
                         key={m}
                         type="button"
-                        onClick={() => setFormData({ ...formData, format: m as any })}
+                        onClick={() => setFormData({ ...formData, format: m as ProgramFormat })}
                         className={clsx(
                           "p-3 rounded-2xl border text-xs font-semibold text-center transition-all",
                           formData.format === m

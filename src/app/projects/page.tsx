@@ -8,13 +8,9 @@ import { usePlatform } from "@/context/PlatformContext";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import {
-  FolderGit2,
-  ExternalLink,
-  Star,
   Trophy,
   ArrowRight,
   Search,
-  Filter,
 } from "lucide-react";
 
 export default function ProjectsGalleryPage() {
