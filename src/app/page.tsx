@@ -310,10 +310,10 @@ export default function HomePage() {
         {/* =========================================================
             SECCIÓN 04 — MOSTRAR LA EXPERIENCIA (Producto en contexto)
             "Todo el programa. Un solo lugar."
-            Ventana central de demostración honesta con tabs.
+            Estudio interactivo de capacidades Kamino.
             ========================================================= */}
         <section id="experiencia" className="py-24 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-5xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto space-y-6">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
               La Plataforma en Acción
             </span>
@@ -324,52 +324,9 @@ export default function HomePage() {
               Del registro de participantes a la deliberación de los jurados y el traspaso de código: Kamino centraliza participantes, equipos, mentores, rúbricas y proyectos entregados.
             </p>
 
-            {/* Showcase Window Component */}
+            {/* Showcase Studio Component with Integrated 4 Capabilities */}
             <div className="pt-6">
               <HeroProductWindow />
-            </div>
-
-            {/* 4 Capacidades Fundamentales */}
-            <div className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-              <div className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                <div className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E4] text-[#141517] flex items-center justify-center font-bold text-xs mb-2">
-                  01
-                </div>
-                <h4 className="text-xs font-bold text-[#141517]">Convocatoria & Filtro</h4>
-                <p className="text-[11px] text-[#52535A] mt-1 leading-snug">
-                  Landing de registro, admisión técnica y verificación de perfiles comprobados.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                <div className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E4] text-[#141517] flex items-center justify-center font-bold text-xs mb-2">
-                  02
-                </div>
-                <h4 className="text-xs font-bold text-[#141517]">Equipos & Proyectos</h4>
-                <p className="text-[11px] text-[#52535A] mt-1 leading-snug">
-                  Matchmaking de habilidades, repositorios vinculados y entregas con video demo.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                <div className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E4] text-[#141517] flex items-center justify-center font-bold text-xs mb-2">
-                  03
-                </div>
-                <h4 className="text-xs font-bold text-[#141517]">Mentoría & Operación</h4>
-                <p className="text-[11px] text-[#52535A] mt-1 leading-snug">
-                  Agendamiento de horas técnicas, canal de anuncios y cronograma en vivo.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                <div className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E4] text-[#141517] flex items-center justify-center font-bold text-xs mb-2">
-                  04
-                </div>
-                <h4 className="text-xs font-bold text-[#141517]">Jury OS & Resultados</h4>
-                <p className="text-[11px] text-[#52535A] mt-1 leading-snug">
-                  Rúbricas ponderadas sin hojas de cálculo, consenso de jurados y reporte final.
-                </p>
-              </div>
             </div>
           </div>
         </section>
