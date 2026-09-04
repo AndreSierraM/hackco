@@ -7,7 +7,6 @@ import { HeroProductWindow } from "@/components/landing/HeroProductWindow";
 import { FormatSelector } from "@/components/landing/FormatSelector";
 import { ChaosToKamino } from "@/components/landing/ChaosToKamino";
 import { ProjectToPilotPipeline } from "@/components/landing/ProjectToPilotPipeline";
-import { BRAND } from "@/config/brand";
 import { Button } from "@/components/ui/Button";
 import {
   ArrowRight,
@@ -83,16 +82,6 @@ export default function HomePage() {
             ========================================================= */}
         <section className="relative pt-12 sm:pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center space-y-8">
-            {/* Minimal Eyebrow Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E8E8E4] shadow-xs text-xs text-[#141517]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1846A3]" />
-              <span className="font-mono text-[11px] text-[#71717A] uppercase tracking-wider">
-                Operación de Hackathons & Innovación Abierta
-              </span>
-              <span className="text-[#D0D0C8]">/</span>
-              <span className="font-semibold text-[#141517]">{BRAND.origin}</span>
-            </div>
-
             {/* Dominant Headline (56-84px desktop / 40-52px mobile) */}
             <h1 className="text-[42px] sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#141517] leading-[1.04] max-w-4xl mx-auto">
               Convierte los problemas de tu empresa en soluciones que{" "}
