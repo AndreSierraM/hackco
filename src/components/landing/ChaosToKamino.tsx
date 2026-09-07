@@ -8,7 +8,6 @@ import {
   HardDrive, 
   HelpCircle, 
   FileText, 
-  CheckCircle2, 
   ArrowRight
 } from "lucide-react";
 

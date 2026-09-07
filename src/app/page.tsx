@@ -1,72 +1,159 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChallengeAssessment } from "@/components/common/ChallengeAssessment";
 import { HeroProductWindow } from "@/components/landing/HeroProductWindow";
-import { FormatSelector } from "@/components/landing/FormatSelector";
-import { ChaosToKamino } from "@/components/landing/ChaosToKamino";
-import { ProjectToPilotPipeline } from "@/components/landing/ProjectToPilotPipeline";
 import { Button } from "@/components/ui/Button";
+import { BRAND } from "@/config/brand";
 import {
   ArrowRight,
-  ArrowUpRight,
   CheckCircle2,
-  Users,
-  Layers,
+  XCircle,
   ShieldCheck,
-  Trophy,
-  Sparkles,
   Workflow,
-  Scale,
-  FolderGit2,
+  Layers,
+  FileCode2,
+  Clock,
   Building2,
   Cpu,
-  Compass,
-  Code2,
-  Eye,
-  Target,
-  Sparkle,
-  Terminal,
+  Database,
+  Users,
+  Sparkles,
+  HelpCircle,
+  ArrowUpRight,
+  Lock,
+  GitBranch,
 } from "lucide-react";
 
 export default function HomePage() {
+  const useCases = [
+    {
+      category: "Automatización & Operaciones",
+      title: "Reducción de procesos manuales de backoffice",
+      description:
+        "Cotejo de órdenes de compra, conciliación de facturas y auditoría de expedientes que consumen cientos de horas operativas cada semana.",
+      deliverable: "Pipeline de extracción y conciliación con dashboard de excepciones en tiempo real.",
+      icon: Workflow,
+    },
+    {
+      category: "IA Aplicada & Agentes",
+      title: "Agentes autónomos sobre flujos de negocio reales",
+      description:
+        "Implementación de arquitecturas RAG, asistentes con memoria y validación de reglas para atención al cliente y análisis legal sin alucinaciones.",
+      deliverable: "Modelos con guardrails éticos, métricas de latencia y pruebas de carga documentadas.",
+      icon: Cpu,
+    },
+    {
+      category: "Datos & Analítica Predictiva",
+      title: "De información dispersa a motores de decisión",
+      description:
+        "Unificación de datos transaccionales para predicción de fuga de clientes, scoring de riesgo crediticio o detección de anomalías.",
+      deliverable: "Modelos calibrados con datasets de validación y API de inferencia desplegable.",
+      icon: Database,
+    },
+    {
+      category: "Fintech & Servicios Financieros",
+      title: "Onboarding seguro y prevención de fraude",
+      description:
+        "Detección forense de adulteración documental, biometría multicriterio y enrutamiento inteligente de pagos.",
+      deliverable: "SDK de verificación con tolerancia a ataques sintéticos y cumplimiento regulatorio.",
+      icon: ShieldCheck,
+    },
+    {
+      category: "Experiencia de Cliente & Canales",
+      title: "Rediseño de journeys complejos de autoatención",
+      description:
+        "Digitalización de solicitudes de seguros, reclamos complejos y atención omnicanal sincronizada con sistemas core.",
+      deliverable: "Interfaces frontend reactivas probadas con usuarios y conectadas a microservicios.",
+      icon: Layers,
+    },
+    {
+      category: "Logística & Cadena de Suministro",
+      title: "Optimización de despachos y ruteo dinámico",
+      description:
+        "Algoritmos de asignación de capacidad de flota, predicción de inventario y alertas tempranas de disrupción logística.",
+      deliverable: "Motor heurístico de optimización con visualización geoespacial interactiva.",
+      icon: Building2,
+    },
+  ];
+
+  const targetIndustries = [
+    { name: "Banca & Fintech", focus: "Scoring, prevención de fraude, onboarding y conciliación contable." },
+    { name: "Seguros", focus: "Liquidación ágil de siniestros, auditoría médica y suscripción automatizada." },
+    { name: "Telecomunicaciones", focus: "Atención al cliente autónoma, gestión de incidencias y churn prediction." },
+    { name: "Retail & E-commerce", focus: "Visibilidad de inventarios, personalización y detección de devoluciones anómalas." },
+    { name: "BPO & Servicios", focus: "Automatización de mesas de ayuda, procesamiento documental y QA de agentes." },
+    { name: "Salud Privada", focus: "Agendamiento asistido, validación de autorizaciones y análisis de historias clínicas." },
+  ];
+
   const steps = [
     {
-      num: "01",
-      title: "Estructuramos tu problema de negocio",
-      subtitle: "Traducimos tu necesidad a código",
-      desc: "Nos reunimos con tus líderes y convertimos ese cuello de botella en un reto técnico con reglas claras, datasets seguros y criterios de éxito medibles para tu empresa.",
-      tag: "Estrategia",
-      image: "/images/hackathon-whiteboard.jpg",
-      highlight: "Especificación técnica y métricas de éxito",
+      step: "01",
+      name: "Discovery & Estructuración del Reto",
+      duration: "Semana 1",
+      description:
+        "Nos reunimos con tus líderes de negocio y tecnología para traducir cuellos de botella en requerimientos de ingeniería, métricas cuantitativas y datasets de prueba seguros.",
+      responsible: "Kamino (85%) · Cliente (15% feedback)",
+      highlight: "Challenge Blueprint con criterios de éxito medibles",
     },
     {
-      num: "02",
-      title: "Te conseguimos el talento técnico ideal",
-      subtitle: "Especialistas filtrados para tu caso",
-      desc: "Atraemos y seleccionamos a los mejores programadores, ingenieros de IA y diseñadores de la región para que compitan por construir la solución que necesitas.",
-      tag: "Convocatoria",
-      image: "/images/hackathon-builders.jpg",
-      highlight: "Equipos multidisciplinarios listos",
+      step: "02",
+      name: "Convocatoria & Filtro Técnico de Builders",
+      duration: "Semana 2",
+      description:
+        "Convocamos a ingenieros de IA, desarrolladores backend y diseñadores de producto senior de Colombia y LATAM. Filtramos mediante validación de repositorios de GitHub.",
+      responsible: "Kamino (100% de la operación)",
+      highlight: "Equipos equilibrados sin vacíos técnicos",
     },
     {
-      num: "03",
-      title: "Supervisamos toda la construcción",
-      subtitle: "Sprints enfocados en tu arquitectura",
-      desc: "Nos encargamos de toda la operación, el cronograma y las mentorías técnicas para asegurar que el código cumpla con tus restricciones de seguridad y negocio.",
-      tag: "Operación",
-      image: "/images/hackathon-mentoring.jpg",
-      highlight: "Código ejecutable verificado en GitHub",
+      step: "03",
+      name: "Build Sprint & Mentorías Técnicas",
+      duration: "Semanas 3 a 4",
+      description:
+        "Los equipos construyen prototipos funcionales bajo supervisión técnica continua. Tu equipo de tecnología solo invierte 2 horas a la semana en sesiones de alineación.",
+      responsible: "Builders (Construcción) · Kamino (Operación)",
+      highlight: "Código verificado en GitHub y commits diarios",
     },
     {
-      num: "04",
-      title: "Te entregamos soluciones listas para piloto",
-      subtitle: "Evaluación objetiva y traspaso",
-      desc: "Tus jurados califican prototipos en vivo con nuestra plataforma y te acompañamos en el traspaso legal y técnico para iniciar el piloto en tu empresa.",
-      tag: "Resultados",
-      image: "/images/hackathon-pitch.jpg",
-      highlight: "Prototipos listos para producción",
+      step: "04",
+      name: "Demo Day & Camino Hacia Piloto",
+      duration: "Semana 5+",
+      description:
+        "Evaluación objetiva con Jury OS bajo rúbrica cuantitativa. Acompañamos el traspaso técnico y legal del código ganador para iniciar su integración en tu infraestructura.",
+      responsible: "Cliente (Jurado) · Kamino (Acompañamiento a piloto)",
+      highlight: "Acuerdo de piloto y transferencia de código",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "¿Por qué no contratar una consultora de tecnología tradicional?",
+      a: "Una consultora tradicional asigna un único equipo cerrado con una sola hipótesis técnica y cobra durante meses antes de escribir una línea de código. Con Kamino obtienes entre 5 y 10 equipos compitiendo con arquitecturas y enfoques distintos, entregándote prototipos de software funcionando en 4 semanas para que decidas con base en código real, no en presentaciones teóricas.",
+    },
+    {
+      q: "¿Por qué no construir la solución con nuestro equipo interno?",
+      a: "Tu equipo de tecnología ya tiene un backlog saturado manteniendo la operación crítica del negocio. Destinar recursos internos a explorar nuevas tecnologías o automatizaciones suele tomar de 6 a 12 meses. Kamino actúa como tu brazo de exploración acelerada: absorbe toda la carga y te entrega soluciones probadas sin distraer a tus ingenieros.",
+    },
+    {
+      q: "¿Quién es el dueño del código fuente y de la propiedad intelectual (IP)?",
+      a: "La propiedad intelectual y las licencias de uso se definen contractualmente en las bases del reto antes de iniciar. El modelo habitual corporativo garantiza a tu empresa la licencia exclusiva o la opción prioritaria de adquisición para desplegar la solución en producción como piloto.",
+    },
+    {
+      q: "¿Qué datos e información sensible tenemos que compartir?",
+      a: "Ninguna información confidencial necesita salir de tu empresa. Trabajamos con datasets sintéticos, datos anonimizados y entornos de sandbox aislados diseñados específicamente para el reto, respaldados por acuerdos de confidencialidad (NDA) vinculantes para todos los participantes.",
+    },
+    {
+      q: "¿Cuánto tiempo y esfuerzo exige de nuestro equipo interno?",
+      a: "Cero desgaste logístico. Nosotros gestionamos las admisiones, la plataforma, las mentorías y la operación diaria. Tu equipo directivo y técnico únicamente participa en la sesión de discovery inicial (2 horas), sesiones semanales de alineación técnica (1 hora) y la deliberación del Demo Day.",
+    },
+    {
+      q: "¿Qué sucede después del Demo Day con el equipo ganador?",
+      a: "El objetivo de Kamino no termina en la entrega de premios. Acompañamos durante 60 a 90 días el Project Pipeline para estructurar el piloto formal, definir el contrato comercial de implementación y asegurar la transferencia técnica hacia tus entornos de staging.",
+    },
+    {
+      q: "¿Puede participar nuestro propio talento interno en el reto?",
+      a: "Sí. Ofrecemos la modalidad de Retos Internos o Híbridos, donde equipos de colaboradores de tu empresa compiten o colaboran con builders externos para romper silos entre áreas de tecnología, operaciones y negocio.",
     },
   ];
 
@@ -76,131 +163,292 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* =========================================================
-            SECCIÓN 01 — HERO EDITORIAL
-            Ocupa gran parte del viewport inicial, copy dominante,
-            mucho espacio negativo, fotografía documental auténtica.
+            SECCIÓN 01 — HERO EDITORIAL B2B
+            Propuesta de valor clara en <5 segundos.
+            Tesis: Problema -> Challenge -> Prototipos -> Piloto.
             ========================================================= */}
         <section className="relative pt-12 sm:pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="max-w-6xl mx-auto text-center space-y-8">
-            {/* Dominant Headline (56-84px desktop / 40-52px mobile) */}
-            <h1 className="text-[42px] sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#141517] leading-[1.04] max-w-4xl mx-auto">
-              Convierte los problemas de tu empresa en soluciones que{" "}
+          <div className="max-w-6xl mx-auto text-center space-y-7">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#DCDCD5] text-[#141517] text-xs font-mono font-semibold tracking-wider uppercase shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#1846A3] animate-pulse" />
+              <span>INNOVACIÓN APLICADA B2B</span>
+            </div>
+
+            {/* Dominant Headline */}
+            <h1 className="text-[40px] sm:text-6xl lg:text-[74px] font-extrabold tracking-[-0.035em] text-[#141517] leading-[1.05] max-w-4xl mx-auto">
+              Tus problemas de negocio merecen{" "}
               <span className="font-serif-italic font-normal text-[#1846A3] tracking-tight">
-                sí se construyen.
+                más de una solución.
               </span>
             </h1>
 
-            {/* Supporting Copy: 100% Client Centric */}
+            {/* Subheadline & Value Proposition */}
             <p className="text-base sm:text-xl text-[#52535A] max-w-3xl mx-auto leading-relaxed font-normal">
-              Tu equipo interno no da abasto y las consultoras tradicionales cobran fortunas por diagnósticos teóricos. Te ayudamos a estructurar tu reto, convocar al mejor talento técnico de la región y entregarte entre 5 y 10 prototipos de software funcionando, listos para tu próximo piloto en 4 semanas.
+              Convierte un reto operativo en múltiples prototipos tecnológicos construidos y evaluados en semanas. Kamino diseña el challenge, reúne talento técnico especializado, opera el programa y acompaña la mejor solución hasta el piloto en producción.
             </p>
 
-            {/* Action CTAs: Primary B2B + Secondary "Cómo te ayudamos" */}
+            {/* Primary & Secondary Action CTAs */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-              <Link href="/start" className="w-full sm:w-auto">
+              <a href="#assessment" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-[#141517] hover:bg-[#252830] text-white shadow-editorial font-semibold px-7 text-sm sm:text-base py-3.5"
+                  className="w-full sm:w-auto bg-[#141517] hover:bg-[#252830] text-white shadow-editorial font-semibold px-8 text-sm sm:text-base py-3.5 cursor-pointer"
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
-                  Diseñar un reto para mi empresa
+                  Cuéntanos qué quieres resolver
                 </Button>
-              </Link>
+              </a>
               <a href="#como-funciona" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-[#DCDCD5] text-[#141517] hover:bg-[#F4F4EE] font-medium px-6 text-sm sm:text-base py-3.5"
+                  className="w-full sm:w-auto border-[#DCDCD5] text-[#141517] hover:bg-[#F4F4EE] font-medium px-6 text-sm sm:text-base py-3.5 cursor-pointer"
                 >
-                  Ver cómo te ayudamos
+                  Ver cómo funciona
                 </Button>
               </a>
             </div>
 
-            {/* Secondary Builder Access Link */}
-            <div className="pt-1">
+            {/* Microcopy Trust Anchor */}
+            <p className="text-xs text-[#71717A] font-mono">
+              Sin compromiso · Diagnóstico preliminar de viabilidad en 48 horas · Operación en Colombia y LATAM
+            </p>
+
+            {/* Visual Process Map: Problema -> Challenge -> Prototipos -> Ganador -> Piloto */}
+            <div className="pt-6 max-w-4xl mx-auto">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs">
+                <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block mb-3 text-center sm:text-left">
+                  Flujo de Entrega de Soluciones:
+                </span>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-left text-xs">
+                  <div className="p-2.5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                    <span className="text-[10px] font-mono text-[#DC2626] font-bold block">1. ENTRADA</span>
+                    <p className="font-bold text-[#141517] mt-0.5">Problema de Negocio</p>
+                    <p className="text-[11px] text-[#71717A] mt-0.5 leading-tight">Dolor operativo o cuello de botella</p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                    <span className="text-[10px] font-mono text-[#1846A3] font-bold block">2. ESTRUCTURA</span>
+                    <p className="font-bold text-[#141517] mt-0.5">Challenge Técnico</p>
+                    <p className="text-[11px] text-[#71717A] mt-0.5 leading-tight">Bases, datasets y rúbricas claras</p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                    <span className="text-[10px] font-mono text-[#7C3AED] font-bold block">3. EJECUCIÓN</span>
+                    <p className="font-bold text-[#141517] mt-0.5">Múltiples Prototipos</p>
+                    <p className="text-[11px] text-[#71717A] mt-0.5 leading-tight">5 a 10 equipos construyendo código</p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                    <span className="text-[10px] font-mono text-[#D97706] font-bold block">4. EVALUACIÓN</span>
+                    <p className="font-bold text-[#141517] mt-0.5">Solución Ganadora</p>
+                    <p className="text-[11px] text-[#71717A] mt-0.5 leading-tight">Calificación objetiva en vivo</p>
+                  </div>
+                  <div className="col-span-2 sm:col-span-1 p-2.5 rounded-xl bg-[#EEF4FF] border border-[#B9D2FE]">
+                    <span className="text-[10px] font-mono text-[#059669] font-bold block">5. RETORNO</span>
+                    <p className="font-bold text-[#0E357E] mt-0.5">Piloto en Producción</p>
+                    <p className="text-[11px] text-[#1E40AF] mt-0.5 leading-tight">Transferencia técnica y despliegue</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Supply-Side Builder Notice */}
+            <div className="pt-2">
               <Link
-                href="/hackathons"
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-[#71717A] hover:text-[#1846A3] transition-colors"
+                href="/builders"
+                className="inline-flex items-center gap-1.5 text-xs text-[#71717A] hover:text-[#1846A3] transition-colors"
               >
-                <span>¿Quieres competir como builder?</span>
+                <span>¿Quieres competir como desarrollador o diseñador?</span>
                 <span className="font-semibold underline underline-offset-4 text-[#141517] hover:text-[#1846A3]">
-                  Explorar hackathons abiertos →
+                  Explorar comunidad de builders →
                 </span>
               </Link>
             </div>
+          </div>
+        </section>
 
-            {/* Hero Visual: Asymmetric Editorial Documentary Composition */}
-            <div className="pt-6 sm:pt-10 max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch text-left">
-                {/* Main Dominant Photo: Builders in deep collaboration */}
-                <div className="md:col-span-8 relative rounded-2xl overflow-hidden border border-[#DCDCD5] shadow-editorial bg-[#EFEFEA] min-h-[340px] sm:min-h-[420px] group">
-                  <Image
-                    src="/images/hackathon-builders.jpg"
-                    alt="Equipos multidisciplinarios construyendo soluciones tecnológicas en un hackathon"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 66vw"
-                    className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                  
-                  {/* Floating Contextual Labels */}
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                    <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-xs text-[#141517] text-[11px] font-mono font-semibold uppercase tracking-wider shadow-xs">
-                      Sprint de Construcción
-                    </span>
-                    <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-xs text-white text-[11px] font-mono shadow-xs">
-                      Talento Técnico · IA · Producto
-                    </span>
-                  </div>
+        {/* =========================================================
+            SECCIÓN 02 — TRUSTED / CREDIBILIDAD HONESTA
+            Cero fake logos. Rigor de ingeniería probado.
+            ========================================================= */}
+        <section className="py-12 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+                Garantías del Modelo Operativo
+              </span>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#141517] tracking-tight">
+                Diseñado para líderes corporativos que no pueden arriesgar tiempo ni presupuesto.
+              </h2>
+            </div>
 
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <p className="text-xs sm:text-sm font-mono text-[#D1D5DB] tracking-tight">
-                      Metodología & Operación Kamino
-                    </p>
-                    <h3 className="text-lg sm:text-xl font-bold tracking-tight mt-0.5 text-white">
-                      Desarrolladores, diseñadores e ingenieros de IA trabajando en retos reales.
-                    </h3>
-                  </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
+                  <FileCode2 className="w-4 h-4" />
                 </div>
+                <span className="text-xs font-mono text-[#1846A3] font-bold">100% Ejecutable</span>
+                <h4 className="text-sm font-bold text-[#141517] mt-0.5">Código en GitHub, No PPT</h4>
+                <p className="text-xs text-[#52535A] mt-1 leading-relaxed">
+                  Cada entrega incluye repositorio verificado, documentación técnica y demo en vivo funcional.
+                </p>
+              </div>
 
-                {/* Secondary Editorial Photos (Mentoring & Demo Day) */}
-                <div className="md:col-span-4 flex flex-col gap-4">
-                  {/* Photo 2: Mentoring */}
-                  <div className="relative rounded-2xl overflow-hidden border border-[#DCDCD5] shadow-editorial bg-[#EFEFEA] flex-1 min-h-[180px] group">
-                    <Image
-                      src="/images/hackathon-mentoring.jpg"
-                      alt="Sesión de mentoría técnica individual con líderes de industria"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-white/90 text-[#141517] text-[10px] font-mono font-semibold uppercase tracking-wider">
-                      Mentoría Especializada
-                    </span>
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <p className="text-xs font-semibold">Arquitectura y viabilidad técnica guiada paso a paso.</p>
-                    </div>
-                  </div>
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-mono text-[#1846A3] font-bold">Velocidad 4 Semanas</span>
+                <h4 className="text-sm font-bold text-[#141517] mt-0.5">De la Hipótesis al Piloto</h4>
+                <p className="text-xs text-[#52535A] mt-1 leading-relaxed">
+                  Sprints intensivos que entregan prototipos en semanas, evitando comités de debate de varios meses.
+                </p>
+              </div>
 
-                  {/* Photo 3: Pitch & Evaluation */}
-                  <div className="relative rounded-2xl overflow-hidden border border-[#DCDCD5] shadow-editorial bg-[#EFEFEA] flex-1 min-h-[180px] group">
-                    <Image
-                      src="/images/hackathon-pitch.jpg"
-                      alt="Presentación final de proyectos ante el comité de jurados"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-white/90 text-[#141517] text-[10px] font-mono font-semibold uppercase tracking-wider">
-                      Demo Day & Evaluación
-                    </span>
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <p className="text-xs font-semibold">Demos en vivo evaluadas con rúbricas objetivas.</p>
-                    </div>
-                  </div>
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
+                  <Layers className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-mono text-[#1846A3] font-bold">Diversidad de Enfoque</span>
+                <h4 className="text-sm font-bold text-[#141517] mt-0.5">Múltiples Soluciones</h4>
+                <p className="text-xs text-[#52535A] mt-1 leading-relaxed">
+                  Entre 5 y 10 equipos exploran distintas tecnologías y arquitecturas para que elijas la más eficiente.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4]">
+                <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
+                  <Lock className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-mono text-[#1846A3] font-bold">Seguridad Enterprise</span>
+                <h4 className="text-sm font-bold text-[#141517] mt-0.5">Blindaje Legal & IP</h4>
+                <p className="text-xs text-[#52535A] mt-1 leading-relaxed">
+                  Acuerdos de confidencialidad estrictos, datasets anonimizados y derechos de uso definidos por contrato.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 03 — EL PROBLEMA REAL
+            Por qué la innovación se atasca en la empresa.
+            ========================================================= */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+              El Cuello de Botella
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+              Tienes decenas de oportunidades de automatización e IA. Pero las rutas habituales fallan.
+            </h2>
+            <p className="text-sm sm:text-base text-[#52535A] mt-3 leading-relaxed">
+              Las empresas grandes y medianas no sufren por falta de ideas. Sufren por la lentitud para convertirlas en software probado sin colapsar al equipo interno:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+                <XCircle className="w-4 h-4" />
+              </div>
+              <h3 className="text-base font-bold text-[#141517]">TI Interno Saturado</h3>
+              <p className="text-xs text-[#52535A] leading-relaxed">
+                Tus desarrolladores e ingenieros de datos están 100% ocupados manteniendo los sistemas core. Cualquier proyecto nuevo queda en un backlog de 6 a 12 meses.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+                <XCircle className="w-4 h-4" />
+              </div>
+              <h3 className="text-base font-bold text-[#141517]">Consultoría Teórica en Diapositivas</h3>
+              <p className="text-xs text-[#52535A] leading-relaxed">
+                Pagas decenas de miles de dólares por diagnósticos de 80 páginas. Al final de meses de reuniones, nadie en tu empresa tiene tiempo para programar lo sugerido.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+                <XCircle className="w-4 h-4" />
+              </div>
+              <h3 className="text-base font-bold text-[#141517]">PoCs que Mueren sin Producción</h3>
+              <p className="text-xs text-[#52535A] leading-relaxed">
+                Se crean prototipos aislados en eventos de post-its que nadie mantiene el lunes. Falta un camino estructurado de transferencia técnica para llegar al piloto.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 04 — LA ALTERNATIVA KAMINO
+            Comparativa de Modelo: 1 Problema -> Múltiples Enfoques
+            ========================================================= */}
+        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-6xl mx-auto space-y-10">
+            <div className="max-w-3xl">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+                La Alternativa de Ejecución
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+                No te cases con una sola hipótesis. Haz que múltiples equipos compitan por resolverlo.
+              </h2>
+              <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
+                En lugar de contratar un único proveedor que cobra por meses de exploración a ciegas, Kamino pone a competir en paralelo a diferentes equipos técnicos con enfoques arquitectónicos diversos:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              {/* Modelo tradicional */}
+              <div className="p-7 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#DC2626] block mb-2">
+                    Consultoría o Desarrollo Tradicional
+                  </span>
+                  <h3 className="text-lg font-bold text-[#141517]">1 Problema → 1 Enfoque Único</h3>
+                  <ul className="space-y-3 mt-4 text-xs text-[#52535A]">
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
+                      <span>Un solo equipo interno o externo propone una única arquitectura.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
+                      <span>Meses de discovery cobrados antes de ver código ejecutándose.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <XCircle className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
+                      <span>Alto costo de equivocarse si la tecnología elegida no escala o rinde.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-6 pt-4 border-t border-[#E8E8E4] text-[11px] font-mono text-[#71717A]">
+                  Resultado: Inversión alta, cero comparabilidad y riesgo operativo total.
+                </div>
+              </div>
+
+              {/* Modelo Kamino */}
+              <div className="p-7 rounded-2xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#60A5FA] block mb-2">
+                    Modelo Kamino de Innovación Aplicada
+                  </span>
+                  <h3 className="text-lg font-bold text-white">1 Problema → 8 Equipos → 3 Finalistas → 1 Piloto</h3>
+                  <ul className="space-y-3 mt-4 text-xs text-[#9CA3AF]">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                      <span>Ocho enfoques técnicos distintos resuelven el mismo cuello de botella simultáneamente.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                      <span>Comparación objetiva de latencia, precisión, experiencia y costo de infraestructura.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                      <span>Decisión gerencial informada en semanas, seleccionando el mejor software para piloto.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-6 pt-4 border-t border-[#2B2D36] text-[11px] font-mono text-[#34D399]">
+                  ✓ Resultado: Menor riesgo, código funcional comprobado y aceleración real.
                 </div>
               </div>
             </div>
@@ -208,111 +456,319 @@ export default function HomePage() {
         </section>
 
         {/* =========================================================
-            SECCIÓN 02 — EL PROBLEMA (Caos vs. Solución Kamino)
-            Visual: CAOS TRADICIONAL -> KAMINO UNIFICADO -> RESULTADOS
-            ========================================================= */}
-        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl text-left mb-12">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
-                ¿Te suena familiar?
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
-                La innovación en tu empresa no se frena por falta de ideas, sino por falta de manos que las construyan.
-              </h2>
-              <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
-                Tu equipo de tecnología está 100% ocupado manteniendo la operación. Las consultorías tradicionales te cobran fortunas por diagnósticos de 80 páginas que nadie programa. Y los eventos internos solo dejan pizzas y fotos. Te ayudamos a romper ese cuello de botella y recibir entre 5 y 10 prototipos de software probados sin distraer a tu equipo interno.
-              </p>
-            </div>
-
-            <ChaosToKamino />
-          </div>
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 03 — CÓMO FUNCIONA (4 Grandes Momentos)
-            4 fases operacionales con visuales reales.
+            SECCIÓN 05 — CÓMO FUNCIONA & MATRIZ DE RESPONSABILIDADES
+            Paso a paso con asignación transparente de carga.
             ========================================================= */}
         <section id="como-funciona" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
           <div className="max-w-3xl mb-14">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
-              Cómo te ayudamos
+              Metodología & Operación
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
-              Cuatro pasos para pasar de un problema que te quita el sueño a software listo para piloto.
+              Cuatro fases estructuradas sin desgastar a tu equipo de tecnología.
             </h2>
             <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
-              Nosotros absorbemos toda la carga metodológica, técnica y operativa. Tu organización solo participa en definir los criterios de éxito, revisar avances y elegir las soluciones ganadoras.
+              Kamino absorbe el 90% del trabajo pesado (convocatoria, admisiones, plataforma, mentoría técnica y logística). Tu empresa se enfoca únicamente en definir los criterios de éxito y evaluar resultados:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {steps.map((step) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {steps.map((st) => (
               <div
-                key={step.num}
-                className="bg-white rounded-2xl border border-[#E8E8E4] overflow-hidden shadow-editorial hover:border-[#141517] transition-all flex flex-col justify-between group"
+                key={st.step}
+                className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs flex flex-col justify-between hover:border-[#141517] transition-all space-y-4"
               >
-                <div className="relative h-48 sm:h-56 w-full bg-[#EFEFEA] overflow-hidden">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
                     <span className="w-7 h-7 rounded-lg bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
-                      {step.num}
+                      {st.step}
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-md bg-white/90 text-[#141517] text-[11px] font-mono font-semibold uppercase tracking-wider">
-                      {step.tag}
+                    <span className="text-xs font-mono font-semibold text-[#1846A3] bg-[#EEF4FF] px-2.5 py-0.5 rounded-md border border-[#D3E2FE]">
+                      {st.duration}
                     </span>
                   </div>
-
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <span className="text-[11px] font-mono text-[#D1D5DB] block">
-                      Entregable para tu empresa:
-                    </span>
-                    <p className="text-xs font-semibold text-[#A7F3D0]">
-                      ✓ {step.highlight}
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-bold text-[#141517]">{st.name}</h3>
+                  <p className="text-xs sm:text-sm text-[#52535A] mt-2 leading-relaxed">
+                    {st.description}
+                  </p>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-2">
-                  <span className="text-[11px] font-mono text-[#71717A] uppercase tracking-wider">
-                    {step.subtitle}
-                  </span>
-                  <h3 className="text-lg font-bold text-[#141517]">{step.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
-                    {step.desc}
-                  </p>
+                <div className="pt-4 border-t border-[#E8E8E4] space-y-1.5 text-xs">
+                  <div className="flex items-center justify-between text-[#71717A] font-mono text-[11px]">
+                    <span>Carga:</span>
+                    <span className="text-[#141517] font-semibold">{st.responsible}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-[#059669] font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                    <span>{st.highlight}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Responsibility Matrix */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] text-xs">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#1846A3] font-bold block mb-3">
+              Matriz de Responsabilidades del Programa:
+            </span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+              <div className="p-4 rounded-xl bg-white border border-[#E8E8E4]">
+                <span className="font-bold text-[#141517] block mb-1">KAMINO (Operador & Plataforma)</span>
+                <ul className="space-y-1 text-[#52535A] text-[11px]">
+                  <li>• Formulación técnica y bases del reto</li>
+                  <li>• Convocatoria y filtro de builders senior</li>
+                  <li>• Plataforma completa y soporte 24/7</li>
+                  <li>• Calibración de jurados y Jury OS</li>
+                  <li>• Acompañamiento post-evento al piloto</li>
+                </ul>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white border border-[#E8E8E4]">
+                <span className="font-bold text-[#141517] block mb-1">TU EMPRESA (Sponsor & Jurado)</span>
+                <ul className="space-y-1 text-[#52535A] text-[11px]">
+                  <li>• Contexto del problema y criterios de éxito</li>
+                  <li>• Datasets anonimizados o sintéticos</li>
+                  <li>• 1 hora semanal de feedback a finalistas</li>
+                  <li>• Jurado decisor en el Demo Day</li>
+                  <li>• Despliegue del piloto con el ganador</li>
+                </ul>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white border border-[#E8E8E4]">
+                <span className="font-bold text-[#141517] block mb-1">LOS BUILDERS (Equipos Técnicos)</span>
+                <ul className="space-y-1 text-[#52535A] text-[11px]">
+                  <li>• Desarrollo frontend, backend e IA</li>
+                  <li>• Repositorio limpio con README</li>
+                  <li>• Demos en video y arquitectura</li>
+                  <li>• Pitch técnico ante el jurado</li>
+                  <li>• Soporte en la fase de piloto</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* =========================================================
-            SECCIÓN 04 — MOSTRAR LA EXPERIENCIA (Producto en contexto)
-            "Así supervisas las soluciones que se construyen para ti."
-            Estudio interactivo de capacidades Kamino.
+            SECCIÓN 06 — QUÉ RECIBE LA EMPRESA
+            Entregables tangibles y verificables.
             ========================================================= */}
-        <section id="experiencia" className="py-24 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+                Resultados Tangibles
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+                Qué recibe tu organización al finalizar el programa.
+              </h2>
+              <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
+                Nada queda en el aire ni se reduce a diplomas. Cada entrega está lista para ser auditada por tus equipos de ciberseguridad, arquitectura y operaciones:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <FileCode2 className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Repositorios de Código en GitHub</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Código fuente limpio, modular y documentado con licencias de uso claras y dependencias auditadas.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <Workflow className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Diagramas de Arquitectura & APIs</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Especificación de microservicios, bases de datos y endpoints listos para integrarse con tus sistemas legacy.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <Cpu className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Benchmarks de Rendimiento & IA</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Métricas de precisión, latencia por inferencia, costo estimado de tokens y tasa de acierto cuantitativa.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <ShieldCheck className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Scoring Consolidado con Jury OS</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Rúbricas matemáticas ponderadas al 100% que eliminan sesgos personales y documentan la deliberación.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <Users className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Talento Técnico Evaluado en Vivo</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Conoce de primera mano cómo resuelven problemas bajo presión los mejores ingenieros de la región.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
+                <GitBranch className="w-5 h-5 text-[#1846A3]" />
+                <h4 className="text-sm font-bold text-[#141517]">Roadmap de Piloto en Producción</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Plan de 60 a 90 días con hitos de staging, validación de seguridad y contrato de implementación formal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 07 — CASOS DE USO EMPRESARIALES
+            Tarjetas orientadas a problemas reales de negocio.
+            ========================================================= */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+              Aplicaciones de Negocio
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+              ¿Qué tipo de retos estructuramos habitualmente?
+            </h2>
+            <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
+              Desde cuellos de botella en operaciones manuales hasta pilotos de IA generativa con salvaguardas corporativas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((uc) => {
+              const Icon = uc.icon;
+              return (
+                <div
+                  key={uc.title}
+                  className="p-6 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs flex flex-col justify-between hover:border-[#141517] transition-all space-y-4"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1846A3] bg-[#EEF4FF] px-2 py-0.5 rounded">
+                        {uc.category}
+                      </span>
+                      <Icon className="w-4 h-4 text-[#71717A]" />
+                    </div>
+                    <h3 className="text-base font-bold text-[#141517]">{uc.title}</h3>
+                    <p className="text-xs text-[#52535A] leading-relaxed">{uc.description}</p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#E8E8E4] text-xs">
+                    <span className="text-[10px] font-mono text-[#71717A] uppercase block">Entregable:</span>
+                    <p className="text-[#0E357E] font-medium text-[11px] mt-0.5">{uc.deliverable}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 08 — INDUSTRIAS PRIORITARIAS
+            Beachhead financiero y sectores intensivos en operación.
+            ========================================================= */}
+        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-10">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
+                Foco Sectorial
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
+                Industrias con mayor retorno en retos de innovación técnica.
+              </h2>
+              <p className="text-xs sm:text-sm text-[#52535A] mt-2 leading-relaxed">
+                Priorizamos organizaciones con altos volúmenes operativos y necesidad de aceleración tecnológica:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {targetIndustries.map((ind) => (
+                <div key={ind.name} className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4] text-xs space-y-1">
+                  <h4 className="font-bold text-[#141517] text-sm">{ind.name}</h4>
+                  <p className="text-[#52535A] leading-relaxed">{ind.focus}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 09 — ASÍ FUNCIONA EN LA PRÁCTICA (CASO DEMOSTRATIVO)
+            Marcado inequívoco como simulación/demo.
+            ========================================================= */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
+          <div className="p-6 sm:p-10 rounded-3xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial-elevated space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#2B2D36]">
+              <div>
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#252830] text-[#93C5FD] text-[11px] font-mono font-semibold uppercase tracking-wider mb-2 border border-[#3B82F6]/30">
+                  <span>CASO DEMOSTRATIVO · SIMULACIÓN ILUSTRATIVA</span>
+                </div>
+                <h3 className="text-xl sm:text-3xl font-bold tracking-tight text-white">
+                  Así funciona un challenge en la práctica: Conciliación Documental
+                </h3>
+              </div>
+              <span className="px-3 py-1 rounded-lg bg-[#1C1E24] text-[#9CA3AF] text-xs font-mono border border-[#2B2D36] shrink-0">
+                Entorno Simulado de Referencia
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs text-[#9CA3AF]">
+              <div className="lg:col-span-4 p-4 rounded-xl bg-[#1C1E24] border border-[#2B2D36] space-y-2">
+                <span className="text-[10px] font-mono uppercase text-[#DC2626] font-bold block">1. Problema de Negocio</span>
+                <h4 className="text-sm font-bold text-white">4.5 Días para Auditar Contratos</h4>
+                <p className="leading-relaxed">
+                  Una entidad financiera tardaba días en revisar manualmente acuerdos mercantiles contra facturas, generando multas y fricción con proveedores.
+                </p>
+              </div>
+
+              <div className="lg:col-span-4 p-4 rounded-xl bg-[#1C1E24] border border-[#2B2D36] space-y-2">
+                <span className="text-[10px] font-mono uppercase text-[#60A5FA] font-bold block">2. Challenge Estructurado</span>
+                <h4 className="text-sm font-bold text-white">8 Equipos · 3 Tracks Técnicos</h4>
+                <p className="leading-relaxed">
+                  Kamino estructuró un reto de 4 semanas con datasets sintéticos de contratos, rúbrica ponderada al 100% y mentores de IA aplicada.
+                </p>
+              </div>
+
+              <div className="lg:col-span-4 p-4 rounded-xl bg-[#1C1E24] border border-[#2B2D36] space-y-2">
+                <span className="text-[10px] font-mono uppercase text-[#34D399] font-bold block">3. Resultado Hacia Piloto</span>
+                <h4 className="text-sm font-bold text-white">Prototipo Redujo Tiempo a 18 Segundos</h4>
+                <p className="leading-relaxed">
+                  El equipo ganador desarrolló un pipeline con OCR y LLM local verificando cláusulas con 99% de precisión, pasando formalmente a fase de piloto.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#2B2D36]">
+              <span className="text-xs text-[#71717A]">
+                ¿Quieres explorar la consola de supervisión completa de este caso demostrativo?
+              </span>
+              <Link href="/demo">
+                <Button size="sm" className="bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold">
+                  Explorar demo interactiva en vivo →
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 10 — PLATAFORMA TECNOLÓGICA
+            Explicada como evidencia tras el valor comercial.
+            ========================================================= */}
+        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-6xl mx-auto space-y-6">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
-              Control Total para tu Empresa
+              Infraestructura Propia de Operación
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#141517] max-w-3xl mx-auto">
-              Así supervisas las soluciones que se construyen para ti.
+              Así supervisa tu organización los prototipos que se construyen.
             </h2>
             <p className="text-sm sm:text-base text-[#52535A] max-w-2xl mx-auto leading-relaxed">
-              Sin hojas de cálculo dispersas ni chats caóticos: monitorea en tiempo real los equipos postulados, el avance de código en GitHub, las sesiones con mentores y la calificación matemática de tus jurados.
+              Sin hojas de cálculo desordenadas ni mensajes de chat dispersos: un entorno unificado para administrar postulaciones, repositorios en GitHub, deliberaciones ciegas y el pipeline hacia producción.
             </p>
 
-            {/* Showcase Studio Component with Integrated 4 Capabilities */}
             <div className="pt-6">
               <HeroProductWindow />
             </div>
@@ -320,237 +776,135 @@ export default function HomePage() {
         </section>
 
         {/* =========================================================
-            SECCIÓN 05 — EXPERIENCIA HUMANA (Pausa Documental)
-            Rompe completamente con la estética SaaS.
-            Fotografía documental, tensión, comunidad, celebración.
+            SECCIÓN 11 — ENTERPRISE READINESS & GOBERNANZA
+            IP, confidencialidad, sandbox y datos seguros.
             ========================================================= */}
-        <section className="relative py-28 sm:py-36 px-4 sm:px-6 lg:px-8 text-center text-white overflow-hidden bg-[#141517]">
-          {/* Full-width documentary background image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/hackathon-celebration.jpg"
-              alt="Comunidad tecnológica reunida en un hackathon presencial en América Latina"
-              fill
-              sizes="100vw"
-              className="object-cover object-center opacity-30 grayscale hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141517] via-[#141517]/70 to-[#141517]" />
-          </div>
-
-          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#93C5FD] text-xs font-mono border border-white/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA]" />
-              <span>La energía de construir juntos</span>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
+                Seguridad & Blindaje Legal
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
+                Tus datos y tu propiedad intelectual permanecen 100% protegidos.
+              </h2>
+              <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
+                Entendemos los requerimientos de compliance de corporaciones medianas y grandes. Diseñamos cada challenge con salvaguardas operativas y legales desde el día uno:
+              </p>
+              <div className="pt-2">
+                <Link href="/trust">
+                  <Button variant="outline" size="sm" className="font-semibold text-xs">
+                    Ver Trust Center & Políticas de Datos →
+                  </Button>
+                </Link>
+              </div>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              “Tu empresa no necesita más comités para debatir ideas. Necesita ver software funcionando en manos de sus usuarios.”
-            </h2>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-5 rounded-xl bg-white border border-[#E8E8E4] shadow-xs space-y-2">
+                <ShieldCheck className="w-5 h-5 text-[#10B981]" />
+                <h4 className="text-sm font-bold text-[#141517]">Acuerdos de Confidencialidad (NDA)</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Todo participante y mentor firma acuerdos vinculantes antes de acceder a las especificaciones y datasets del reto.
+                </p>
+              </div>
 
-            <p className="text-sm sm:text-base text-[#9CA3AF] max-w-xl mx-auto leading-relaxed">
-              Menos PowerPoints. Más productos funcionando. Te ayudamos a acortar la distancia entre un cuello de botella operativo y una solución que tu equipo pueda desplegar en producción.
-            </p>
+              <div className="p-5 rounded-xl bg-white border border-[#E8E8E4] shadow-xs space-y-2">
+                <FileCode2 className="w-5 h-5 text-[#10B981]" />
+                <h4 className="text-sm font-bold text-[#141517]">Propiedad Intelectual Clara</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Las bases del programa estipulan licencias exclusivas o cesión de derechos para que tu empresa desarrolle el piloto con total tranquilidad.
+                </p>
+              </div>
 
-            <div className="pt-4">
-              <Link href="/start">
-                <Button size="lg" className="bg-white hover:bg-[#F4F4EE] text-[#141517] font-semibold px-6 shadow-sm">
-                  Cuéntanos qué problema quieres resolver
-                </Button>
-              </Link>
+              <div className="p-5 rounded-xl bg-white border border-[#E8E8E4] shadow-xs space-y-2">
+                <Database className="w-5 h-5 text-[#10B981]" />
+                <h4 className="text-sm font-bold text-[#141517]">Datasets Sintéticos & Anonimizados</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Estructuramos datos de prueba representativos pero completamente desprovistos de información personal o sensible.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-white border border-[#E8E8E4] shadow-xs space-y-2">
+                <Lock className="w-5 h-5 text-[#10B981]" />
+                <h4 className="text-sm font-bold text-[#141517]">Entornos Sandbox Aislados</h4>
+                <p className="text-xs text-[#52535A] leading-relaxed">
+                  Acceso controlado a APIs simuladas sin conexión a tus bases de datos productivas.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* =========================================================
-            SECCIÓN 06 — PARA QUÉ USAR KAMINO (Selector de Objetivos)
-            No cards homogéneas: Selector interactivo elegante.
-            ========================================================= */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-          <FormatSelector />
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 07 — SOCIAL PROOF & CREDIBILIDAD HONESTA
-            Garantías concretas para el cliente corporativo.
+            SECCIÓN 12 — FAQ ESTRATÉGICO
+            Objeciones directas de CIOs y Directores de Innovación.
             ========================================================= */}
         <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 space-y-4">
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
-                  Garantías para tu Empresa
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                  Eliminamos los riesgos que habitualmente frenan la innovación corporativa.
-                </h2>
-                <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
-                  Sabemos que abrir un reto genera dudas sobre confidencialidad, calidad de código y desgaste de tu equipo interno. Diseñamos cada proceso para darte certeza total y control desde el primer día:
-                </p>
-                <div className="pt-2 text-xs font-mono text-[#71717A]">
-                  <span>Sede en Bogotá, Colombia · Operación híbrida en toda América Latina</span>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
+                Preguntas Frecuentes
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141517] tracking-tight">
+                Respuestas claras a las dudas habituales de líderes empresariales.
+              </h2>
+            </div>
 
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
-                    <Workflow className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Cero Desgaste Operativo</h4>
-                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Nosotros absorbemos toda la logística, admisiones y soporte a builders. Tu equipo solo invierte 2 horas semanales en revisar avances y dar feedback.
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="p-6 rounded-2xl bg-[#FBFBFA] border border-[#E8E8E4] shadow-xs space-y-2">
+                  <h3 className="text-sm font-bold text-[#141517] flex items-center gap-2">
+                    <HelpCircle className="w-4 h-4 text-[#1846A3] shrink-0" />
+                    <span>{faq.q}</span>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#52535A] pl-6 leading-relaxed">
+                    {faq.a}
                   </p>
                 </div>
+              ))}
+            </div>
 
-                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
-                    <Layers className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Código Real, No Maquetas</h4>
-                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Exigimos repositorios de GitHub verificados, APIs integradas y demos en vivo para que no pagues por conceptos abstractos en diapositivas.
-                  </p>
-                </div>
-
-                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
-                    <ShieldCheck className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Blindaje Legal & Propiedad (IP)</h4>
-                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Términos claros desde la postulación: acuerdos de confidencialidad (NDA), cesión de derechos sobre prototipos y datasets protegidos para tu empresa.
-                  </p>
-                </div>
-
-                <div className="p-5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4]">
-                  <div className="w-8 h-8 rounded-lg bg-[#141517] text-white flex items-center justify-center mb-3">
-                    <Users className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#141517]">Evaluación Objetiva con tus Criterios</h4>
-                  <p className="text-xs text-[#52535A] mt-1.5 leading-relaxed">
-                    Tus líderes técnicos califican con rúbricas cuantitativas calibradas al 100%; nada se decide por simpatía, sino por viabilidad técnica y valor comercial.
-                  </p>
-                </div>
-              </div>
+            <div className="text-center pt-4">
+              <Link href="/faq" className="text-xs font-semibold text-[#1846A3] hover:underline">
+                Ver todas las preguntas frecuentes de propiedad intelectual y operación →
+              </Link>
             </div>
           </div>
         </section>
 
         {/* =========================================================
-            SECCIÓN 08 — EL DIFERENCIADOR: DE PROTOTIPO A PILOTO
-            "El Demo Day no es la meta"
-            Visual: IDEA -> MVP -> FINALISTA -> PILOTO
+            SECCIÓN 13 — LEAD MAGNET & CTA FINAL
+            Herramienta interactiva ChallengeAssessment embebida.
             ========================================================= */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-          <ProjectToPilotPipeline />
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 09 — DOS PUERTAS (Separación nítida de audiencias)
-            Para organizaciones vs Para builders.
-            ========================================================= */}
-        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-              {/* Door 1: Organizations */}
-              <div className="p-8 sm:p-10 rounded-2xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial flex flex-col justify-between relative overflow-hidden">
-                <div className="space-y-4">
-                  <span className="px-2.5 py-1 rounded-full bg-white/10 text-white font-mono text-[11px] font-semibold uppercase tracking-wider border border-white/20 inline-block">
-                    Para tu Organización o Empresa
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                    ¿Tienes un problema de negocio que necesitas resolver rápido?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                    Cuéntanos tu cuello de botella. En 48 horas estructuramos las bases del reto y ponemos a decenas de desarrolladores senior a construir soluciones para ti.
-                  </p>
-                  <ul className="space-y-2 pt-2 text-xs text-[#D1D5DB]">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                      <span>Formulación técnica y datasets de prueba estructurados</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                      <span>Operación completa sin desgaste para tu equipo interno</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                      <span>Acompañamiento hasta el piloto con los proyectos ganadores</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-8">
-                  <Link href="/start">
-                    <Button className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                      Diseñar un reto para mi empresa
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Door 2: Builders */}
-              <div className="p-8 sm:p-10 rounded-2xl bg-[#FBFBFA] border border-[#E8E8E4] shadow-editorial flex flex-col justify-between">
-                <div className="space-y-4">
-                  <span className="px-2.5 py-1 rounded-full bg-[#EEF4FF] text-[#1846A3] font-mono text-[11px] font-semibold uppercase tracking-wider border border-[#D3E2FE] inline-block">
-                    Para Builders & Desarrolladores
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                    ¿Quieres construir soluciones para problemas reales?
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#52535A] leading-relaxed">
-                    Encuentra retos técnicos patrocinados por empresas líderes, compite por bolsas de premios, recibe mentoría de alto nivel y construye prototipos que sí se usan.
-                  </p>
-                  <ul className="space-y-2 pt-2 text-xs text-[#52535A]">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
-                      <span>Retos reales con premios y oportunidades de contratación</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
-                      <span>Matchmaking inteligente para armar equipos de frontend, backend e IA</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0" />
-                      <span>Portafolio con código probado para validar tu carrera profesional</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pt-8">
-                  <Link href="/hackathons">
-                    <Button variant="outline" className="w-full sm:w-auto font-medium" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                      Explorar hackathons abiertos
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+        <section id="assessment" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center space-y-8">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EEF4FF] text-[#1846A3] text-xs font-mono font-semibold uppercase tracking-wider border border-[#D3E2FE]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Diagnóstico Técnico Sin Costo</span>
             </div>
-          </div>
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 10 — CTA FINAL EMOCIONAL
-            Cierre memorable y directo.
-            ========================================================= */}
-        <section className="py-24 sm:py-32 bg-[#141517] text-white px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              ¿Qué problema de tu empresa resolverías si tuvieras a 100 expertos programando en él este mes?
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#141517] leading-tight">
+              ¿Qué problema de tu empresa quieres resolver este mes?
             </h2>
-            <p className="text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
-              Agenda una llamada técnica de 30 minutos. Analizamos tu cuello de botella sin costo y te mostramos cómo te ayudamos a tener prototipos de software funcionando antes de que termine el mes.
+            <p className="text-sm sm:text-base text-[#52535A] max-w-2xl mx-auto leading-relaxed">
+              Utiliza el calculador de retos a continuación para obtener un diagnóstico inmediato de tracks, perfiles técnicos y entregables, o envíanos tu caso para una llamada técnica de viabilidad.
             </p>
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link href="/start" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-[#141517] hover:bg-[#F4F4EE] font-semibold px-8 py-3.5 shadow-xs">
-                  Cuéntanos tu reto
-                </Button>
-              </Link>
-              <Link href="/empresas" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#2B2D36] text-white hover:bg-[#22242C] font-medium px-6 py-3.5">
-                  Ver cómo ayudamos a tu empresa
-                </Button>
-              </Link>
-            </div>
+          </div>
+
+          <div className="pt-2">
+            <ChallengeAssessment />
+          </div>
+
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-[#71717A]">
+            <span>¿Prefieres hablar directamente con un director técnico de Kamino?</span>
+            <a
+              href={BRAND.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-[#1846A3] hover:underline flex items-center gap-1"
+            >
+              Agendar llamada de 30 minutos <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </section>
       </main>

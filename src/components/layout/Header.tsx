@@ -24,10 +24,10 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { label: "Hackathons", href: "/hackathons" },
     { label: "Cómo funciona", href: "/#como-funciona" },
     { label: "Para empresas", href: "/empresas" },
-    { label: "Proyectos", href: "/projects" },
+    { label: "Precios", href: "/pricing" },
+    { label: "Builders", href: "/builders" },
   ];
 
   return (
@@ -96,13 +96,13 @@ export function Header() {
             Explorar retos
           </Link>
 
-          {/* Primary CTA: Diseñar un reto */}
+          {/* Primary CTA: Evaluar mi reto */}
           <Link href="/start">
             <Button
               size="sm"
-              className="bg-[#141517] hover:bg-[#252830] text-white transition-all shadow-editorial font-semibold px-3.5"
+              className="bg-[#141517] hover:bg-[#252830] text-white transition-all shadow-editorial font-semibold px-4"
             >
-              Diseñar un reto
+              Evaluar mi reto
             </Button>
           </Link>
 
@@ -134,15 +134,15 @@ export function Header() {
           </div>
           <div className="pt-3 border-t border-[#E8E8E4] flex flex-col gap-2">
             <Link 
-              href="/hackathons" 
+              href="/builders" 
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 text-xs font-medium text-[#52535A] hover:text-[#141517]"
             >
-              ¿Quieres competir? Explorar hackathons →
+              ¿Quieres competir? Comunidad de builders →
             </Link>
             <Link href="/start" onClick={() => setMobileMenuOpen(false)}>
               <Button size="sm" className="w-full bg-[#141517] text-white font-semibold">
-                Diseñar un reto
+                Evaluar mi reto
               </Button>
             </Link>
           </div>

@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { BRAND } from "@/config/brand";
 import { Globe, ArrowUpRight } from "lucide-react";
+import { LinkedinIcon } from "@/components/common/Icons";
 
 export function Footer() {
   return (
@@ -19,7 +20,7 @@ export function Footer() {
               <span className="text-base font-bold text-white tracking-tight">{BRAND.name}</span>
             </div>
             <p className="text-[#9CA3AF] text-xs max-w-sm leading-relaxed">
-              Diseñamos y operamos hackathons y retos de innovación de principio a fin: desde el dolor de negocio hasta pilotos reales con código probado.
+              Plataforma y operador B2B de innovación abierta. Transformamos problemas de negocio en múltiples prototipos funcionales y pilotos productivos en semanas.
             </p>
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1C1E24] border border-[#2B2D36] text-[11px] text-[#9CA3AF]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
@@ -27,50 +28,60 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Platform */}
+          {/* Solutions & Enterprises */}
           <div className="space-y-3">
-            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Plataforma</p>
+            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Para Empresas</p>
             <ul className="space-y-2 text-[#9CA3AF]">
+              <li>
+                <Link href="/empresas" className="hover:text-white transition-colors">
+                  Propuesta de innovación
+                </Link>
+              </li>
+              <li>
+                <Link href="/start" className="hover:text-white transition-colors">
+                  Evaluar un reto
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="hover:text-white transition-colors">
+                  Modelos de servicio
+                </Link>
+              </li>
+              <li>
+                <Link href="/trust" className="hover:text-white transition-colors">
+                  Trust & Gobernanza IP
+                </Link>
+              </li>
+              <li>
+                <Link href="/demo" className="hover:text-white transition-colors flex items-center gap-1">
+                  Entorno demostrativo <ArrowUpRight className="w-3 h-3 text-[#60A5FA]" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Builders & DevRel */}
+          <div className="space-y-3">
+            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Builders & Tech</p>
+            <ul className="space-y-2 text-[#9CA3AF]">
+              <li>
+                <Link href="/builders" className="hover:text-white transition-colors">
+                  Comunidad de builders
+                </Link>
+              </li>
               <li>
                 <Link href="/hackathons" className="hover:text-white transition-colors">
                   Explorar hackathons
                 </Link>
               </li>
               <li>
-                <Link href="/start" className="hover:text-white transition-colors">
-                  Diseñar un reto
+                <Link href="/devrel" className="hover:text-white transition-colors">
+                  DevRel & Adopción de APIs
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-white transition-colors">
-                  Galería de proyectos
-                </Link>
-              </li>
-              <li>
-                <Link href="/demo" className="hover:text-white transition-colors flex items-center gap-1">
-                  Vista demostrativa <ArrowUpRight className="w-3 h-3 text-[#60A5FA]" />
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Solutions */}
-          <div className="space-y-3">
-            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Soluciones</p>
-            <ul className="space-y-2 text-[#9CA3AF]">
-              <li>
-                <Link href="/empresas" className="hover:text-white transition-colors">
-                  Para empresas
-                </Link>
-              </li>
-              <li>
-                <Link href="/#como-funciona" className="hover:text-white transition-colors">
-                  Cómo funciona
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="hover:text-white transition-colors">
-                  Formatos y alcances
+                  Proyectos & Entregables
                 </Link>
               </li>
               <li>
@@ -81,23 +92,34 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources & Contact */}
+          {/* About & Contact */}
           <div className="space-y-3">
-            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Contacto & FAQ</p>
+            <p className="text-white font-mono text-[11px] font-semibold tracking-wider uppercase">Kamino</p>
             <ul className="space-y-2 text-[#9CA3AF]">
+              <li>
+                <Link href="/about" className="hover:text-white transition-colors">
+                  Quiénes somos
+                </Link>
+              </li>
               <li>
                 <Link href="/faq" className="hover:text-white transition-colors">
                   Preguntas frecuentes
                 </Link>
               </li>
               <li>
-                <a href={`mailto:${BRAND.contactEmail}`} className="hover:text-white transition-colors">
-                  {BRAND.contactEmail}
+                <a href={`mailto:${BRAND.salesEmail}`} className="hover:text-white transition-colors">
+                  {BRAND.salesEmail}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${BRAND.salesEmail}`} className="hover:text-white transition-colors">
-                  {BRAND.salesEmail}
+                <a
+                  href={BRAND.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors flex items-center gap-1"
+                >
+                  <LinkedinIcon className="w-3.5 h-3.5" />
+                  <span>LinkedIn</span>
                 </a>
               </li>
               <li>
@@ -119,6 +141,10 @@ export function Footer() {
             </span>
             <span>·</span>
             <span>Estándar WCAG AA</span>
+            <span>·</span>
+            <Link href="/trust" className="hover:underline">
+              Privacidad & Seguridad
+            </Link>
           </div>
         </div>
       </div>

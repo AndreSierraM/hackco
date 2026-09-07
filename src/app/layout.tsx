@@ -30,41 +30,37 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kamino.co"),
-  title: `${BRAND.name} — ${BRAND.claim}`,
+  metadataBase: new URL(BRAND.siteUrl),
+  title: `${BRAND.name} — ${BRAND.tagline}`,
   description: BRAND.description,
   keywords: [
-    "organizar hackathon",
-    "organizar hackathon Colombia",
-    "plataforma de hackathons",
-    "hackathons Colombia",
-    "hackathon empresarial",
-    "hackathon corporativo",
-    "hackathon universitario",
+    "hackathon corporativo Colombia",
     "innovación abierta Colombia",
-    "retos de innovación",
-    "plataforma innovación abierta",
-    "organizar reto de innovación",
-    "hackathons para empresas",
+    "retos de innovación empresas",
+    "challenge de innovación empresarial",
+    "prototipos IA empresas",
     "corporate hackathon LATAM",
-    "Kamino"
+    "soluciones tecnológicas a medida",
+    "validación técnica de software",
+    "Kamino",
   ],
   authors: [{ name: "Kamino Innovation Labs" }],
   creator: "Kamino Innovation Labs",
   openGraph: {
-    title: `${BRAND.name} — ${BRAND.claim}`,
+    title: `${BRAND.name} — ${BRAND.tagline}`,
     description: BRAND.description,
     type: "website",
     locale: "es_CO",
     siteName: BRAND.name,
+    url: BRAND.siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${BRAND.name} — ${BRAND.claim}`,
+    title: `${BRAND.name} — ${BRAND.tagline}`,
     description: BRAND.description,
   },
   alternates: {
-    canonical: "https://hackco.vercel.app",
+    canonical: BRAND.siteUrl,
   },
 };
 
@@ -73,12 +69,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://hackco.vercel.app/#organization",
+      "@id": `${BRAND.siteUrl}/#organization`,
       name: BRAND.name,
       legalName: BRAND.legalName,
-      url: "https://hackco.vercel.app",
+      url: BRAND.siteUrl,
       description: BRAND.description,
-      email: BRAND.contactEmail,
+      email: BRAND.salesEmail,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bogotá",
@@ -87,12 +83,12 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://hackco.vercel.app/#website",
-      url: "https://hackco.vercel.app",
+      "@id": `${BRAND.siteUrl}/#website`,
+      url: BRAND.siteUrl,
       name: BRAND.name,
       description: BRAND.description,
       publisher: {
-        "@id": "https://hackco.vercel.app/#organization",
+        "@id": `${BRAND.siteUrl}/#organization`,
       },
       inLanguage: "es-CO",
     },

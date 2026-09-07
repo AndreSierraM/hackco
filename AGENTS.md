@@ -122,4 +122,16 @@ vercel --prod --yes
 3. [ ] ¿Se ejecutó `pnpm run lint` sin warnings críticos?
 4. [ ] ¿Se probaron las rutas afectadas en viewport móvil y desktop?
 5. [ ] ¿Se mantuvo intacto el bloque `<!-- BEGIN:nextjs-agent-rules -->`?
+- Los archivos nuevos de pruebas son optativos. No crees archivos de pruebas unitarias, de integración, end-to-end o spec, ni nuevos helpers/fixtures exclusivos para pruebas, salvo que el usuario solicite explícitamente su creación o la apruebe primero.
+- Una solicitud para implementar, corregir, probar o verificar algo no autoriza por sí sola la creación de archivos nuevos de pruebas. Asume que no están autorizados por defecto; pregunta únicamente cuando crearlos aporte un beneficio concreto, no como paso rutinario.
+- Prefiere ejecutar las pruebas existentes y hacer verificaciones directas en el navegador o en runtime sin agregar archivos de pruebas.
+- Cuando los cambios de pruebas estén dentro del alcance, verifica el comportamiento observable en lugar de afirmar cadenas del código fuente, formas de implementación o simplemente que existan pruebas.
 
+## Escritura para agentes
+
+Estas reglas pertenecen a AGENTS.md y son la fuente de verdad. Claude y cualquier otro agente deben obedecerlas; CLAUDE.md no las reemplaza.
+
+- Sigue los cuatro principios de Zinsser: simplicidad, brevedad, claridad y humanidad.
+- Usa inglés técnico simplificado cuando el contexto sea código, arquitectura o documentación para agentes.
+- Antes de entregar texto, revisa y evita los patrones registrados en docs/forbidden-writing-patterns.md si ese archivo existe en el repositorio.
+- Si actúas como agente escritor, mantén el contexto utilizado por debajo del 50% de la ventana siempre que sea posible. Divide el trabajo o usa subagentes cuando el volumen pueda degradar la calidad.

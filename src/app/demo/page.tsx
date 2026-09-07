@@ -175,19 +175,34 @@ export default function SalesDemoPage() {
       <Header />
 
       <main className="flex-1 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+        {/* Permanent Demo Notice */}
+        <div className="mb-6 p-3.5 rounded-xl bg-[#EEF4FF] border border-[#D3E2FE] text-xs text-[#0E357E] flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded bg-[#1846A3] text-white text-[10px] font-mono font-bold uppercase tracking-wider">
+              Entorno Demostrativo
+            </span>
+            <span className="text-[11px] leading-tight">
+              Los datos, métricas y empresas mostrados a continuación son una simulación ilustrativa para visualizar el funcionamiento de la plataforma.
+            </span>
+          </div>
+          <Link href="/start" className="font-bold underline text-[#1846A3] hover:text-[#0E357E] shrink-0 text-[11px]">
+            Evaluar un reto real →
+          </Link>
+        </div>
+
         {/* Top Controls */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-slate-200">
           <div>
             <div className="flex items-center gap-2">
               <Badge variant="primary" size="sm">
-                Sales Walkthrough Interactivo
+                Simulación de Challenge Paso a Paso
               </Badge>
               <span className="text-xs text-slate-500 font-mono">
                 Paso {currentStep + 1} de {steps.length}
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-950 mt-1">
-              Recorrido Comercial del Producto
+              Recorrido Demostrativo del Proceso
             </h1>
           </div>
           <div className="flex items-center gap-2">

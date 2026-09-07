@@ -36,12 +36,21 @@ export default function ProjectsGalleryPage() {
       <Header />
 
       <main className="flex-1 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-left">
+        <div className="mb-6 p-3.5 rounded-xl bg-[#EEF4FF] border border-[#D3E2FE] text-xs text-[#0E357E] flex items-center justify-between gap-3">
+          <span className="text-[11px] leading-tight">
+            <strong>Vista Demostrativa de Entregables:</strong> Esta galería presenta proyectos y arquitecturas de retos técnicos simulados para ilustrar la profundidad de entregables de software.
+          </span>
+          <Link href="/start" className="font-bold underline text-[#1846A3] shrink-0 text-[11px]">
+            Estructurar un reto →
+          </Link>
+        </div>
+
         <div className="space-y-3 mb-8">
           <Badge variant="primary" size="sm">
-            Showcase de Resultados
+            Showcase de Entregables
           </Badge>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
-            Proyectos Construidos en Hackathons
+            Proyectos y Prototipos Técnicos
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
             Explora las soluciones, prototipos y arquitecturas técnicas construidas por equipos multidisciplinarios en nuestros retos.
