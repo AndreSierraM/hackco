@@ -201,44 +201,44 @@ export function ChallengeAssessment() {
   };
 
   return (
-    <div className="w-full bg-white rounded-3xl border border-[#DCDCD5] shadow-editorial-elevated overflow-hidden text-left">
+    <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-[#DCDCD5] shadow-editorial-elevated overflow-hidden text-left">
       {/* Top Header */}
-      <div className="p-6 sm:p-8 bg-[#141517] text-white border-b border-[#252830]">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#252830] text-[#93C5FD] text-xs font-mono font-semibold uppercase tracking-wider mb-3 border border-[#3B82F6]/30">
+      <div className="p-5 sm:p-7 bg-[#141517] text-white border-b border-[#252830]">
+        <div className="max-w-3xl space-y-1.5">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#252830] text-[#93C5FD] text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider border border-[#3B82F6]/30">
             <Sparkles className="w-3.5 h-3.5 text-[#60A5FA]" />
-            <span>Challenge Assessment · Diagnóstico Técnico B2B</span>
+            <span>Challenge Assessment · Diagnóstico Técnico</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Escribe un problema de tu empresa. Observa la arquitectura del reto en segundos.
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight">
+            Escribe un problema de tu empresa. Observa la arquitectura en segundos.
           </h3>
-          <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
-            No necesitas redactar un documento técnico de 50 páginas. Describe el cuello de botella en tus propias palabras y estructuramos tracks, perfiles, entregables y cronograma.
+          <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
+            Describe el cuello de botella en tus propias palabras o selecciona un reto típico para generar la propuesta técnica:
           </p>
         </div>
       </div>
 
-      <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="p-5 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         {/* Left Column: Problem Input & Presets */}
-        <div className="lg:col-span-5 space-y-4">
+        <div className="lg:col-span-5 space-y-3.5">
           <div>
             <label htmlFor="assessment-problem-input" className="block text-[11px] font-mono font-bold text-[#141517] uppercase tracking-wider mb-1.5">
-              1. Describe el dolor operativo o reto a resolver
+              1. Describe el dolor o proceso a optimizar
             </label>
             <textarea
               id="assessment-problem-input"
-              rows={5}
+              rows={4}
               value={problemText}
               onChange={(e) => setProblemText(e.target.value)}
-              placeholder="Ej. Nuestro equipo tarda 4 días en procesar solicitudes de crédito porque la documentación está dispersa en PDFs y la validación de garantías es manual..."
-              className="w-full rounded-2xl border border-[#DCDCD5] bg-[#FBFBFA] p-3.5 text-xs sm:text-sm text-[#141517] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#141517] focus:bg-white transition-all resize-none shadow-xs font-sans leading-relaxed"
+              placeholder="Ej. Tumbamos 4 días en conciliar facturas contra órdenes de compra por ser un proceso manual..."
+              className="w-full rounded-xl sm:rounded-2xl border border-[#DCDCD5] bg-[#FBFBFA] p-3 text-xs sm:text-sm text-[#141517] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#141517] focus:bg-white transition-all resize-none shadow-xs font-sans leading-relaxed"
             />
           </div>
 
           {/* Quick Presets */}
-          <div className="space-y-2">
-            <span className="text-[11px] font-mono text-[#71717A] uppercase tracking-wider block">
-              O elige un reto típico de la industria:
+          <div className="space-y-1.5">
+            <span className="text-[10px] font-mono text-[#71717A] uppercase tracking-wider block">
+              O selecciona un reto predefinido:
             </span>
             <div className="flex flex-col gap-1.5">
               {PRESET_PROBLEMS.map((preset) => {
@@ -248,14 +248,14 @@ export function ChallengeAssessment() {
                     key={preset.label}
                     type="button"
                     onClick={() => handleSelectPreset(preset)}
-                    className={`p-2.5 rounded-xl text-left text-xs transition-all border cursor-pointer flex items-center justify-between ${
+                    className={`min-h-[44px] p-2.5 rounded-xl text-left text-xs transition-all duration-150 border cursor-pointer flex items-center justify-between gap-2 ${
                       isSelected
-                        ? "bg-[#EEF4FF] border-[#3B82F6] text-[#0E357E] font-semibold"
+                        ? "bg-[#EEF4FF] border-[#3B82F6] text-[#0E357E] font-semibold ring-1 ring-[#3B82F6]/20"
                         : "bg-[#F9F9F8] border-[#E8E8E4] text-[#52535A] hover:bg-white hover:text-[#141517]"
                     }`}
                   >
-                    <span>{preset.label}</span>
-                    <span className="text-[10px] font-mono text-[#71717A] shrink-0 ml-2">{preset.tag}</span>
+                    <span className="truncate">{preset.label}</span>
+                    <span className="text-[9px] font-mono text-[#71717A] shrink-0">{preset.tag}</span>
                   </button>
                 );
               })}
@@ -265,7 +265,7 @@ export function ChallengeAssessment() {
           <Button
             onClick={handleCustomAnalyze}
             disabled={isPending || !problemText.trim()}
-            className="w-full bg-[#141517] text-white hover:bg-[#252830] font-semibold py-3 text-xs sm:text-sm shadow-editorial"
+            className="w-full min-h-[44px] bg-[#141517] text-white hover:bg-[#252830] active:scale-[0.98] font-bold py-3 text-xs sm:text-sm shadow-editorial transition-all"
             rightIcon={<ArrowRight className="w-4 h-4" />}
           >
             {isPending ? "Calculando diagnóstico..." : "Estructurar reto con esta información"}

@@ -14,15 +14,6 @@
   }
 }
 
-.font-serif-italic {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-}
-
-.font-serif-title {
-  font-family: var(--font-serif), Georgia, serif;
-}
-
 .font-mono-code {
   font-family: var(--font-mono), monospace;
 }

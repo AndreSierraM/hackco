@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChallengeAssessment } from "@/components/common/ChallengeAssessment";
 import { HeroProductWindow } from "@/components/landing/HeroProductWindow";
+import { FaqAccordion } from "@/components/landing/FaqAccordion";
 import { Button } from "@/components/ui/Button";
 import { BRAND } from "@/config/brand";
 import {
@@ -12,180 +13,183 @@ import {
   XCircle,
   ShieldCheck,
   FileCode2,
-  HelpCircle,
   ArrowUpRight,
   Lock,
+  Zap,
+  GitBranch,
 } from "lucide-react";
 
 export default function HomePage() {
   const caseStudies = [
     {
-      sector: "Finanzas & Retail Masivo",
-      title: "Conciliación Automática de 40.000 Facturas DIAN contra ERP",
-      problem:
-        "El equipo contable tardaba 4.5 días hábiles cada fin de mes en cruzar facturas electrónicas en XML/PDF contra órdenes de compra en SAP, acumulando $180M COP en multas por retrasos y pagos dobles.",
-      solution:
-        "Challenge de 4 semanas con 8 equipos. El equipo ganador construyó un pipeline en Go con OCR local y Llama 3 8B que extrae cláusulas, retenciones y montos con 99.4% de precisión en 68ms por factura.",
-      impact: "Reducción del tiempo de ciclo de 4.5 días a 18 minutos de proceso por lotes.",
-      status: "Fase de Staging & Piloto On-Premise",
-      codeMetrics: "68ms latencia · $0.02 USD x 1k docs · Docker 38MB",
+      sector: "Finanzas & Retail",
+      title: "Conciliación de 40.000 Facturas DIAN vs ERP",
+      problem: "4 auditores dedicaban 6 días al mes a conciliar manualmente órdenes de compra y facturas XML con alta tasa de error.",
+      solution: "10 equipos compitieron con modelos OCR y reglas fiscales. El ganador redujo el ciclo a minutos con arquitectura on-premise.",
+      impact: "-75% tiempo de cierre mensual",
+      metric: "68ms latencia · $0.02 USD x 1k docs · Docker 38MB",
+      badge: "En Staging Corporativo",
     },
     {
-      sector: "Fintech & Crédito Digital",
-      title: "Detección Forense de Fraude en Onboarding y Cédulas Adulteradas",
-      problem:
-        "Una entidad de crédito digital sufría un 3.8% de pérdidas por suplantación de identidad en microcréditos; los filtros biométricos comerciales no detectaban cédulas manipuladas digitalmente.",
-      solution:
-        "Challenge técnico con 10 equipos de visión artificial e IA. Los finalistas desarrollaron modelos de detección de artefactos en imágenes y coherencia tipográfica que analizan el documento antes de emitir crédito.",
-      impact: "Disminución del 62% en cuentas fraudulentas en pruebas de estrés con 8.000 solicitudes simuladas.",
-      status: "Piloto en Servidores de Pruebas",
-      codeMetrics: "210ms respuesta · 98.6% recall en fraudes · API REST",
+      sector: "Fintech & Crédito",
+      title: "Detección Forense de Cédulas Adulteradas",
+      problem: "Pérdidas de 3.8% por suplantación en microcréditos digitales no detectadas por biometrías estándar.",
+      solution: "Modelos de visión artificial que analizan artefactos de compresión y micro-tipografía en documentos de identidad.",
+      impact: "-62% cuentas fraudulentas",
+      metric: "210ms inferencia · 98.6% recall · API REST",
+      badge: "Piloto en Producción",
     },
     {
-      sector: "Aseguradoras & Salud Privada",
-      title: "Triaje y Auditoría Automatizada de Reclamaciones Médicas",
-      problem:
-        "40 auditores médicos dedicaban el 80% de su tiempo a verificar si facturas y diagnósticos ambulatorios cumplían con las exclusiones de 14 tipos de pólizas de salud distintas.",
-      solution:
-        "Challenge enfocado en arquitecturas RAG con memoria sobre manuales de suscripción médica. El prototipo ganador clasifica el 65% de casos sencillos de forma autónoma y deriva con notas explicativas los casos complejos.",
-      impact: "Liberación de 1.200 horas de auditoría médica al mes para casos de alta complejidad.",
-      status: "Integración con Sistema Core",
-      codeMetrics: "350ms inferencia · 97.9% consistencia en reglas · Guardrails éticos",
+      sector: "Seguros & Salud",
+      title: "Triaje Automatizado de Reclamaciones Médicas",
+      problem: "Auditores saturados revisando diagnósticos y exclusiones en 14 pólizas de salud distintas.",
+      solution: "Pipeline RAG con guardrails éticos que clasifica reclamos ambulatorios y deriva anomalías con notas explicativas.",
+      impact: "1.200h liberadas al mes",
+      metric: "350ms respuesta · 97.9% consistencia · Sin fuga de datos",
+      badge: "Integración Core",
     },
   ];
 
   const comparisonRows = [
     {
-      factor: "Tiempo hasta tener software probado",
-      consultora: "5 a 8 meses de reuniones y diagnósticos",
-      interno: "6 a 12 meses de espera en cola de TI",
-      kamino: "4 semanas de sprint intensivo",
-      winner: "kamino",
+      factor: "Tiempo a software probado",
+      consultora: "5 a 8 meses",
+      interno: "6 a 12 meses en backlog",
+      kamino: "4 semanas de sprint",
     },
     {
-      factor: "Enfoques y arquitecturas probadas",
-      consultora: "1 único enfoque cerrado propuesto por la firma",
-      interno: "1 única hipótesis interna sin tiempo de iterar",
-      kamino: "Entre 6 y 10 equipos explorando tecnologías distintas",
-      winner: "kamino",
+      factor: "Arquitecturas evaluadas",
+      consultora: "1 propuesta cerrada",
+      interno: "1 única hipótesis interna",
+      kamino: "3 a 5 arquitecturas en paralelo",
     },
     {
-      factor: "Entregable al finalizar el proceso",
-      consultora: "Presentación en PowerPoint de 80 diapositivas",
-      interno: "Código en desarrollo parcial sin probar con usuarios",
-      kamino: "Repositorios en GitHub + Contenedores Docker + Demos en vivo",
-      winner: "kamino",
+      factor: "Entregables tangibles",
+      consultora: "Diapositivas y reportes PDF",
+      interno: "Código parcial sin validar",
+      kamino: "Repositorios Git + Docker + Demo en vivo",
     },
     {
-      factor: "Riesgo de inversión económica",
-      consultora: "Alto: pagas honorarios antes de ver una pantalla",
-      interno: "Alto: desvías recursos críticos del core del negocio",
-      kamino: "Bajo: comparas 3 finalistas con métricas antes de invertir en producción",
-      winner: "kamino",
+      factor: "Riesgo de inversión",
+      consultora: "Alto: pagas antes de ver código",
+      interno: "Alto: desvías recursos del core",
+      kamino: "Bajo: pagas sobre prototipos verificados",
     },
     {
-      factor: "Carga de trabajo para tu equipo interno",
-      consultora: "Decenas de entrevistas y comités semanales",
-      interno: "Desgaste total de tus ingenieros líderes",
-      kamino: "Solo 2 horas semanales para validar avances y dar feedback",
-      winner: "kamino",
+      factor: "Dedicación de tu equipo",
+      consultora: "Comités semanales desgastantes",
+      interno: "Sobrecarga de ingenieros senior",
+      kamino: "Solo 2h semanales de feedback",
     },
   ];
 
-  const faqs = [
+  const phases = [
     {
-      q: "¿Por qué no contratar una consultora tradicional?",
-      a: "Una consultora tradicional asigna un único equipo cerrado y cobra meses por diagnósticos teóricos antes de programar una sola línea. Con Kamino obtienes entre 6 y 10 equipos de ingeniería senior compitiendo con arquitecturas distintas, entregándote prototipos de software ejecutables en 4 semanas para que decidas con base en benchmarks reales.",
+      num: "01",
+      week: "Semana 1",
+      title: "Discovery Técnico",
+      desc: "Convertimos tu cuello de botella en un pliego técnico con restricciones, datasets sintéticos y rúbrica ponderada.",
+      time: "2h de tu equipo",
     },
     {
-      q: "¿Por qué no construirlo internamente con nuestros desarrolladores?",
-      a: "Tu equipo de tecnología ya está al 100% manteniendo la operación crítica del negocio. Destinar recursos internos a explorar nuevas tecnologías suele tardar de 6 a 12 meses por prioridades de backlog. Kamino actúa como tu brazo de exploración acelerada: absorbe toda la carga y te entrega soluciones probadas sin distraer a tus ingenieros.",
+      num: "02",
+      week: "Semana 2",
+      title: "Filtro de Builders",
+      desc: "Convocamos ingenieros de IA, backend y producto. Validamos habilidades en GitHub antes de admitirlos.",
+      time: "0h (100% Kamino)",
     },
     {
-      q: "¿Quién es dueño del código fuente y de la propiedad intelectual?",
-      a: "La propiedad intelectual y las licencias se definen contractualmente en las bases del reto antes de iniciar. En los programas corporativos, los participantes otorgan a tu empresa la licencia exclusiva para desarrollar el piloto o la opción prioritaria de adquisición comercial.",
+      num: "03",
+      week: "Semanas 3 a 4",
+      title: "Sprint Supervisado",
+      desc: "Los equipos construyen repositorios ejecutables con commits diarios y mentoría de industria continua.",
+      time: "1h feedback semanal",
     },
     {
-      q: "¿Qué datos tenemos que compartir con los participantes?",
-      a: "Ninguna información sensible o productiva sale de tus servidores. Trabajamos con datasets sintéticos o anonimizados y entornos sandbox aislados, respaldados por acuerdos de confidencialidad (NDA) vinculantes para todos los participantes.",
-    },
-    {
-      q: "¿Cuánto tiempo exige de nuestro equipo de tecnología?",
-      a: "Nosotros absorbemos toda la carga metodológica, logística y técnica. Tu equipo únicamente participa en la sesión de discovery inicial (2 horas), 1 hora semanal de feedback técnico a finalistas y la deliberación en el Demo Day.",
+      num: "04",
+      week: "Semana 5+",
+      title: "Demo Day & Piloto",
+      desc: "Evaluación a ciegas con Jury OS y acompañamiento técnico durante 60 a 90 días para el pase a staging.",
+      time: "Deliberación + Piloto",
     },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBFBFA] selection:bg-[#E2ECFE] selection:text-[#0E357E]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFA]">
       <Header />
 
       <main className="flex-1">
         {/* =========================================================
-            HERO B2B DIRECTO & SIN CLICHÉS
-            Golpe de realidad: Backlog lleno vs Diapositivas vs Software
+            HERO B2B — CONCISO, ALTO IMPACTO, 2 FUENTES
             ========================================================= */}
-        <section className="relative pt-12 sm:pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="max-w-6xl mx-auto text-center space-y-7">
-            {/* Context Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#DCDCD5] text-[#141517] text-xs font-mono font-semibold tracking-wider uppercase shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#1846A3] animate-pulse" />
-              <span>INNOVACIÓN APLICADA · BOGOTÁ · MEDELLÍN · LATAM</span>
+        <section className="relative pt-10 sm:pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="max-w-5xl mx-auto text-center space-y-6">
+            {/* Micro Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#DCDCD5] text-[#141517] text-[11px] font-mono font-semibold tracking-wider uppercase shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1846A3] animate-pulse" />
+              <span>Innovación Abierta B2B · Bogotá & LATAM</span>
             </div>
 
-            {/* Dominant Visceral Headline */}
-            <h1 className="text-[38px] sm:text-5xl lg:text-[68px] font-extrabold tracking-[-0.035em] text-[#141517] leading-[1.06] max-w-5xl mx-auto">
-              Tus ingenieros tienen el backlog lleno.{" "}
-              <span className="text-[#52535A] font-normal block sm:inline">
-                Las consultoras te cobran meses por diapositivas.
-              </span>{" "}
-              <span className="font-serif-italic font-normal text-[#1846A3] tracking-tight block mt-1">
-                Kamino te entrega 5 prototipos funcionando en 4 semanas.
+            {/* Punchy Headline (2 fonts only: Plus Jakarta Sans bold) */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-[#141517] leading-[1.1] max-w-4xl mx-auto">
+              Tu equipo no da abasto con el backlog.{" "}
+              <span className="text-[#1846A3] block mt-1 sm:mt-2">
+                Te entregamos 5 prototipos funcionando en 4 semanas.
               </span>
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-base sm:text-lg text-[#52535A] max-w-3xl mx-auto leading-relaxed font-normal">
-              Estructuramos tu reto operativo, convocamos a los mejores ingenieros de IA y desarrolladores de la región para que compitan construyendo soluciones, y acompañamos la mejor arquitectura hasta el piloto en tus servidores.
+            {/* Subtitle - 1 concise sentence */}
+            <p className="text-sm sm:text-base text-[#52535A] max-w-2xl mx-auto leading-relaxed">
+              Estructuramos retos técnicos reales, convocamos a los mejores ingenieros de IA y software para competir construyendo soluciones y acompañamos la arquitectura ganadora hasta el piloto en tus servidores.
             </p>
 
-            {/* Action CTAs */}
-            <div className="pt-1 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            {/* CTAs with responsive touch targets */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#assessment" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-[#141517] hover:bg-[#252830] text-white shadow-editorial font-semibold px-8 text-sm sm:text-base py-3.5 cursor-pointer"
+                  className="w-full sm:w-auto min-h-[48px] bg-[#141517] hover:bg-[#252830] active:scale-[0.98] text-white shadow-editorial font-bold px-7 text-sm sm:text-base cursor-pointer transition-all"
                   rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
                   Evaluar un reto para mi empresa
                 </Button>
               </a>
-              <a href="#terminal-benchmarks" className="w-full sm:w-auto">
+              <a href="#benchmarks" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-[#DCDCD5] text-[#141517] hover:bg-[#F4F4EE] font-medium px-6 text-sm sm:text-base py-3.5 cursor-pointer"
+                  className="w-full sm:w-auto min-h-[48px] border-[#DCDCD5] text-[#141517] hover:bg-[#F4F4EE] active:scale-[0.98] font-semibold px-6 text-sm sm:text-base cursor-pointer transition-all"
                 >
-                  Ver comparativa de código real
+                  Ver comparativa de código
                 </Button>
               </a>
             </div>
 
-            <p className="text-xs text-[#71717A] font-mono">
-              Sin compromiso · Primer diagnóstico técnico en 48 horas · Operación en Colombia y LATAM
-            </p>
+            {/* Value Highlights */}
+            <div className="pt-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-mono text-[#71717A]">
+              <span className="flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5 text-[#1846A3]" /> 4 semanas de ejecución
+              </span>
+              <span className="flex items-center gap-1.5">
+                <GitBranch className="w-3.5 h-3.5 text-[#10B981]" /> Repositorios Git auditados
+              </span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#1846A3]" /> Código 100% de tu empresa
+              </span>
+            </div>
 
-            {/* IMMERSIVE LIVE ARTIFACT TERMINAL */}
-            <div id="terminal-benchmarks" className="pt-6 max-w-5xl mx-auto">
+            {/* TERMINAL & SPECIMEN WINDOW */}
+            <div id="benchmarks" className="pt-6">
               <HeroProductWindow />
             </div>
 
-            {/* Builder route anchor */}
+            {/* Builders secondary link */}
             <div className="pt-2">
               <Link
                 href="/builders"
                 className="inline-flex items-center gap-1.5 text-xs text-[#71717A] hover:text-[#1846A3] transition-colors"
               >
-                <span>¿Quieres competir como programador o diseñador?</span>
+                <span>¿Eres programador o diseñador?</span>
                 <span className="font-semibold underline underline-offset-4 text-[#141517] hover:text-[#1846A3]">
                   Comunidad de builders →
                 </span>
@@ -195,55 +199,52 @@ export default function HomePage() {
         </section>
 
         {/* =========================================================
-            SECCIÓN 02 — TABLA COMPARATIVA DE DECISIÓN ECONÓMICA (CTO)
-            Sin retórica: números, tiempos, riesgos y entregables.
+            SECCIÓN 02 — TABLA DE DECISIÓN DEL CTO (RESPONSIVE)
             ========================================================= */}
-        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
-          <div className="max-w-6xl mx-auto space-y-10">
-            <div className="max-w-3xl">
+        <section className="py-14 sm:py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="max-w-2xl">
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
-                La Ecuación de Decisión de un CTO
+                La Ecuación de Decisión
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                Comparativa de Métodos: ¿Por qué un challenge técnico supera al modelo tradicional?
+                ¿Por qué un challenge técnico supera al modelo tradicional?
               </h2>
-              <p className="text-xs sm:text-sm text-[#52535A] mt-2 leading-relaxed">
-                Cuando necesitas validar si una nueva tecnología o automatización resuelve un dolor de negocio real, comprometer presupuestos a ciegas es el mayor riesgo:
+              <p className="text-xs sm:text-sm text-[#52535A] mt-1.5">
+                Comparativa directa de tiempos, entregables y riesgos al validar nuevas soluciones:
               </p>
             </div>
 
-            {/* Responsive Comparison Table */}
-            <div className="overflow-x-auto rounded-2xl border border-[#E8E8E4] shadow-xs">
+            {/* Desktop Table View (>= 768px) */}
+            <div className="hidden md:block overflow-hidden rounded-2xl border border-[#E8E8E4] shadow-xs">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
                   <tr className="bg-[#141517] text-white font-mono text-[11px]">
-                    <th className="p-4 sm:p-5 font-bold uppercase tracking-wider w-1/4">Dimensión de Evaluación</th>
-                    <th className="p-4 sm:p-5 font-medium text-[#9CA3AF] w-1/4">Consultoría Tradicional</th>
-                    <th className="p-4 sm:p-5 font-medium text-[#9CA3AF] w-1/4">Esperar a TI Interno</th>
-                    <th className="p-4 sm:p-5 font-bold text-[#60A5FA] bg-[#1E222B] w-1/4">Kamino Challenge</th>
+                    <th className="p-4 font-bold uppercase tracking-wider w-1/4">Dimensión</th>
+                    <th className="p-4 font-medium text-[#9CA3AF] w-1/4">Consultoría Tradicional</th>
+                    <th className="p-4 font-medium text-[#9CA3AF] w-1/4">Esperar a TI Interno</th>
+                    <th className="p-4 font-bold text-[#60A5FA] bg-[#1E222B] w-1/4">Kamino Challenge</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#E8E8E4] text-[#52535A]">
                   {comparisonRows.map((row, idx) => (
                     <tr key={idx} className="hover:bg-[#F9F9F8] transition-colors">
-                      <td className="p-4 sm:p-5 font-bold text-[#141517] bg-[#FBFBFA]">
-                        {row.factor}
-                      </td>
-                      <td className="p-4 sm:p-5 text-red-700 bg-red-50/30">
-                        <div className="flex items-start gap-1.5">
-                          <XCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                      <td className="p-4 font-bold text-[#141517] bg-[#FBFBFA]">{row.factor}</td>
+                      <td className="p-4 text-red-700 bg-red-50/20">
+                        <div className="flex items-center gap-1.5">
+                          <XCircle className="w-3.5 h-3.5 text-red-500 shrink-0" />
                           <span>{row.consultora}</span>
                         </div>
                       </td>
-                      <td className="p-4 sm:p-5 text-amber-800 bg-amber-50/30">
-                        <div className="flex items-start gap-1.5">
-                          <XCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                      <td className="p-4 text-amber-800 bg-amber-50/20">
+                        <div className="flex items-center gap-1.5">
+                          <XCircle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                           <span>{row.interno}</span>
                         </div>
                       </td>
-                      <td className="p-4 sm:p-5 font-semibold text-[#0E357E] bg-[#EEF4FF]/50">
-                        <div className="flex items-start gap-1.5">
-                          <CheckCircle2 className="w-4 h-4 text-[#1846A3] shrink-0 mt-0.5" />
+                      <td className="p-4 font-bold text-[#0E357E] bg-[#EEF4FF]/40">
+                        <div className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1846A3] shrink-0" />
                           <span>{row.kamino}</span>
                         </div>
                       </td>
@@ -253,39 +254,58 @@ export default function HomePage() {
               </table>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4] text-xs text-[#52535A] flex items-center justify-between">
+            {/* Mobile Card-Based View (< 768px) */}
+            <div className="md:hidden space-y-3">
+              {comparisonRows.map((row, idx) => (
+                <div key={idx} className="p-4 rounded-xl bg-[#FBFBFA] border border-[#E8E8E4] space-y-2.5 text-xs">
+                  <span className="font-bold text-[#141517] text-xs block">{row.factor}</span>
+                  <div className="space-y-1.5 font-mono text-[11px]">
+                    <div className="flex items-center justify-between p-2 rounded bg-white border border-[#E8E8E4]">
+                      <span className="text-[#71717A]">Consultora:</span>
+                      <span className="text-red-700 font-semibold">{row.consultora}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2 rounded bg-white border border-[#E8E8E4]">
+                      <span className="text-[#71717A]">TI Interno:</span>
+                      <span className="text-amber-800 font-semibold">{row.interno}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2 rounded bg-[#EEF4FF] border border-[#3B82F6]/30 text-[#0E357E] font-bold">
+                      <span>Kamino:</span>
+                      <span>{row.kamino}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-[#F9F9F8] border border-[#E8E8E4] text-xs text-[#52535A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
               <span>
-                <strong>Conclusión:</strong> Kamino te permite reducir el ciclo de exploración de 6 meses a 4 semanas, comparando arquitecturas reales antes de firmar cualquier contrato de producción.
+                <strong>Resultado:</strong> Reduces el ciclo de validación de 6 meses a 4 semanas comparando código real.
               </span>
-              <a href="#assessment" className="text-xs font-bold text-[#1846A3] hover:underline shrink-0 ml-4">
-                Evaluar viabilidad de mi reto →
+              <a href="#assessment" className="font-bold text-[#1846A3] hover:underline shrink-0">
+                Evaluar viabilidad →
               </a>
             </div>
           </div>
         </section>
 
         {/* =========================================================
-            SECCIÓN 03 — CASOS DE ESTUDIO TÉCNICOS DETALLADOS
-            Datos concretos, problemas reales, métricas de código.
+            SECCIÓN 03 — CASOS DE ESTUDIO TÉCNICOS (CONCISOS)
             ========================================================= */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
-          <div className="max-w-3xl mb-12">
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-left">
+          <div className="max-w-2xl mb-8">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
               Casos Reales de Estudio
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
-              Así se traduce un dolor de negocio en software funcionando.
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
+              De problemas de negocio a software funcionando.
             </h2>
-            <p className="text-sm sm:text-base text-[#52535A] mt-2 leading-relaxed">
-              Problemas con impacto en pérdidas económicas o cuellos de botella de personal, estructurados bajo nuestra metodología técnica:
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {caseStudies.map((cs, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs flex flex-col justify-between hover:border-[#141517] transition-all space-y-5"
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8E8E4] shadow-xs flex flex-col justify-between hover:border-[#141517] hover:-translate-y-1 hover:shadow-md transition-all duration-200 space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -293,32 +313,32 @@ export default function HomePage() {
                       {cs.sector}
                     </span>
                     <span className="text-[10px] font-mono text-[#059669] font-bold">
-                      {cs.status}
+                      {cs.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-[#141517] leading-snug">
+                  <h3 className="text-sm sm:text-base font-bold text-[#141517] leading-snug">
                     {cs.title}
                   </h3>
 
-                  <div className="p-3 rounded-xl bg-[#FFF5F5] border border-red-100 text-xs text-red-900 space-y-1">
-                    <span className="font-bold text-[10px] font-mono uppercase text-red-700 block">El Dolor Inicial:</span>
-                    <p className="leading-relaxed text-[11px]">{cs.problem}</p>
+                  <div className="p-2.5 rounded-xl bg-[#FFF5F5] border border-red-100 text-xs text-red-900 space-y-0.5">
+                    <span className="font-bold text-[10px] font-mono uppercase text-red-700 block">Dolor:</span>
+                    <p className="text-[11px] leading-relaxed">{cs.problem}</p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-[#F0FDF4] border border-emerald-100 text-xs text-emerald-900 space-y-1">
-                    <span className="font-bold text-[10px] font-mono uppercase text-emerald-700 block">Qué construyeron los builders:</span>
-                    <p className="leading-relaxed text-[11px]">{cs.solution}</p>
+                  <div className="p-2.5 rounded-xl bg-[#F0FDF4] border border-emerald-100 text-xs text-emerald-900 space-y-0.5">
+                    <span className="font-bold text-[10px] font-mono uppercase text-emerald-700 block">Solución:</span>
+                    <p className="text-[11px] leading-relaxed">{cs.solution}</p>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-[#E8E8E4] space-y-2">
-                  <div className="text-xs">
-                    <span className="text-[10px] font-mono text-[#71717A] uppercase block">Impacto de Negocio:</span>
-                    <p className="font-bold text-[#141517] text-xs mt-0.5">{cs.impact}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-[#71717A] uppercase">Impacto:</span>
+                    <span className="font-extrabold text-[#141517] text-xs font-mono">{cs.impact}</span>
                   </div>
-                  <div className="p-2 rounded bg-[#F9F9F8] border border-[#E8E8E4] font-mono text-[10px] text-[#52535A]">
-                    {cs.codeMetrics}
+                  <div className="p-2 rounded bg-[#F9F9F8] border border-[#E8E8E4] font-mono text-[10px] text-[#52535A] truncate">
+                    {cs.metric}
                   </div>
                 </div>
               </div>
@@ -327,150 +347,40 @@ export default function HomePage() {
         </section>
 
         {/* =========================================================
-            SECCIÓN 04 — CÓMO OPERA EL PROGRAMA (4 MOMENTOS)
+            SECCIÓN 04 — CÓMO OPERA EL PROGRAMA (4 PASOS VISUALES)
             ========================================================= */}
-        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="max-w-3xl">
+        <section className="py-14 sm:py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="max-w-2xl">
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block mb-1">
                 La Mecánica Operativa
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#141517]">
-                Cómo te entregamos prototipos de software en 4 semanas sin desgastarte
+                Cómo te entregamos software en 4 semanas sin desgastarte
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
-                <span className="w-6 h-6 rounded-md bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
-                  1
-                </span>
-                <span className="text-[10px] font-mono text-[#1846A3] font-bold block">Semana 1</span>
-                <h4 className="font-bold text-[#141517] text-sm">Challenge Discovery</h4>
-                <p className="text-[#52535A] leading-relaxed">
-                  Traducimos tu cuello de botella en un pliego técnico con restricciones, datasets sintéticos y rúbrica ponderada al 100%.
-                </p>
-                <span className="text-[10px] font-mono text-[#059669] block pt-1">Carga: 2h de tu equipo</span>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
-                <span className="w-6 h-6 rounded-md bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
-                  2
-                </span>
-                <span className="text-[10px] font-mono text-[#1846A3] font-bold block">Semana 2</span>
-                <h4 className="font-bold text-[#141517] text-sm">Filtro de Talento Senior</h4>
-                <p className="text-[#52535A] leading-relaxed">
-                  Convocamos ingenieros de IA, backend y diseñadores de producto. Validamos habilidades en GitHub antes de admitirlos.
-                </p>
-                <span className="text-[10px] font-mono text-[#059669] block pt-1">Carga: 0h (100% Kamino)</span>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
-                <span className="w-6 h-6 rounded-md bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
-                  3
-                </span>
-                <span className="text-[10px] font-mono text-[#1846A3] font-bold block">Semanas 3 a 4</span>
-                <h4 className="font-bold text-[#141517] text-sm">Build Sprint Supervisado</h4>
-                <p className="text-[#52535A] leading-relaxed">
-                  Los equipos construyen repositorios ejecutables con commits diarios y mentoría técnica continua de industria.
-                </p>
-                <span className="text-[10px] font-mono text-[#059669] block pt-1">Carga: 1h semanal de feedback</span>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] space-y-2">
-                <span className="w-6 h-6 rounded-md bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
-                  4
-                </span>
-                <span className="text-[10px] font-mono text-[#1846A3] font-bold block">Semana 5+</span>
-                <h4 className="font-bold text-[#141517] text-sm">Demo Day &amp; Piloto</h4>
-                <p className="text-[#52535A] leading-relaxed">
-                  Tus jurados evalúan demos en vivo con Jury OS a ciegas y acompañamos durante 60 a 90 días el traspaso técnico a producción.
-                </p>
-                <span className="text-[10px] font-mono text-[#059669] block pt-1">Carga: Deliberación + Piloto</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 05 — ENTERPRISE SECURITY & GOBERNANZA IP
-            ========================================================= */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-left">
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#2B2D36]">
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#60A5FA] block mb-1">
-                  Compliance &amp; Blindaje Legal
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                  Tus datos nunca salen de tu perímetro. Tu IP está 100% protegida.
-                </h3>
-              </div>
-              <Link href="/trust">
-                <button className="px-4 py-2 rounded-lg bg-[#252830] text-[#93C5FD] hover:bg-[#2F343E] font-mono text-xs border border-[#3B82F6]/30 transition-colors cursor-pointer shrink-0">
-                  Ver Trust Center Completo →
-                </button>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-[#9CA3AF]">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white font-bold text-sm">
-                  <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-                  <span>Acuerdos de IP Previos</span>
-                </div>
-                <p className="leading-relaxed">
-                  Las bases del reto estipulan licencias comerciales exclusivas o cesión de derechos antes de admitir al primer participante.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white font-bold text-sm">
-                  <Lock className="w-4 h-4 text-[#10B981]" />
-                  <span>NDAs Vinculantes</span>
-                </div>
-                <p className="leading-relaxed">
-                  Cada desarrollador y mentor firma acuerdos de confidencialidad y secreto comercial antes de ver las especificaciones técnicas.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white font-bold text-sm">
-                  <FileCode2 className="w-4 h-4 text-[#10B981]" />
-                  <span>Datasets Sintéticos</span>
-                </div>
-                <p className="leading-relaxed">
-                  Construimos lotes de datos anonimizados para pruebas; ningún dato de clientes reales se comparte con builders.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================
-            SECCIÓN 06 — FAQ ESTRATÉGICO
-            ========================================================= */}
-        <section className="py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
-                Preguntas Frecuentes
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141517] tracking-tight">
-                Respuestas sin rodeos para directores de tecnología e innovación.
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-[#FBFBFA] border border-[#E8E8E4] shadow-xs space-y-2">
-                  <h3 className="text-sm font-bold text-[#141517] flex items-center gap-2">
-                    <HelpCircle className="w-4 h-4 text-[#1846A3] shrink-0" />
-                    <span>{faq.q}</span>
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#52535A] pl-6 leading-relaxed">
-                    {faq.a}
-                  </p>
+              {phases.map((ph, idx) => (
+                <div
+                  key={idx}
+                  className="p-5 rounded-2xl bg-[#F9F9F8] border border-[#E8E8E4] hover:border-[#141517] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between space-y-3"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="w-6 h-6 rounded-md bg-[#141517] text-white flex items-center justify-center font-mono font-bold text-xs">
+                        {ph.num}
+                      </span>
+                      <span className="text-[10px] font-mono text-[#1846A3] font-bold">
+                        {ph.week}
+                      </span>
+                    </div>
+                    <h4 className="font-bold text-[#141517] text-sm">{ph.title}</h4>
+                    <p className="text-[#52535A] leading-relaxed text-xs">{ph.desc}</p>
+                  </div>
+                  <span className="text-[10px] font-mono text-[#059669] font-bold pt-2 border-t border-[#E8E8E4]">
+                    Carga: {ph.time}
+                  </span>
                 </div>
               ))}
             </div>
@@ -478,18 +388,94 @@ export default function HomePage() {
         </section>
 
         {/* =========================================================
-            SECCIÓN 07 — LEAD MAGNET INTERACTIVO & CTA FINAL
+            SECCIÓN 05 — ENTERPRISE SECURITY & GOBERNANZA IP
             ========================================================= */}
-        <section id="assessment" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-center space-y-8">
-          <div className="max-w-3xl mx-auto space-y-4">
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-left">
+          <div className="p-6 sm:p-9 rounded-3xl bg-[#141517] text-white border border-[#2B2D33] shadow-editorial space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[#2B2D36]">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#60A5FA] block mb-1">
+                  Compliance & Blindaje Legal
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                  Tus datos en tu perímetro. Tu IP 100% protegida.
+                </h3>
+              </div>
+              <Link href="/trust">
+                <button
+                  type="button"
+                  className="px-3.5 py-1.5 rounded-lg bg-[#252830] text-[#93C5FD] hover:bg-[#2F343E] font-mono text-xs border border-[#3B82F6]/30 transition-colors cursor-pointer shrink-0"
+                >
+                  Trust Center →
+                </button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-[#9CA3AF]">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-white font-bold text-sm">
+                  <ShieldCheck className="w-4 h-4 text-[#10B981]" />
+                  <span>Acuerdos de IP Previos</span>
+                </div>
+                <p className="leading-relaxed text-[11px]">
+                  Licencias comerciales exclusivas o cesión total de derechos pactadas antes de escribir la primera línea de código.
+                </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-white font-bold text-sm">
+                  <Lock className="w-4 h-4 text-[#10B981]" />
+                  <span>NDAs Vinculantes</span>
+                </div>
+                <p className="leading-relaxed text-[11px]">
+                  Cada desarrollador y mentor firma acuerdos legales de confidencialidad antes de acceder al pliego técnico.
+                </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-white font-bold text-sm">
+                  <FileCode2 className="w-4 h-4 text-[#10B981]" />
+                  <span>Datasets Sintéticos</span>
+                </div>
+                <p className="leading-relaxed text-[11px]">
+                  Datos anonimizados y entornos sandbox aislados: ningún dato real de tus clientes se comparte externamente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 06 — FAQ INTERACTIVO (ACCORDION)
+            ========================================================= */}
+        <section className="py-14 sm:py-20 bg-white border-y border-[#E8E8E4] px-4 sm:px-6 lg:px-8 text-left">
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="text-center space-y-1.5">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#1846A3] block">
+                Preguntas Frecuentes
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141517] tracking-tight">
+                Respuestas directas para líderes técnicos
+              </h2>
+            </div>
+
+            <FaqAccordion />
+          </div>
+        </section>
+
+        {/* =========================================================
+            SECCIÓN 07 — EVALUADOR INTERACTIVO & CTA FINAL
+            ========================================================= */}
+        <section id="assessment" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center space-y-6">
+          <div className="max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EEF4FF] text-[#1846A3] text-xs font-mono font-semibold uppercase tracking-wider border border-[#D3E2FE]">
               <span>Diagnóstico de Viabilidad Técnica</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#141517] leading-tight">
-              ¿Qué problema operativo quieres resolver en tu empresa este mes?
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#141517]">
+              ¿Qué problema operativo quieres resolver este mes?
             </h2>
-            <p className="text-sm sm:text-base text-[#52535A] max-w-2xl mx-auto leading-relaxed">
-              Describe tu cuello de botella en el evaluador interactivo a continuación para obtener la arquitectura sugerida, perfiles técnicos y entregables esperados en segundos:
+            <p className="text-xs sm:text-sm text-[#52535A] max-w-xl mx-auto leading-relaxed">
+              Describe tu cuello de botella en el evaluador interactivo para obtener arquitectura sugerida, perfiles técnicos y entregables esperados en segundos:
             </p>
           </div>
 
@@ -497,7 +483,7 @@ export default function HomePage() {
             <ChallengeAssessment />
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-[#71717A]">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-[#71717A]">
             <span>¿Prefieres agendar una llamada técnica directa de 30 minutos?</span>
             <a
               href={BRAND.calendarUrl}
